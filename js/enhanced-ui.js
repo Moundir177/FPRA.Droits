@@ -657,25 +657,6 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('header-sticky');
         }
     });
-
-    // Active menu highlighting based on current page
-    highlightCurrentPage();
-    
-    // Handle dropdowns on mobile
-    const dropdowns = document.querySelectorAll('.dropdown');
-    if (window.innerWidth < 992) {
-        dropdowns.forEach(dropdown => {
-            const toggle = dropdown.querySelector('.dropdown-toggle');
-            const menu = dropdown.querySelector('.dropdown-menu');
-            
-            if (toggle && menu) {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    menu.classList.toggle('active');
-                });
-            }
-        });
-    }
 });
 
 // Add smooth scrolling for anchor links
@@ -784,44 +765,3 @@ document.head.insertAdjacentHTML('beforeend', `
 }
 </style>
 `); 
-
-// Function to highlight the current page in the navigation
-function highlightCurrentPage() {
-    // Get the current page URL
-    const currentLocation = window.location.pathname;
-    const fileName = currentLocation.split('/').pop();
-    
-    // Find all navigation links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    
-    // Remove any existing 'active' classes
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-    
-    // Highlight the correct link
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        
-        // For homepage
-        if (fileName === '' || fileName === 'index.html') {
-            if (linkHref === 'index.html' || linkHref === './') {
-                link.classList.add('active');
-            }
-        } 
-        // For other pages
-        else if (linkHref === fileName) {
-            link.classList.add('active');
-        }
-        // For dropdown parent links
-        else if (linkHref && fileName.includes(linkHref) && linkHref !== 'index.html') {
-            const parentLi = link.closest('li.dropdown');
-            if (parentLi) {
-                const dropdownToggle = parentLi.querySelector('.dropdown-toggle');
-                if (dropdownToggle) {
-                    dropdownToggle.classList.add('active');
-                }
-            }
-        }
-    });
-} 
