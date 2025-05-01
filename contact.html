@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Fondation pour la promotion des droits</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer-fix.css">
+    <link rel="stylesheet" href="css/newsletter-fix.css">
+    <link rel="stylesheet" href="css/layout-fix.css">
+    <link rel="stylesheet" href="css/navigation-fix.css">
+    <link rel="stylesheet" href="css/service-cards-fix.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Fondation pour la promotion des droits</h1>
+                </a>
+            </div>
+            <div class="language-switch">
+                <a href="#" class="active">FR</a>
+                <a href="ar/contact.html">عربي</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="news.html">Actualités & Projets</a></li>
+                    <li><a href="revue.html">Revue</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="resources.html">Ressources</a></li>
+                    <li><a href="testimonials.html">Témoignages</a></li>
+                    <li><a href="civil-society.html">Société civile</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Nous sommes à votre écoute</p>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Notre adresse</h3>
+                            <p>123 Rue de la Liberté<br>Alger, Algérie</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p>+213 XX XX XX XX</p>
+                            <p>+213 XX XX XX XX</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>contact@fondationdroits.org</p>
+                            <p>info@fondationdroits.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Heures d'ouverture</h3>
+                            <p>Dimanche - Jeudi: 9h - 17h</p>
+                            <p>Vendredi - Samedi: Fermé</p>
+                        </div>
+                    </div>
+                    <div class="social-contact">
+                        <h3>Suivez-nous</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Envoyez-nous un message</h2>
+                    <p>Pour toute question, suggestion ou demande de collaboration, n'hésitez pas à nous contacter.</p>
+                    <div class="form-alert success" id="formSuccess" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.
+                    </div>
+                    <div class="form-alert error" id="formError" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i> Une erreur s'est produite. Veuillez vérifier vos informations et réessayer.
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone (optionnel)</label>
+                            <input type="tel" id="phone" name="phone">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <!-- Replace with actual Google Maps embed code in production -->
+            <div class="placeholder-map" style="height: 400px; background-color: var(--gray-color); display: flex; align-items: center; justify-content: center; color: white;">
+                <span>Carte Google Maps</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="assistance-section">
+        <div class="container">
+            <div class="assistance-grid">
+                <div class="assistance-item">
+                    <div class="assistance-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Assistance juridique</h3>
+                    <p>Pour toute demande d'assistance juridique, veuillez nous contacter par téléphone ou par mail avec les détails de votre situation.</p>
+                </div>
+                <div class="assistance-item">
+                    <div class="assistance-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Signalement de violations</h3>
+                    <p>Pour signaler des violations des droits, utilisez notre formulaire dédié ou contactez-nous directement.</p>
+                </div>
+                <div class="assistance-item">
+                    <div class="assistance-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partenariats</h3>
+                    <p>Pour explorer des opportunités de collaboration, écrivez-nous à partenariats@fondationdroits.org</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Restez informés</h2>
+            <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et ressources</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fondation pour la promotion des droits</h3>
+                    <p>Ensemble, pour des droits connus, reconnus et défendus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="news.html">Actualités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Alger, Algérie</p>
+                    <p><i class="fas fa-envelope"></i> contact@fondationdroits.org</p>
+                    <p><i class="fas fa-phone"></i> +213 XX XX XX XX</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fondation pour la promotion des droits. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/menu-fix.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact form validation
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Reset form state
+                    resetFormState();
+                    
+                    // Validate form
+                    const isValid = validateForm();
+                    
+                    if (isValid) {
+                        // Simulate form submission (in a real application, you would send data to a server here)
+                        document.getElementById('formSuccess').style.display = 'block';
+                        contactForm.reset();
+                        
+                        // Scroll to the success message
+                        document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(function() {
+                            document.getElementById('formSuccess').style.display = 'none';
+                        }, 5000);
+                    } else {
+                        document.getElementById('formError').style.display = 'block';
+                        
+                        // Scroll to the error message
+                        document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+                
+                // Add input event listeners for real-time validation
+                document.getElementById('name').addEventListener('input', function() {
+                    validateField('name', nameValidator);
+                });
+                
+                document.getElementById('email').addEventListener('input', function() {
+                    validateField('email', emailValidator);
+                });
+                
+                document.getElementById('phone').addEventListener('input', function() {
+                    validateField('phone', phoneValidator);
+                });
+                
+                document.getElementById('subject').addEventListener('input', function() {
+                    validateField('subject', subjectValidator);
+                });
+                
+                document.getElementById('message').addEventListener('input', function() {
+                    validateField('message', messageValidator);
+                });
+            }
+            
+            // Validation functions
+            function validateForm() {
+                const nameValid = validateField('name', nameValidator);
+                const emailValid = validateField('email', emailValidator);
+                const phoneValid = validateField('phone', phoneValidator);
+                const subjectValid = validateField('subject', subjectValidator);
+                const messageValid = validateField('message', messageValidator);
+                
+                return nameValid && emailValid && phoneValid && subjectValid && messageValid;
+            }
+            
+            function validateField(fieldName, validatorFunction) {
+                const field = document.getElementById(fieldName);
+                const errorField = document.getElementById(fieldName + 'Error');
+                
+                // Don't validate optional empty fields
+                if (fieldName === 'phone' && field.value === '') {
+                    field.parentElement.classList.remove('error');
+                    field.parentElement.classList.add('success');
+                    errorField.textContent = '';
+                    return true;
+                }
+                
+                const result = validatorFunction(field.value);
+                
+                if (result.valid) {
+                    field.parentElement.classList.remove('error');
+                    field.parentElement.classList.add('success');
+                    errorField.textContent = '';
+                    return true;
+                } else {
+                    field.parentElement.classList.remove('success');
+                    field.parentElement.classList.add('error');
+                    errorField.textContent = result.message;
+                    return false;
+                }
+            }
+            
+            function resetFormState() {
+                // Hide alert messages
+                document.getElementById('formSuccess').style.display = 'none';
+                document.getElementById('formError').style.display = 'none';
+                
+                // Reset field states
+                const formGroups = document.querySelectorAll('.form-group');
+                formGroups.forEach(group => {
+                    group.classList.remove('error', 'success');
+                });
+                
+                // Clear error messages
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(message => {
+                    message.textContent = '';
+                });
+            }
+            
+            // Validator functions
+            function nameValidator(value) {
+                if (value.trim() === '') {
+                    return { valid: false, message: 'Veuillez entrer votre nom complet' };
+                }
+                if (value.trim().length < 3) {
+                    return { valid: false, message: 'Le nom doit contenir au moins 3 caractères' };
+                }
+                return { valid: true };
+            }
+            
+            function emailValidator(value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (value.trim() === '') {
+                    return { valid: false, message: 'Veuillez entrer votre adresse email' };
+                }
+                if (!emailRegex.test(value)) {
+                    return { valid: false, message: 'Veuillez entrer une adresse email valide' };
+                }
+                return { valid: true };
+            }
+            
+            function phoneValidator(value) {
+                // Skip validation if the field is empty (it's optional)
+                if (value.trim() === '') {
+                    return { valid: true };
+                }
+                
+                // Basic phone validation - this can be adapted based on your country's format
+                const phoneRegex = /^[\d\s\+\-\(\)]{8,20}$/;
+                if (!phoneRegex.test(value)) {
+                    return { valid: false, message: 'Veuillez entrer un numéro de téléphone valide' };
+                }
+                return { valid: true };
+            }
+            
+            function subjectValidator(value) {
+                if (value.trim() === '') {
+                    return { valid: false, message: 'Veuillez entrer un sujet' };
+                }
+                if (value.trim().length < 5) {
+                    return { valid: false, message: 'Le sujet doit contenir au moins 5 caractères' };
+                }
+                return { valid: true };
+            }
+            
+            function messageValidator(value) {
+                if (value.trim() === '') {
+                    return { valid: false, message: 'Veuillez entrer votre message' };
+                }
+                if (value.trim().length < 10) {
+                    return { valid: false, message: 'Le message doit contenir au moins 10 caractères' };
+                }
+                return { valid: true };
+            }
+            
+            // Add animation when elements come into view
+            const animateElements = document.querySelectorAll('.contact-card, .assistance-item');
+            
+            function checkIfInView() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('animate-fadeIn');
+                    }
+                });
+            }
+            
+            // Check on page load
+            checkIfInView();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkIfInView);
+        });
+    </script>
+</body>
+</html> 

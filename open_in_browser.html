@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Your Website - Colors Fixed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #3cb496;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3cb496, #2a9d80);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #f39207, #e67e22);
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .color-box {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .color-primary {
+            background-color: #3cb496;
+        }
+        .color-secondary {
+            background-color: #f39207;
+        }
+        .color-gradient {
+            background-image: linear-gradient(135deg, #3cb496, #f39207);
+        }
+    </style>
+</head>
+<body>
+    <h1>Open Your Website - Colors Fixed!</h1>
+    <p>All colors have been updated to use your brand colors:</p>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <div class="color-box color-primary" title="Primary: Teal/Turquoise"></div>
+        <div class="color-box color-secondary" title="Secondary: Orange"></div>
+        <div class="color-box color-gradient" title="Gradient"></div>
+    </div>
+    
+    <p><strong>Primary color:</strong> Teal/Turquoise (#3cb496 / RGB: 60,180,150)</p>
+    <p><strong>Secondary color:</strong> Orange (#f39207 / RGB: 243,146,7)</p>
+    
+    <p>Click the button below to open your website with the updated colors:</p>
+    
+    <a href="index.html" class="btn">Open Website</a>
+    
+    <p>Or you can navigate to these individual pages:</p>
+    
+    <ul>
+        <li><a href="index.html">Home page</a></li>
+        <li><a href="about.html">About page</a></li>
+        <li><a href="news.html">News page</a></li>
+        <li><a href="revue.html">Revue page</a></li>
+    </ul>
+    
+    <p><strong>Note:</strong> When opening directly as files, some features may not work properly due to browser security restrictions.</p>
+    
+    <h2>Alternative Methods</h2>
+    <p>If you want to run a proper server, you could:</p>
+    <ol>
+        <li>Install Python from <a href="https://www.python.org/downloads/">python.org</a></li>
+        <li>Install Node.js from <a href="https://nodejs.org/">nodejs.org</a></li>
+        <li>Use Visual Studio Code with the "Live Server" extension</li>
+        <li>Use XAMPP, WAMP, or another web server package</li>
+    </ol>
+</body>
+</html> 

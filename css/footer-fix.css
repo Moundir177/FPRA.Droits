@@ -1,0 +1,59 @@
+/* Footer contact information fixes for improved visibility */
+
+/* Improve visibility of all footer text */
+.footer-section p,
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+}
+
+/* Make contact links stand out */
+.footer-section p a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section p a:hover {
+    color: var(--secondary-color);
+}
+
+/* Make contact icons more visible */
+.footer-section p i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Add some spacing to the contact section */
+.footer-section h3 {
+    margin-bottom: 20px;
+}
+
+/* Make the footer headings clearer */
+.footer-section h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure all footer links have good hover states */
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+    display: inline-block;
+}
+
+/* Improve social links */
+.social-links a {
+    background: rgba(255, 255, 255, 0.2);
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    background: var(--secondary-gradient);
+} 
