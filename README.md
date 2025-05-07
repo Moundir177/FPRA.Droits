@@ -1,11 +1,10 @@
 # Fondation pour la promotion des droits - Site Web
 
-Ce projet est un site web bilingue (français et arabe) pour la "Fondation pour la promotion des droits", une association algérienne dédiée à la promotion et à la défense des droits.
+Ce projet est un site web pour la "Fondation pour la promotion des droits", une association algérienne dédiée à la promotion et à la défense des droits.
 
 ## Fonctionnalités
 
 - Design moderne et responsive adapté à tous les appareils
-- Interface bilingue (français et arabe) avec support RTL pour l'arabe
 - Pages principales :
   - Accueil
   - À propos (mission, objectifs, équipe)
@@ -21,11 +20,9 @@ Ce projet est un site web bilingue (français et arabe) pour la "Fondation pour 
 
 ```
 /
-├── index.html                  # Page d'accueil (français)
-├── about.html                  # Page À propos (français)
-├── contact.html                # Page Contact (français)
-├── ar/                         # Versions arabes des pages
-│   └── index.html              # Page d'accueil (arabe)
+├── index.html                  # Page d'accueil
+├── about.html                  # Page À propos
+├── contact.html                # Page Contact
 ├── css/
 │   └── style.css               # Feuille de style principale
 ├── js/
@@ -44,8 +41,7 @@ Ce projet est un site web bilingue (français et arabe) pour la "Fondation pour 
 ## Comment utiliser
 
 1. Clonez ce dépôt
-2. Ouvrez le fichier `index.html` dans votre navigateur pour voir la version française
-3. Cliquez sur le bouton "عربي" pour basculer vers la version arabe
+2. Ouvrez le fichier `index.html` dans votre navigateur
 
 ## Personnalisation
 

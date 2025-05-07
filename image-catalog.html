@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue d'images - Fondation pour la promotion des droits</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .image-catalog {
+            padding: 40px 0;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .image-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .image-container {
+            height: 300px;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .image-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+        .image-info {
+            padding: 20px;
+        }
+        .image-info h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .image-info p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .image-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Fondation pour la promotion des droits</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="news.html">Actualités</a></li>
+                    <li><a href="revue.html">Revue</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="resources.html">Ressources</a></li>
+                    <li><a href="testimonials.html">Témoignages</a></li>
+                    <li><a href="civil-society.html">Société civile</a></li>
+                    <li><a href="gallery.html">Galerie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-switch">
+                <a href="#" class="active">FR</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Catalogue d'images</h1>
+            <p>Images libres de droits pour le site de la Fondation</p>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Catalogue d'images</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-catalog">
+        <div class="container">
+            <div class="catalog-intro">
+                <h2>Images téléchargées</h2>
+                <p>Ces images proviennent de sources libres de droits (Pexels, Unsplash et Pixabay) et peuvent être utilisées sur le site web de la Fondation pour la promotion des droits. Elles sont thématiquement liées à la mission et aux activités de la Fondation.</p>
+            </div>
+
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/justice-scale.jpg" alt="Balance de la justice">
+                    </div>
+                    <div class="image-info">
+                        <h3>Balance de la justice</h3>
+                        <p>Symbolise l'équité et le droit, image parfaite pour les sections liées à la justice et au système judiciaire.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> justice-scale.jpg</span>
+                            <span><i class="fas fa-camera"></i> Pexels</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/human-rights.jpg" alt="Manifestation pour les droits humains">
+                    </div>
+                    <div class="image-info">
+                        <h3>Manifestation pour les droits</h3>
+                        <p>Représente l'engagement citoyen pour les droits humains, idéale pour les sections sur l'activisme et la mobilisation.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> human-rights.jpg</span>
+                            <span><i class="fas fa-camera"></i> Unsplash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/diversity-team.jpg" alt="Équipe diverse collaborant">
+                    </div>
+                    <div class="image-info">
+                        <h3>Équipe diverse</h3>
+                        <p>Symbolise la coopération et l'inclusion, parfaite pour les sections sur l'équipe, la collaboration ou la diversité.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> diversity-team.jpg</span>
+                            <span><i class="fas fa-camera"></i> Pexels</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/education-rights.jpg" alt="Éducation - Droit fondamental">
+                    </div>
+                    <div class="image-info">
+                        <h3>Éducation</h3>
+                        <p>Représente le droit fondamental à l'éducation, idéale pour les sections sur les formations, l'éducation aux droits.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> education-rights.jpg</span>
+                            <span><i class="fas fa-camera"></i> Unsplash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/youth-engagement.jpg" alt="Jeunes engagés">
+                    </div>
+                    <div class="image-info">
+                        <h3>Jeunes engagés</h3>
+                        <p>Représente l'avenir de l'activisme, parfaite pour les sections sur l'engagement des jeunes et les programmes destinés à la jeunesse.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> youth-engagement.jpg</span>
+                            <span><i class="fas fa-camera"></i> Pexels</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/collaboration.jpg" alt="Collaboration">
+                    </div>
+                    <div class="image-info">
+                        <h3>Collaboration</h3>
+                        <p>Représente le travail d'équipe pour la défense des droits, idéale pour les sections sur les partenariats et la société civile.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> collaboration.jpg</span>
+                            <span><i class="fas fa-camera"></i> Pexels</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/advocacy.jpg" alt="Plaidoyer">
+                    </div>
+                    <div class="image-info">
+                        <h3>Plaidoyer</h3>
+                        <p>Représente la discussion autour des enjeux des droits, parfaite pour les sections sur le plaidoyer et la sensibilisation.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> advocacy.jpg</span>
+                            <span><i class="fas fa-camera"></i> Pexels</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="img/real/women-rights.jpg" alt="Droits des femmes">
+                    </div>
+                    <div class="image-info">
+                        <h3>Droits des femmes</h3>
+                        <p>Symbolise l'égalité et l'émancipation, idéale pour les sections sur les droits des femmes et l'égalité des genres.</p>
+                        <div class="image-meta">
+                            <span><i class="fas fa-file"></i> women-rights.jpg</span>
+                            <span><i class="fas fa-camera"></i> Unsplash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="implementation-guide">
+        <div class="container">
+            <h2>Guide d'utilisation sur le site</h2>
+            <p>Voici quelques suggestions pour intégrer ces images dans les différentes pages du site :</p>
+            
+            <div style="margin-top: 30px;">
+                <h3>Page d'accueil</h3>
+                <ul>
+                    <li><strong>Human-rights.jpg</strong> - Slider principal ou bannière</li>
+                    <li><strong>Justice-scale.jpg</strong> - Section sur la mission de la Fondation</li>
+                    <li><strong>Youth-engagement.jpg</strong> - Section sur les actualités ou événements à venir</li>
+                </ul>
+                
+                <h3>À propos</h3>
+                <ul>
+                    <li><strong>Diversity-team.jpg</strong> - Section "Notre équipe" ou "Notre histoire"</li>
+                    <li><strong>Collaboration.jpg</strong> - Section "Notre vision" ou "Nos objectifs"</li>
+                </ul>
+                
+                <h3>Formations</h3>
+                <ul>
+                    <li><strong>Education-rights.jpg</strong> - Bannière principale de la page</li>
+                    <li><strong>Youth-engagement.jpg</strong> - Section sur les formations destinées aux jeunes</li>
+                </ul>
+                
+                <h3>Société civile</h3>
+                <ul>
+                    <li><strong>Advocacy.jpg</strong> - Section sur le plaidoyer et la sensibilisation</li>
+                    <li><strong>Collaboration.jpg</strong> - Section sur les réseaux et partenariats</li>
+                </ul>
+                
+                <h3>Ressources</h3>
+                <ul>
+                    <li><strong>Justice-scale.jpg</strong> - Section sur les ressources juridiques</li>
+                    <li><strong>Women-rights.jpg</strong> - Section sur les droits des femmes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fondation pour la promotion des droits</h3>
+                    <p>Ensemble, pour des droits connus, reconnus et défendus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="news.html">Actualités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Alger, Algérie</p>
+                    <p><i class="fas fa-envelope"></i> contact@fondationdroits.org</p>
+                    <p><i class="fas fa-phone"></i> +213 XX XX XX XX</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="visually-hidden">Facebook</span>
+                        </a>
+                        <a href="https://x.com/FondationDZ" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="visually-hidden">Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/fondationdz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="visually-hidden">Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span class="visually-hidden">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fondation pour la promotion des droits. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html> 

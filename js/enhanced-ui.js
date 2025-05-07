@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transitionDelay = `${index * 0.1}s`;
     });
 
+    // Target reveal animation elements
+    document.querySelectorAll('.reveal-left, .reveal-right').forEach(item => {
+        observer.observe(item);
+    });
+
     // Enhanced header scroll effect
     const header = document.querySelector('header');
     let lastScrollY = window.scrollY;
@@ -49,6 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuBackdrop = document.createElement('div');
     menuBackdrop.className = 'menu-backdrop';
     document.body.appendChild(menuBackdrop);
+    
+    // Initialize About page interactions
+    initAboutPageInteractions();
+    
+    // Initialize CSS animations for elements
+    initializeCssAnimations();
 
     // Enhanced mobile menu toggle with animation
     const menuToggle = document.querySelector('.menu-toggle');
@@ -764,4 +775,671 @@ document.head.insertAdjacentHTML('beforeend', `
     }
 }
 </style>
-`); 
+`);
+
+/**
+ * Enhanced UI - JavaScript for advanced visual features
+ * Fondation pour la promotion des droits
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Header scroll effect
+    const header = document.querySelector('header');
+    const scrollIndicator = createScrollIndicator();
+    
+    window.addEventListener('scroll', function() {
+        // Add scrolled class to header on scroll
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Update scroll indicator
+        updateScrollIndicator(scrollIndicator);
+        
+        // Reveal elements on scroll
+        revealElementsOnScroll();
+    });
+    
+    // Initialize animations
+    initializeScrollAnimations();
+    
+    // Setup testimonial slider if exists
+    setupTestimonialSlider();
+    
+    // Setup dropdown interactions
+    enhanceDropdownMenus();
+    
+    // Add hover effects to buttons
+    enhanceButtons();
+    
+    // Setup modal functionality if exists
+    setupModalFunctionality();
+    
+    // Add typing effect to hero section title if exists
+    addTypingEffect();
+    
+    // Enable dark/light mode toggle
+    setupThemeToggle();
+    
+    // Add parallax effect
+    setupParallaxEffect();
+    
+    // Add smooth anchor scrolling
+    setupSmoothScrolling();
+    
+    // Initialize image zoom effect for gallery
+    initializeImageZoom();
+});
+
+/**
+ * Create scroll indicator at the top of the page
+ */
+function createScrollIndicator() {
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+    document.body.appendChild(scrollIndicator);
+    return scrollIndicator;
+}
+
+/**
+ * Update scroll indicator width based on scroll position
+ */
+function updateScrollIndicator(indicator) {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    indicator.style.width = scrolled + '%';
+}
+
+/**
+ * Initialize animations for elements on scroll
+ */
+function initializeScrollAnimations() {
+    // Add fade-in class to elements that should animate
+    const animatableElements = document.querySelectorAll('.section-title, .news-card, .program-card, .testimonial, .gallery-preview-item');
+    
+    animatableElements.forEach(element => {
+        element.classList.add('fade-in');
+    });
+    
+    // Add directional reveal classes where appropriate
+    const leftElements = document.querySelectorAll('.mission-content, .intro-content');
+    leftElements.forEach(element => {
+        element.classList.add('reveal-left');
+    });
+    
+    const rightElements = document.querySelectorAll('.mission-image, .intro-image');
+    rightElements.forEach(element => {
+        element.classList.add('reveal-right');
+    });
+    
+    // Initial check for visible elements
+    revealElementsOnScroll();
+}
+
+/**
+ * Reveal elements when they enter the viewport
+ */
+function revealElementsOnScroll() {
+    const revealElements = document.querySelectorAll('.fade-in, .reveal-left, .reveal-right');
+    
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+/**
+ * Setup and enhance testimonial slider
+ */
+function setupTestimonialSlider() {
+    const testimonialSlider = document.querySelector('.testimonial-slider');
+    if (!testimonialSlider) return;
+    
+    const testimonials = testimonialSlider.querySelectorAll('.testimonial');
+    if (testimonials.length <= 1) return;
+    
+    // Create navigation dots
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'testimonial-nav';
+    
+    testimonials.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Témoignage ${index + 1}`);
+        if (index === 0) dot.classList.add('active');
+        
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+        });
+        
+        dotsContainer.appendChild(dot);
+    });
+    
+    testimonialSlider.after(dotsContainer);
+    
+    // Create arrow navigation
+    const arrowsContainer = document.createElement('div');
+    arrowsContainer.className = 'testimonial-arrows';
+    
+    const prevArrow = document.createElement('button');
+    prevArrow.className = 'testimonial-arrow prev';
+    prevArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    prevArrow.setAttribute('aria-label', 'Témoignage précédent');
+    
+    const nextArrow = document.createElement('button');
+    nextArrow.className = 'testimonial-arrow next';
+    nextArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    nextArrow.setAttribute('aria-label', 'Témoignage suivant');
+    
+    arrowsContainer.appendChild(prevArrow);
+    arrowsContainer.appendChild(nextArrow);
+    
+    testimonialSlider.after(arrowsContainer);
+    
+    // Current testimonial index
+    let currentIndex = 0;
+    
+    // Show specific testimonial
+    function showTestimonial(index) {
+        // Hide all testimonials
+        testimonials.forEach(testimonial => {
+            testimonial.style.display = 'none';
+        });
+        
+        // Show selected testimonial
+        testimonials[index].style.display = 'block';
+        
+        // Update active dot
+        const dots = dotsContainer.querySelectorAll('button');
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        currentIndex = index;
+    }
+    
+    // Add click events to arrows
+    prevArrow.addEventListener('click', () => {
+        let newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = testimonials.length - 1;
+        showTestimonial(newIndex);
+    });
+    
+    nextArrow.addEventListener('click', () => {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= testimonials.length) newIndex = 0;
+        showTestimonial(newIndex);
+    });
+    
+    // Auto-rotate testimonials
+    setInterval(() => {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= testimonials.length) newIndex = 0;
+        showTestimonial(newIndex);
+    }, 8000);
+    
+    // Initialize with first testimonial
+    showTestimonial(0);
+}
+
+/**
+ * Enhance dropdown menu interactions
+ */
+function enhanceDropdownMenus() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!link || !menu) return;
+        
+        // For mobile: make the dropdown toggleable with click
+        link.addEventListener('click', function(e) {
+            // Only prevent default on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            const isDropdown = e.target.closest('.dropdown');
+            
+            if (!isDropdown) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        }
+    });
+}
+
+/**
+ * Enhance buttons with hover effects
+ */
+function enhanceButtons() {
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline');
+    
+    buttons.forEach(button => {
+        // Add data-text attribute with button text
+        const buttonText = button.textContent;
+        button.setAttribute('data-text', buttonText);
+        
+        // Add ripple effect on click
+        button.addEventListener('click', function(e) {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+}
+
+/**
+ * Setup modal functionality for elements with data-modal attribute
+ */
+function setupModalFunctionality() {
+    // Find all elements that should open a modal
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    
+    modalTriggers.forEach(trigger => {
+        const modalId = trigger.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        
+        if (!modal) return;
+        
+        // Add click event to open modal
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+        
+        // Add close button functionality
+        const closeButtons = modal.querySelectorAll('.close-modal');
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+        });
+        
+        // Close modal when clicking outside content
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+    });
+}
+
+/**
+ * Add typing effect to text with .typing-effect class
+ */
+function addTypingEffect() {
+    const typingElements = document.querySelectorAll('.typing-effect');
+    
+    typingElements.forEach(element => {
+        const text = element.textContent;
+        element.textContent = '';
+        
+        let i = 0;
+        const speed = 50; // typing speed in milliseconds
+        
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        
+        // Start typing effect when element is in viewport
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeWriter();
+                    observer.unobserve(element);
+                }
+            });
+        });
+        
+        observer.observe(element);
+    });
+}
+
+/**
+ * Setup theme toggle (light/dark mode)
+ */
+function setupThemeToggle() {
+    // Skip if toggle doesn't exist
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (!themeToggle) return;
+    
+    // Check user preference from local storage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'dark') {
+            themeToggle.classList.add('active');
+        }
+    }
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        themeToggle.classList.toggle('active');
+    });
+}
+
+/**
+ * Setup parallax effect for elements with .parallax class
+ */
+function setupParallaxEffect() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const speed = element.getAttribute('data-speed') || 0.5;
+            element.style.transform = `translateY(${scrollTop * speed}px)`;
+        });
+    });
+}
+
+/**
+ * Setup smooth scrolling for anchor links
+ */
+function setupSmoothScrolling() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
+            
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Update URL hash without scrolling
+            history.pushState(null, null, this.getAttribute('href'));
+        });
+    });
+}
+
+/**
+ * Initialize zoom effect for gallery images
+ */
+function initializeImageZoom() {
+    const galleryItems = document.querySelectorAll('.gallery-item img, .gallery-preview-item img');
+    
+    galleryItems.forEach(img => {
+        img.addEventListener('click', function() {
+            // Create zoom container
+            const zoomContainer = document.createElement('div');
+            zoomContainer.className = 'image-zoom-container';
+            
+            // Create zoomed image
+            const zoomedImg = document.createElement('img');
+            zoomedImg.src = this.src;
+            zoomedImg.alt = this.alt;
+            
+            // Create close button
+            const closeButton = document.createElement('button');
+            closeButton.className = 'zoom-close-btn';
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            
+            // Add elements to container
+            zoomContainer.appendChild(zoomedImg);
+            zoomContainer.appendChild(closeButton);
+            document.body.appendChild(zoomContainer);
+            
+            // Prevent scrolling
+            document.body.style.overflow = 'hidden';
+            
+            // Add close functionality
+            function closeZoom() {
+                zoomContainer.remove();
+                document.body.style.overflow = '';
+            }
+            
+            closeButton.addEventListener('click', closeZoom);
+            zoomContainer.addEventListener('click', function(e) {
+                if (e.target === zoomContainer) {
+                    closeZoom();
+                }
+            });
+            
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeZoom();
+                }
+            }, { once: true });
+        });
+    });
+}
+
+/**
+ * Add loading animation to elements that are loading content
+ */
+function addLoadingAnimation(element) {
+    if (!element) return;
+    
+    const loadingSpinner = document.createElement('div');
+    loadingSpinner.className = 'loading-spinner';
+    element.appendChild(loadingSpinner);
+    
+    return loadingSpinner;
+}
+
+/**
+ * Initialize interactions specifically for the About page
+ */
+function initAboutPageInteractions() {
+    // Check if we're on the About page
+    if (!window.location.pathname.includes('about.html')) return;
+    
+    // Handle "Show More Objectives" button
+    const showMoreButton = document.getElementById('show-more-objectives');
+    const additionalObjectives = document.getElementById('additional-objectives');
+    
+    if (showMoreButton && additionalObjectives) {
+        showMoreButton.addEventListener('click', function() {
+            if (additionalObjectives.style.display === 'none' || !additionalObjectives.style.display) {
+                // Show additional objectives with a smooth animation
+                additionalObjectives.style.display = 'block';
+                setTimeout(() => {
+                    additionalObjectives.style.opacity = '1';
+                }, 10);
+                
+                // Change button text
+                this.querySelector('span').textContent = 'Voir moins';
+                this.querySelector('i').classList.remove('fa-chevron-down');
+                this.querySelector('i').classList.add('fa-chevron-up');
+            } else {
+                // Hide additional objectives with a smooth animation
+                additionalObjectives.style.opacity = '0';
+                setTimeout(() => {
+                    additionalObjectives.style.display = 'none';
+                }, 500);
+                
+                // Change button text back
+                this.querySelector('span').textContent = 'Voir tous nos objectifs';
+                this.querySelector('i').classList.remove('fa-chevron-up');
+                this.querySelector('i').classList.add('fa-chevron-down');
+                
+                // Scroll to objectives section
+                document.getElementById('vision').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+    
+    // Handle interactive public cards
+    const publicCards = document.querySelectorAll('.public-card');
+    
+    if (publicCards.length > 0) {
+        publicCards.forEach(card => {
+            // Find the hidden features element
+            const featuresElement = card.querySelector('.public-features');
+            
+            // Add hover interactions for desktop
+            card.addEventListener('mouseenter', function() {
+                if (window.innerWidth >= 768 && featuresElement) {
+                    featuresElement.style.height = `${featuresElement.scrollHeight}px`;
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.boxShadow = '0 25px 50px rgba(0,0,0,0.1)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (window.innerWidth >= 768 && featuresElement) {
+                    featuresElement.style.height = '0';
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.05)';
+                }
+            });
+            
+            // Add click interactions for mobile
+            card.addEventListener('click', function() {
+                if (window.innerWidth < 768 && featuresElement) {
+                    // Close all other cards
+                    publicCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            const otherFeatures = otherCard.querySelector('.public-features');
+                            if (otherFeatures) {
+                                otherFeatures.style.height = '0';
+                                otherCard.style.transform = 'translateY(0)';
+                                otherCard.style.boxShadow = '0 15px 35px rgba(0,0,0,0.05)';
+                            }
+                        }
+                    });
+                    
+                    // Toggle current card
+                    if (featuresElement.style.height === '0px' || !featuresElement.style.height) {
+                        featuresElement.style.height = `${featuresElement.scrollHeight}px`;
+                        card.style.transform = 'translateY(-10px)';
+                        card.style.boxShadow = '0 25px 50px rgba(0,0,0,0.1)';
+                    } else {
+                        featuresElement.style.height = '0';
+                        card.style.transform = 'translateY(0)';
+                        card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.05)';
+                    }
+                }
+            });
+        });
+    }
+    
+    // Interactive image hover effect (show values on hover)
+    const missionImage = document.querySelector('.mission-image-wrapper');
+    const hoverFacts = document.querySelector('.image-hover-facts');
+    
+    if (missionImage && hoverFacts) {
+        missionImage.addEventListener('mouseenter', function() {
+            hoverFacts.style.opacity = '1';
+        });
+        
+        missionImage.addEventListener('mouseleave', function() {
+            hoverFacts.style.opacity = '0';
+        });
+    }
+}
+
+/**
+ * Initialize CSS animations and effects
+ */
+function initializeCssAnimations() {
+    // Initialize animations for reveal classes
+    const revealElements = document.querySelectorAll('.reveal-left, .reveal-right');
+    
+    // Add CSS classes for animation behavior
+    const style = document.createElement('style');
+    style.textContent = `
+        .reveal-left, .reveal-right {
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        .reveal-left {
+            transform: translateX(-50px);
+        }
+        
+        .reveal-right {
+            transform: translateX(50px);
+        }
+        
+        .reveal-left.visible, .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .stagger-animation > *.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .animate-fadeIn {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    `;
+    
+    document.head.appendChild(style);
+} 

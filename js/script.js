@@ -1,35 +1,149 @@
 // JavaScript for Fondation pour la promotion des droits
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile navigation toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
+    // Create menu backdrop
+    const menuBackdrop = document.createElement('div');
+    menuBackdrop.className = 'menu-backdrop';
+    document.body.appendChild(menuBackdrop);
     
+    // Create hamburger icon for the menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            // Toggle between bars and close icon
-            const icon = menuToggle.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        // Check if we're not already using the hamburger icon
+        if (!menuToggle.querySelector('.hamburger-icon')) {
+            // Remove default icon if it exists
+            const defaultIcon = menuToggle.querySelector('i');
+            if (defaultIcon) {
+                defaultIcon.remove();
             }
+            
+            // Create and add hamburger icon
+            const hamburger = document.createElement('div');
+            hamburger.className = 'hamburger-icon';
+            
+            for (let i = 1; i <= 4; i++) {
+                const span = document.createElement('span');
+                hamburger.appendChild(span);
+            }
+            
+            menuToggle.appendChild(hamburger);
+        }
+        
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
         });
     }
     
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = nav.contains(event.target);
-        const isClickOnMenuToggle = menuToggle.contains(event.target);
+    // Function to toggle menu state
+    function toggleMenu() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        menuBackdrop.classList.toggle('active');
         
-        if (!isClickInsideNav && !isClickOnMenuToggle && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+        // Toggle hamburger icon animation
+        const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+        if (hamburgerIcon) {
+            hamburgerIcon.classList.toggle('open');
+        }
+        
+        // Toggle body scroll
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    // Close menu on backdrop click
+    menuBackdrop.addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        if (nav.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
+    // Close menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        const nav = document.querySelector('nav');
+        if (nav && nav.classList.contains('active')) {
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnMenuToggle = menuToggle && menuToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnMenuToggle) {
+                toggleMenu();
+            }
+        }
+    });
+    
+    // Mobile dropdown functionality
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 992) {
+                e.preventDefault();
+                
+                // Find the dropdown menu
+                const parent = this.parentElement;
+                const dropdown = parent.querySelector('.dropdown-menu');
+                
+                // Check if already open
+                const isOpen = dropdown.classList.contains('active');
+                
+                // Close all dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.remove('active');
+                });
+                
+                // Toggle the clicked dropdown
+                if (!isOpen) {
+                    dropdown.classList.add('active');
+                }
+            }
+        });
+    });
+    
+    // Sticky header on scroll
+    const header = document.querySelector('header');
+    
+    function stickyHeader() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    // Check on page load
+    stickyHeader();
+    
+    // Check on scroll
+    window.addEventListener('scroll', stickyHeader);
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992) {
+            // Reset mobile menu on larger screens
+            const nav = document.querySelector('nav');
+            if (nav) {
+                nav.classList.remove('active');
+            }
+            if (menuToggle) {
+                menuToggle.classList.remove('active');
+            }
+            menuBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset mobile dropdown functionality
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('active');
+            });
+            
+            // Reset hamburger icon
+            const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+            if (hamburgerIcon) {
+                hamburgerIcon.classList.remove('open');
+            }
         }
     });
     
@@ -514,21 +628,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.animationDelay = `${0.1 * index}s`;
         });
     });
-    
-    // Sticky header functionality
-    function stickyHeader() {
-        const header = document.querySelector('header');
-        const scrollPosition = window.scrollY;
-        
-        if (scrollPosition > 300) {
-            header.classList.add('header-sticky');
-        } else {
-            header.classList.remove('header-sticky');
-        }
-    }
-    
-    // Run sticky header check on scroll
-    window.addEventListener('scroll', stickyHeader);
 });
 
 // Enhanced Back to top button with smooth appearance

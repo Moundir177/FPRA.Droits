@@ -117,8 +117,7 @@
                 </ul>
             </nav>
             <div class="language-switch">
-                <a href="#" class="active" aria-current="page">FR</a>
-                <a href="ar/news.html">عربي</a>
+                <a href="#" class="active">FR</a>
             </div>
             <div class="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -127,114 +126,387 @@
     </header>
 
     <main id="content">
-        <section class="page-header">
-            <div class="container">
-                <h1>Actualités & Projets</h1>
-                <p>Restez informés de nos activités et initiatives</p>
-                <div class="breadcrumb">
-                    <a href="index.html">Accueil</a>
-                    <span>/</span>
-                    <span>Actualités & Projets</span>
+        <section class="hero animated-bg" style="position: relative; overflow: hidden;">
+            <!-- Video Background Option -->
+            <div class="hero-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6;">
+                <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(60, 180, 150, 0.85), rgba(243, 146, 7, 0.85)); z-index: 1;"></div>
+                <img src="img/real/press-conference.jpg" alt="" class="fallback-bg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;">
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 2; padding: 100px 0;">
+                <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                        Actualités & Projets
+                    </h1>
+                    
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                        Suivez nos activités et initiatives pour la promotion et la défense des droits humains
+                    </p>
+                    
+                    <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.5s;">
+                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <span style="opacity: 0.8;">/</span>
+                        <span style="font-weight: 600;">Actualités & Projets</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Curved Shape Divider -->
+            <div class="shape-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 70px; fill: white;">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="social-connect" style="position: relative; padding: 60px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAgMzBtLTI4IDBhMjggMjggMCAxIDAgNTYgMCAyOCAyOCAwIDEgMC01NiAwIiBzdHJva2U9InJnYmEoNjAsIDE4MCwgMTUwLCAwLjEpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMTggMGExOCAxOCAwIDEgMCAzNiAwIDE4IDE4IDAgMSAwLTM2IDAiIHN0cm9rZT0icmdiYSg2MCwgMTgwLCAxNTAsIDAuMTUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvZz48L3N2Zz4='); background-position: center; opacity: 0.5; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="social-connect-header" style="text-align: center; margin-bottom: 40px;">
+                    <span class="social-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Suivez notre actualité</span>
+                    <h2 class="section-title">Restez connectés</h2>
+                </div>
+                
+                <div class="social-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                    <!-- Facebook Card -->
+                    <div class="social-card reveal-left" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative;">
+                        <!-- Color accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: #1877F2;"></div>
+                        
+                        <div style="padding: 30px;">
+                            <div class="social-icon" style="width: 70px; height: 70px; margin: 0 auto 20px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(24, 119, 242, 0.3);">
+                                <i class="fab fa-facebook-f" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            
+                            <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">Facebook</h3>
+                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);">Les actualités et informations présentées sur cette page sont issues de notre page Facebook officielle.</p>
+                            
+                            <div style="text-align: center;">
+                                <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 12px 25px; display: inline-flex; align-items: center; gap: 8px; border-radius: 50px;">
+                                    <span>Visiter notre page</span>
+                                    <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Twitter Card -->
+                    <div class="social-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative;">
+                        <!-- Color accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: #1DA1F2;"></div>
+                        
+                        <div style="padding: 30px;">
+                            <div class="social-icon" style="width: 70px; height: 70px; margin: 0 auto 20px; background: #1DA1F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(29, 161, 242, 0.3);">
+                                <i class="fab fa-twitter" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            
+                            <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">X (Twitter)</h3>
+                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);">Suivez-nous sur X pour des mises à jour quotidiennes et des ressources en temps réel.</p>
+                            
+                            <div style="text-align: center;">
+                                <a href="https://x.com/FondationDZ" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 12px 25px; display: inline-flex; align-items: center; gap: 8px; border: 2px solid #1DA1F2; color: #1DA1F2; border-radius: 50px; background: transparent;">
+                                    <span>Nous suivre</span>
+                                    <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Instagram Card -->
+                    <div class="social-card reveal-right" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative;">
+                        <!-- Color accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);"></div>
+                        
+                        <div style="padding: 30px;">
+                            <div class="social-icon" style="width: 70px; height: 70px; margin: 0 auto 20px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(220, 39, 67, 0.3);">
+                                <i class="fab fa-instagram" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            
+                            <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">Instagram</h3>
+                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);">Explorez notre galerie de photos et découvrez les coulisses de nos activités.</p>
+                            
+                            <div style="text-align: center;">
+                                <a href="https://www.instagram.com/fondationdz" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 12px 25px; display: inline-flex; align-items: center; gap: 8px; border: 2px solid #dc2743; color: #dc2743; border-radius: 50px; background: transparent;">
+                                    <span>Voir les photos</span>
+                                    <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube Button -->
+                <div class="youtube-link" style="margin-top: 40px; text-align: center;">
+                    <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: #FF0000; color: white; padding: 15px 30px; border-radius: 50px; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2); transition: all 0.3s ease;">
+                        <i class="fab fa-youtube" style="font-size: 1.5rem;"></i>
+                        <span style="font-weight: 600;">Découvrez notre chaîne YouTube</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="news-section" id="latest" style="padding: 80px 0;">
-            <div class="container">
-                <div class="news-filter" style="display: flex; justify-content: center; margin-bottom: 40px;">
-                    <button class="filter-btn active" style="padding: 10px 20px; margin: 0 5px; background: none; border: 2px solid var(--primary-color); border-radius: 4px; cursor: pointer; font-weight: 500;">Tout</button>
-                    <button class="filter-btn" style="padding: 10px 20px; margin: 0 5px; background: none; border: 2px solid var(--border-color); border-radius: 4px; cursor: pointer; font-weight: 500;">Actualités</button>
-                    <button class="filter-btn" style="padding: 10px 20px; margin: 0 5px; background: none; border: 2px solid var(--border-color); border-radius: 4px; cursor: pointer; font-weight: 500;">Projets</button>
-                    <button class="filter-btn" style="padding: 10px 20px; margin: 0 5px; background: none; border: 2px solid var(--border-color); border-radius: 4px; cursor: pointer; font-weight: 500;">Événements</button>
+        <section class="news-section" id="latest" style="padding: 100px 0; background: white; position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="news-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(135deg, rgba(243,146,7,0.05) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.07) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="news-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="news-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Nos actualités</span>
+                    <h2 class="section-title">Nos dernières activités</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Découvrez les dernières nouvelles concernant nos activités, projets et événements pour la promotion des droits humains.</p>
                 </div>
                 
-                <div class="news-grid">
+                <!-- Filtres modernisés -->
+                <div class="news-filter" style="display: flex; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; gap: 10px;">
+                    <button class="filter-btn active" style="padding: 12px 25px; background: var(--primary-gradient); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.3); transition: all 0.3s ease;">Tout</button>
+                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Actualités</button>
+                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Projets</button>
+                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Événements</button>
+                </div>
+                
+                <!-- Grille d'articles améliorée -->
+                <div class="news-grid stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
                     <!-- Article 1 -->
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">25 Août 2023</span>
-                            <h3>Formation sur les droits fondamentaux</h3>
-                            <p>Nouvelle session de formation prévue à Alger pour les défenseurs des droits. Cette formation vise à renforcer les capacités des acteurs locaux et à leur fournir les outils nécessaires pour promouvoir et défendre les droits humains.</p>
-                            <a href="#" class="read-more">Lire plus</a>
+                    <div class="news-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; transform: translateY(0);">
+                        <!-- Image de l'article avec overlay -->
+                        <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
+                            <div class="news-image" style="background-image: url('img/real/education-rights.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: var(--primary-gradient); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Formation</div>
+                        </div>
+                        
+                        <!-- Contenu de l'article -->
+                        <div class="news-content" style="padding: 25px;">
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span class="date" style="display: flex; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 25 Août 2023
+                                </span>
+                            </div>
+                            
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Formation sur les droits fondamentaux</h3>
+                            
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Nouvelle session de formation prévue à Alger pour les défenseurs des droits. Cette formation vise à renforcer les capacités des acteurs locaux.</p>
+                            
+                            <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
+                                <span>Lire plus</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Article 2 -->
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">18 Août 2023</span>
-                            <h3>Publication du rapport annuel</h3>
-                            <p>Notre rapport sur l'état des droits en Algérie est maintenant disponible. Le document offre une analyse détaillée des avancées et des défis en matière de droits humains à travers le pays au cours de l'année écoulée.</p>
-                            <a href="#" class="read-more">Lire plus</a>
+                    <div class="news-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; transform: translateY(0);">
+                        <!-- Image de l'article avec overlay -->
+                        <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
+                            <div class="news-image" style="background-image: url('img/real/advocacy.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #e17055, #ff7675); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Publication</div>
+                        </div>
+                        
+                        <!-- Contenu de l'article -->
+                        <div class="news-content" style="padding: 25px;">
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span class="date" style="display: flex; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 18 Août 2023
+                                </span>
+                            </div>
+                            
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Publication du rapport annuel</h3>
+                            
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Notre rapport sur l'état des droits en Algérie est maintenant disponible. Le document offre une analyse détaillée des avancées.</p>
+                            
+                            <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
+                                <span>Lire plus</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Article 3 -->
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">10 Août 2023</span>
-                            <h3>Collaboration avec des ONG internationales</h3>
-                            <p>Un nouveau partenariat pour renforcer la promotion des droits. Cette collaboration permettra d'échanger des expertises et de renforcer l'impact de nos actions au niveau national et international.</p>
-                            <a href="#" class="read-more">Lire plus</a>
+                    <div class="news-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; transform: translateY(0);">
+                        <!-- Image de l'article avec overlay -->
+                        <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
+                            <div class="news-image" style="background-image: url('img/real/collaboration.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Partenariat</div>
+                        </div>
+                        
+                        <!-- Contenu de l'article -->
+                        <div class="news-content" style="padding: 25px;">
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span class="date" style="display: flex; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 10 Août 2023
+                                </span>
+                            </div>
+                            
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Collaboration avec des ONG internationales</h3>
+                            
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Un nouveau partenariat pour renforcer la promotion des droits. Cette collaboration permettra d'échanger des expertises.</p>
+                            
+                            <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
+                                <span>Lire plus</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Article 4 -->
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">5 Août 2023</span>
-                            <h3>Lancement du projet "Droits pour tous"</h3>
-                            <p>Un projet d'éducation civique destiné aux jeunes dans les régions éloignées. Cette initiative vise à sensibiliser les jeunes à leurs droits et à promouvoir une culture de citoyenneté active.</p>
-                            <a href="#" class="read-more">Lire plus</a>
+                    <div class="news-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; transform: translateY(0);">
+                        <!-- Image de l'article avec overlay -->
+                        <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
+                            <div class="news-image" style="background-image: url('img/real/youth-engagement.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #00cec9, #81ecec); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Projet</div>
+                        </div>
+                        
+                        <!-- Contenu de l'article -->
+                        <div class="news-content" style="padding: 25px;">
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span class="date" style="display: flex; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 5 Août 2023
+                                </span>
+                            </div>
+                            
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Lancement du projet "Droits pour tous"</h3>
+                            
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Un projet d'éducation civique destiné aux jeunes dans les régions éloignées. Cette initiative vise à sensibiliser les jeunes.</p>
+                            
+                            <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
+                                <span>Lire plus</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Article 5 -->
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">1 Août 2023</span>
-                            <h3>Conférence sur l'égalité des genres</h3>
-                            <p>Une journée d'échanges et de débats sur les défis et les opportunités pour l'égalité hommes-femmes. Des experts nationaux et internationaux ont partagé leurs analyses et proposé des pistes d'action concrètes.</p>
-                            <a href="#" class="read-more">Lire plus</a>
+                    <div class="news-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; transform: translateY(0);">
+                        <!-- Image de l'article avec overlay -->
+                        <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
+                            <div class="news-image" style="background-image: url('img/real/women-rights.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #ff9f43, #feca57); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Conférence</div>
+                        </div>
+                        
+                        <!-- Contenu de l'article -->
+                        <div class="news-content" style="padding: 25px;">
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span class="date" style="display: flex; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 1 Août 2023
+                                </span>
+                            </div>
+                            
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Conférence sur l'égalité des genres</h3>
+                            
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Une journée d'échanges et de débats sur les défis et les opportunités pour l'égalité hommes-femmes. Des experts ont partagé leurs analyses.</p>
+                            
+                            <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
+                                <span>Lire plus</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Article 6 -->
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">25 Juillet 2023</span>
-                            <h3>Campagne de sensibilisation sur les droits environnementaux</h3>
-                            <p>Une série d'actions pour promouvoir la protection de l'environnement comme un droit fondamental. La campagne s'étendra sur trois mois et comportera des activités éducatives et des initiatives de terrain.</p>
-                            <a href="#" class="read-more">Lire plus</a>
+                    <div class="news-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; transform: translateY(0);">
+                        <!-- Image de l'article avec overlay -->
+                        <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
+                            <div class="news-image" style="background-image: url('img/real/justice-scale.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #10ac84, #1dd1a1); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Campagne</div>
+                        </div>
+                        
+                        <!-- Contenu de l'article -->
+                        <div class="news-content" style="padding: 25px;">
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span class="date" style="display: flex; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 25 Juillet 2023
+                                </span>
+                            </div>
+                            
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Campagne sur les droits environnementaux</h3>
+                            
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Une série d'actions pour promouvoir la protection de l'environnement comme un droit fondamental. La campagne s'étendra sur trois mois.</p>
+                            
+                            <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
+                                <span>Lire plus</span>
+                                <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="pagination" style="display: flex; justify-content: center; margin-top: 40px;">
-                    <a href="#" class="pagination-btn active" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 5px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); text-decoration: none;">1</a>
-                    <a href="#" class="pagination-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 5px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); text-decoration: none;">2</a>
-                    <a href="#" class="pagination-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 5px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); text-decoration: none;">3</a>
-                    <span style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 5px;">...</span>
-                    <a href="#" class="pagination-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 5px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-color); text-decoration: none;">10</a>
+                <!-- Pagination améliorée -->
+                <div class="pagination" style="margin-top: 60px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                    <a href="#" class="pagination-arrow" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 2px solid #e0e0e0; color: var(--text-color); transition: all 0.3s ease;">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    
+                    <a href="#" class="pagination-btn active" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--primary-gradient); color: white; font-weight: 600; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.3); transition: all 0.3s ease;">1</a>
+                    
+                    <a href="#" class="pagination-btn" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 2px solid #e0e0e0; color: var(--text-color); transition: all 0.3s ease;">2</a>
+                    
+                    <a href="#" class="pagination-btn" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 2px solid #e0e0e0; color: var(--text-color); transition: all 0.3s ease;">3</a>
+                    
+                    <span style="display: flex; align-items: center; color: var(--text-color);">...</span>
+                    
+                    <a href="#" class="pagination-btn" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 2px solid #e0e0e0; color: var(--text-color); transition: all 0.3s ease;">10</a>
+                    
+                    <a href="#" class="pagination-arrow" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 2px solid #e0e0e0; color: var(--text-color); transition: all 0.3s ease;">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="newsletter" id="newsletter">
-            <div class="container">
-                <h2>Restez informés</h2>
-                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et ressources</p>
-                <form class="newsletter-form" action="#" method="post">
-                    <label for="email-newsletter" class="visually-hidden">Votre adresse email</label>
-                    <input type="email" id="email-newsletter" placeholder="Votre adresse email" required aria-required="true">
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <section class="newsletter" style="padding: 100px 0; background: linear-gradient(135deg, rgba(60,180,150,0.95) 0%, rgba(243,146,7,0.95) 100%), url('img/real/teamwork.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; color: white; position: relative; overflow: hidden;">
+            <!-- Decorative elements -->
+            <div class="newsletter-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 15%; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
+                <div style="position: absolute; bottom: 10%; right: 10%; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,0.07);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
+                <div class="newsletter-content text-center" style="text-align: center;">
+                    <div class="newsletter-icon" style="margin-bottom: 20px;">
+                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; backdrop-filter: blur(5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+                            <i class="fas fa-envelope-open-text" style="font-size: 2.5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    
+                    <h2 style="font-size: 2.8rem; margin-bottom: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Restez informés</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px; color: rgba(255,255,255,0.9); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités, ressources et opportunités d'engagement pour la promotion des droits.</p>
+                    
+                    <form class="newsletter-form" style="max-width: 600px; margin: 0 auto; position: relative;">
+                        <div style="position: relative; display: flex; flex-wrap: wrap; gap: 15px;">
+                            <input type="email" id="email-newsletter" placeholder="Votre adresse email" required style="flex: 1; min-width: 250px; padding: 18px 25px; font-size: 1.1rem; border: none; border-radius: 50px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                            <button type="submit" class="btn btn-subscribe" style="padding: 18px 35px; border: none; border-radius: 50px; background: white; color: var(--primary-color); font-weight: 700; font-size: 1.1rem; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                                <span>S'inscrire</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">En vous inscrivant, vous acceptez de recevoir nos communications. Vous pourrez vous désinscrire à tout moment.</p>
                 </form>
+                    
+                    <!-- Social Follow -->
+                    <div class="social-follow" style="margin-top: 50px;">
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; color: white;">Suivez-nous sur les réseaux sociaux</p>
+                        <div class="social-icons" style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/FondationDZ" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/fondationdz" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -292,16 +564,163 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Filter buttons functionality (for demo purposes)
-        document.querySelectorAll('.filter-btn').forEach(button => {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filtres d'actualités améliorés
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const newsCards = document.querySelectorAll('.news-card');
+            
+            filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.style.borderColor = 'var(--border-color)';
+                    // Réinitialiser tous les boutons
+                    filterButtons.forEach(btn => {
+                        btn.style.background = 'white';
+                        btn.style.color = 'var(--text-color)';
+                        btn.style.borderColor = '#e0e0e0';
+                        btn.style.boxShadow = 'none';
                     btn.classList.remove('active');
+                    });
+                    
+                    // Activer le bouton cliqué
+                    this.style.background = 'var(--primary-gradient)';
+                    this.style.color = 'white';
+                    this.style.borderColor = 'transparent';
+                    this.style.boxShadow = '0 5px 15px rgba(60, 180, 150, 0.3)';
+                    this.classList.add('active');
+                    
+                    // Animation pour filtrer les articles (démo seulement)
+                    const filterType = this.textContent.trim().toLowerCase();
+                    
+                    newsCards.forEach(card => {
+                        // Dans une implémentation réelle, vérifiez la catégorie de la carte
+                        // Pour la démo, afficher toutes les cartes pour "Tout" et simuler un filtrage pour les autres
+                        if (filterType === 'tout') {
+                            // Afficher toutes les cartes avec animation
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            
+                            setTimeout(() => {
+                                card.style.display = 'block';
+                                
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 50);
+                            }, 300);
+                        } else {
+                            // Simuler le filtrage (dans un cas réel, vous vérifieriez la catégorie)
+                            const category = card.querySelector('.news-category').textContent.toLowerCase();
+                            const shouldShow = Math.random() > 0.5; // Simulation aléatoire
+                            
+                            if (shouldShow) {
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px)';
+                                
+                                setTimeout(() => {
+                                    card.style.display = 'block';
+                                    
+                                    setTimeout(() => {
+                                        card.style.opacity = '1';
+                                        card.style.transform = 'translateY(0)';
+                                    }, 50);
+                                }, 300);
+                            } else {
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px)';
+                                
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        }
+                    });
                 });
-                this.style.borderColor = 'var(--primary-color)';
-                this.classList.add('active');
             });
+            
+            // Effets de survol pour les cartes d'actualités
+            newsCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    // Effet de survol pour l'image
+                    const image = this.querySelector('.news-image');
+                    if (image) {
+                        image.style.transform = 'scale(1.05)';
+                    }
+                    
+                    // Effet de survol pour la carte
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+                    
+                    // Effet de survol pour le bouton "Lire plus"
+                    const readMoreIcon = this.querySelector('.read-more i');
+                    if (readMoreIcon) {
+                        readMoreIcon.style.transform = 'translateX(5px)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    // Réinitialiser l'effet de survol pour l'image
+                    const image = this.querySelector('.news-image');
+                    if (image) {
+                        image.style.transform = 'scale(1)';
+                    }
+                    
+                    // Réinitialiser l'effet de survol pour la carte
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.05)';
+                    
+                    // Réinitialiser l'effet de survol pour le bouton "Lire plus"
+                    const readMoreIcon = this.querySelector('.read-more i');
+                    if (readMoreIcon) {
+                        readMoreIcon.style.transform = 'translateX(0)';
+                    }
+                });
+            });
+            
+            // Effets de survol pour les boutons de pagination
+            const paginationButtons = document.querySelectorAll('.pagination-btn, .pagination-arrow');
+            
+            paginationButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.background = 'rgba(60, 180, 150, 0.1)';
+                this.style.borderColor = 'var(--primary-color)';
+                        this.style.color = 'var(--primary-color)';
+                        this.style.transform = 'translateY(-3px)';
+                    } else {
+                        this.style.transform = 'translateY(-3px)';
+                    }
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.background = 'transparent';
+                        this.style.borderColor = '#e0e0e0';
+                        this.style.color = 'var(--text-color)';
+                        this.style.transform = 'translateY(0)';
+                    } else {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // Animations au défilement pour les sections
+            function revealOnScroll() {
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight - 150) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Vérifier les sections visibles au chargement
+            revealOnScroll();
+            
+            // Écouter l'événement de défilement
+            window.addEventListener('scroll', revealOnScroll);
         });
     </script>
     <script src="js/enhanced-ui.js"></script>

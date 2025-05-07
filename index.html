@@ -117,8 +117,7 @@
                 </ul>
             </nav>
             <div class="language-switch">
-                <a href="#" class="active" aria-current="page">FR</a>
-                <a href="ar/index.html">عربي</a>
+                <a href="#" class="active">FR</a>
             </div>
             <div class="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -127,139 +126,1185 @@
     </header>
 
     <main id="content">
-        <section class="hero">
-            <div class="container">
-                <h2 class="animate-fadeIn">Ensemble, pour des droits connus, reconnus et défendus.</h2>
-                <p class="animate-fadeIn" style="animation-delay: 0.3s;">Notre mission est de promouvoir et défendre les droits par la sensibilisation, la formation, la documentation des violations et le soutien aux acteurs de la société civile.</p>
-                <div class="cta-buttons animate-fadeIn" style="animation-delay: 0.6s;">
-                    <a href="about.html" class="btn btn-primary">En savoir plus</a>
-                    <a href="contact.html" class="btn btn-secondary">Nous contacter</a>
+        <section class="hero animated-bg" style="position: relative; overflow: hidden;">
+            <!-- Video Background Option -->
+            <div class="hero-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6;">
+                <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(60, 180, 150, 0.85), rgba(243, 146, 7, 0.85)); z-index: 1;"></div>
+                <img src="img/real/human-rights.jpg" alt="" class="fallback-bg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;">
                 </div>
+            
+            <div class="container" style="position: relative; z-index: 2; padding: 150px 0;">
+                <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <!-- Animated Headline -->
+                    <h2 class="animate-fadeIn typing-effect" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                        Ensemble, pour des droits connus, reconnus et défendus.
+                    </h2>
+                    
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                        Notre mission est de promouvoir et défendre les droits par la sensibilisation, la formation, la documentation des violations et le soutien aux acteurs de la société civile.
+                    </p>
+                    
+                    <!-- Impact Stats -->
+                    <div class="impact-stats" style="display: flex; justify-content: center; margin: 30px 0; flex-wrap: wrap; gap: 30px;">
+                        <div class="stat-item" style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; backdrop-filter: blur(5px);">
+                            <span class="stat-number animate-number" data-target="50" style="font-size: 2.5rem; font-weight: 700; color: white; display: block;">0</span>
+                            <span class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Formations</span>
+                        </div>
+                        <div class="stat-item" style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; backdrop-filter: blur(5px);">
+                            <span class="stat-number animate-number" data-target="1000" style="font-size: 2.5rem; font-weight: 700; color: white; display: block;">0</span>
+                            <span class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Bénéficiaires</span>
+                        </div>
+                        <div class="stat-item" style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; backdrop-filter: blur(5px);">
+                            <span class="stat-number animate-number" data-target="25" style="font-size: 2.5rem; font-weight: 700; color: white; display: block;">0</span>
+                            <span class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Partenaires</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced CTA Buttons -->
+                    <div class="cta-buttons animate-fadeIn" style="animation-delay: 0.6s; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+                        <a href="about.html" class="btn btn-primary" style="padding: 15px 35px; font-size: 1.1rem; border-radius: 50px; position: relative; overflow: hidden;">
+                            <span style="position: relative; z-index: 1;">Notre mission</span>
+                        </a>
+                        <a href="revue.html" class="btn btn-secondary" style="padding: 15px 35px; font-size: 1.1rem; border-radius: 50px; position: relative; overflow: hidden;">
+                            <span style="position: relative; z-index: 1;">Nos publications</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline" style="padding: 15px 35px; font-size: 1.1rem; border-radius: 50px; border: 2px solid white; color: white; background: transparent; position: relative; overflow: hidden;">
+                            <span style="position: relative; z-index: 1;">Nous contacter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-down-indicator" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 5; cursor: pointer; animation: bounce 2s infinite;">
+                <a href="#actualites" aria-label="Défiler vers le bas">
+                    <i class="fas fa-chevron-down" style="color: white; font-size: 1.5rem; opacity: 0.8;"></i>
+                </a>
+            </div>
+            
+            <!-- Curved Shape Divider -->
+            <div class="shape-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 70px; fill: white;">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                </svg>
             </div>
         </section>
 
-        <section class="latest-news" id="actualites">
+        <section class="latest-news" id="actualites" style="padding: 100px 0 80px; background-color: white;">
             <div class="container">
                 <h2 class="section-title">Actualités récentes</h2>
-                <div class="news-grid stagger-animation">
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">25 Août 2023</span>
-                            <h3>Formation sur les droits fondamentaux</h3>
-                            <p>Nouvelle session de formation prévue à Alger pour les défenseurs des droits.</p>
-                            <a href="news.html" class="read-more">Lire plus</a>
+                
+                <!-- Featured News Article -->
+                <div class="featured-news fade-in" style="position: relative; margin-bottom: 60px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;">
+                        <div class="featured-news-image" style="min-height: 400px; background: url('img/real/advocacy.jpg') center/cover; position: relative;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);"></div>
                         </div>
+                        
+                        <div class="featured-news-content" style="padding: 40px; background: linear-gradient(135deg, white 0%, #f8f9fa 100%);">
+                            <div class="news-tags" style="margin-bottom: 15px;">
+                                <span style="display: inline-block; padding: 5px 12px; background: var(--secondary-color); color: white; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">À la une</span>
+                                <span style="display: inline-block; padding: 5px 12px; background: var(--primary-color); color: white; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-left: 10px;">Rapport</span>
                     </div>
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">18 Août 2023</span>
-                            <h3>Publication du rapport annuel</h3>
-                            <p>Notre rapport sur l'état des droits en Algérie est maintenant disponible.</p>
-                            <a href="news.html" class="read-more">Lire plus</a>
+                            
+                            <h3 style="font-size: 2rem; margin-bottom: 15px; color: var(--text-color);">Publication du rapport annuel 2023</h3>
+                            
+                            <div class="news-meta" style="display: flex; align-items: center; margin-bottom: 20px; color: var(--gray-color);">
+                                <span style="display: flex; align-items: center; margin-right: 20px;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 18 Août 2023
+                                </span>
+                                <span style="display: flex; align-items: center;">
+                                    <i class="far fa-user" style="margin-right: 5px;"></i> Équipe de recherche
+                                </span>
                         </div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">Notre rapport annuel sur l'état des droits en Algérie est désormais disponible. Ce document de référence présente une analyse détaillée des avancées et des défis en matière de droits humains au cours de l'année écoulée.</p>
+                            
+                            <div class="report-highlights" style="margin-bottom: 30px; background: rgba(60,180,150,0.05); padding: 15px; border-left: 3px solid var(--primary-color); border-radius: 5px;">
+                                <h4 style="margin-bottom: 10px; color: var(--primary-color);">Points clés du rapport :</h4>
+                                <ul style="padding-left: 20px; list-style-type: disc;">
+                                    <li style="margin-bottom: 5px;">Analyse des réformes législatives</li>
+                                    <li style="margin-bottom: 5px;">Évaluation de la liberté d'expression</li>
+                                    <li style="margin-bottom: 5px;">Accès à la justice et procès équitables</li>
+                                </ul>
                     </div>
-                    <div class="news-card">
-                        <div class="news-image" aria-hidden="true"></div>
-                        <div class="news-content">
-                            <span class="date">10 Août 2023</span>
-                            <h3>Collaboration avec des ONG internationales</h3>
-                            <p>Un nouveau partenariat pour renforcer la promotion des droits.</p>
-                            <a href="news.html" class="read-more">Lire plus</a>
+                            
+                            <a href="news.html" class="btn btn-primary">Lire le rapport complet</a>
                         </div>
                     </div>
                 </div>
-                <div class="center">
-                    <a href="news.html" class="btn btn-outline">Voir toutes les actualités</a>
+                
+                <!-- News Categories Navigation -->
+                <div class="news-categories" style="margin-bottom: 40px; text-align: center;">
+                    <div class="category-nav" style="display: inline-flex; background: #f5f5f5; border-radius: 30px; padding: 5px; margin-bottom: 40px;">
+                        <a href="#" class="active" style="padding: 10px 20px; border-radius: 25px; font-weight: 600; color: white; background: var(--primary-color);">Tous</a>
+                        <a href="#" style="padding: 10px 20px; border-radius: 25px; font-weight: 600; color: var(--text-color);">Formations</a>
+                        <a href="#" style="padding: 10px 20px; border-radius: 25px; font-weight: 600; color: var(--text-color);">Rapports</a>
+                        <a href="#" style="padding: 10px 20px; border-radius: 25px; font-weight: 600; color: var(--text-color);">Partenariats</a>
+                        <a href="#" style="padding: 10px 20px; border-radius: 25px; font-weight: 600; color: var(--text-color);">Événements</a>
+                    </div>
+                </div>
+                
+                <!-- News Grid -->
+                <div class="news-grid stagger-animation" style="gap: 30px;">
+                    <div class="news-card" style="border-radius: 15px; overflow: hidden; transition: all 0.3s ease; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                        <div class="news-image" style="height: 220px; background-image: url('img/real/education-rights.jpg'); background-size: cover; background-position: center; position: relative;">
+                            <div class="news-category" style="position: absolute; bottom: 15px; left: 15px; background: var(--primary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Formation</div>
+                        </div>
+                        <div class="news-content" style="padding: 25px;">
+                            <span class="date" style="color: var(--gray-color); font-size: 0.9rem; display: flex; align-items: center;"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 25 Août 2023</span>
+                            <h3 style="margin: 15px 0; font-size: 1.3rem; line-height: 1.4;">Formation sur les droits fondamentaux</h3>
+                            <p style="margin-bottom: 20px; color: var(--text-color);">Nouvelle session de formation prévue à Alger pour les défenseurs des droits, axée sur les mécanismes internationaux de protection.</p>
+                            <a href="news.html" class="read-more" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center;">Lire plus <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" style="border-radius: 15px; overflow: hidden; transition: all 0.3s ease; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                        <div class="news-image" style="height: 220px; background-image: url('img/real/collaboration.jpg'); background-size: cover; background-position: center; position: relative;">
+                            <div class="news-category" style="position: absolute; bottom: 15px; left: 15px; background: var(--secondary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Partenariat</div>
+                        </div>
+                        <div class="news-content" style="padding: 25px;">
+                            <span class="date" style="color: var(--gray-color); font-size: 0.9rem; display: flex; align-items: center;"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 10 Août 2023</span>
+                            <h3 style="margin: 15px 0; font-size: 1.3rem; line-height: 1.4;">Collaboration avec des ONG internationales</h3>
+                            <p style="margin-bottom: 20px; color: var(--text-color);">Un nouveau partenariat stratégique avec des organisations internationales pour renforcer la promotion des droits.</p>
+                            <a href="news.html" class="read-more" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center;">Lire plus <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" style="border-radius: 15px; overflow: hidden; transition: all 0.3s ease; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                        <div class="news-image" style="height: 220px; background-image: url('img/real/workshop.jpg'); background-size: cover; background-position: center; position: relative;">
+                            <div class="news-category" style="position: absolute; bottom: 15px; left: 15px; background: #7952b3; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Événement</div>
+                        </div>
+                        <div class="news-content" style="padding: 25px;">
+                            <span class="date" style="color: var(--gray-color); font-size: 0.9rem; display: flex; align-items: center;"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i> 5 Août 2023</span>
+                            <h3 style="margin: 15px 0; font-size: 1.3rem; line-height: 1.4;">Table ronde sur les réformes juridiques</h3>
+                            <p style="margin-bottom: 20px; color: var(--text-color);">Une journée d'étude consacrée aux récentes réformes juridiques et à leur impact sur les droits des citoyens.</p>
+                            <a href="news.html" class="read-more" style="color: var(--primary-color); font-weight: 600; display: flex; align-items: center;">Lire plus <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Call to Action -->
+                <div class="center" style="margin-top: 50px; text-align: center;">
+                    <a href="news.html" class="btn btn-outline" style="padding: 15px 35px; border: 2px solid var(--primary-color); display: inline-flex; align-items: center; gap: 10px;">
+                        <span>Voir toutes les actualités</span> 
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- News Subscribe Box -->
+                <div class="news-subscribe" style="margin-top: 80px; background: linear-gradient(135deg, rgba(60,180,150,0.1) 0%, rgba(243,146,7,0.1) 100%); padding: 40px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="margin-bottom: 10px; font-size: 1.5rem; color: var(--primary-color);">Ne manquez aucune actualité</h3>
+                        <p style="color: var(--text-color);">Recevez nos derniers articles directement dans votre boîte mail</p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <form class="subscribe-mini-form" style="display: flex; max-width: 450px; margin-left: auto;">
+                            <input type="email" placeholder="Votre adresse email" required style="flex: 1; padding: 15px; border: none; border-radius: 50px 0 0 50px; outline: none;">
+                            <button type="submit" style="background: var(--primary-gradient); color: white; border: none; border-radius: 0 50px 50px 0; padding: 0 25px; font-weight: 600;">S'abonner</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="mission" id="mission">
-            <div class="container">
-                <div class="mission-content">
+        <section class="mission" id="mission" style="position: relative; padding: 100px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAgMzBtLTI4IDBhMjggMjggMCAxIDAgNTYgMCAyOCAyOCAwIDEgMC01NiAwIiBzdHJva2U9InJnYmEoNjAsIDE4MCwgMTUwLCAwLjEpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMTggMGExOCAxOCAwIDEgMCAzNiAwIDE4IDE4IDAgMSAwLTM2IDAiIHN0cm9rZT0icmdiYSg2MCwgMTgwLCAxNTAsIDAuMTUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvZz48L3N2Zz4='); background-position: center; opacity: 0.5; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="mission-header text-center" style="text-align: center; margin-bottom: 60px;">
                     <h2 class="section-title">Notre mission</h2>
-                    <p>Face aux défis, nous restons engagés et mobilisés pour faire avancer la justice.</p>
-                    <ul class="mission-list">
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Contribuer à la construction d'un État de droit</li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sensibiliser et informer sur les droits</li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Organiser des formations et des forums</li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Combattre toutes formes de discrimination</li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fournir une assistance juridique</li>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Face aux défis, nous restons engagés et mobilisés pour faire avancer la justice et promouvoir le respect des droits fondamentaux.</p>
+                </div>
+                
+                <div class="mission-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 50px; align-items: center;">
+                    <!-- Left side: Vision & Principles -->
+                    <div class="mission-content reveal-left">
+                        <!-- Vision statement -->
+                        <div class="vision-statement" style="margin-bottom: 30px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; height: 100%; width: 5px; background: var(--primary-gradient);"></div>
+                            <h3 style="margin-bottom: 15px; color: var(--primary-color); font-size: 1.5rem;">Notre vision</h3>
+                            <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: var(--text-color);">
+                                "Contribuer à l'édification d'une société où la dignité humaine est respectée et où les droits sont garantis pour tous, sans discrimination."
+                            </p>
+                        </div>
+                        
+                        <!-- Mission list with improved styling -->
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color); font-size: 1.5rem;">Nos objectifs</h3>
+                        <ul class="mission-list" style="list-style: none; padding: 0;">
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 20px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                <div style="background: var(--primary-gradient); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.2);">
+                                    <i class="fas fa-balance-scale" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px; color: var(--primary-color);">État de droit</h4>
+                                    <p style="margin: 0; color: var(--text-color);">Contribuer à la construction d'un État de droit où les principes de justice sont respectés.</p>
+                                </div>
+                            </li>
+                            
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 20px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                <div style="background: var(--primary-gradient); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.2);">
+                                    <i class="fas fa-book-reader" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px; color: var(--primary-color);">Sensibilisation</h4>
+                                    <p style="margin: 0; color: var(--text-color);">Sensibiliser et informer les citoyens sur leurs droits et les moyens de les défendre.</p>
+                                </div>
+                            </li>
+                            
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 20px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                <div style="background: var(--primary-gradient); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.2);">
+                                    <i class="fas fa-chalkboard-teacher" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px; color: var(--primary-color);">Formation</h4>
+                                    <p style="margin: 0; color: var(--text-color);">Organiser des formations et des forums pour renforcer les capacités des acteurs.</p>
+                                </div>
+                            </li>
+                            
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 20px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                <div style="background: var(--primary-gradient); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.2);">
+                                    <i class="fas fa-gavel" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px; color: var(--primary-color);">Assistance juridique</h4>
+                                    <p style="margin: 0; color: var(--text-color);">Fournir une assistance juridique aux personnes dont les droits ont été violés.</p>
+                                </div>
+                            </li>
                     </ul>
-                    <a href="about.html" class="btn btn-primary">Découvrir nos objectifs</a>
+                        
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="about.html" class="btn btn-primary" style="padding: 12px 30px; border-radius: 50px;">Découvrir notre histoire</a>
                 </div>
-                <div class="mission-image" aria-hidden="true"></div>
+                    </div>
+                    
+                    <!-- Right side: Interactive Image & Quote -->
+                    <div class="mission-visual reveal-right">
+                        <div class="mission-image-wrapper" style="position: relative; margin-bottom: 30px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                            <!-- Main image -->
+                            <img src="img/real/justice-scale.jpg" alt="Justice et droits humains" style="width: 100%; height: 400px; object-fit: cover; display: block; transition: all 0.5s ease;">
+                            
+                            <!-- Hover overlay with facts -->
+                            <div class="image-hover-facts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(60,180,150,0.8) 0%, rgba(243,146,7,0.8) 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; opacity: 0; transition: all 0.3s ease; color: white; text-align: center;">
+                                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Nos valeurs</h3>
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Intégrité</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Justice</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Engagement</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Transparence</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Solidarité</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Inspirational quote -->
+                        <div class="inspirational-quote" style="background: var(--primary-gradient); padding: 30px; border-radius: 20px; color: white; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(60, 180, 150, 0.3);">
+                            <div style="position: absolute; top: 10px; left: 10px; font-size: 5rem; opacity: 0.1; font-family: Georgia, serif;">"</div>
+                            <blockquote style="position: relative; z-index: 1; font-size: 1.2rem; line-height: 1.7; font-style: italic; margin: 0 0 20px;">
+                                La justice n'est pas seulement ce que la loi nous dicte, mais ce que l'humanité exige de nous.
+                            </blockquote>
+                            <div style="text-align: right; font-weight: 600;">— Nelson Mandela</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="programs" id="programmes">
-            <div class="container">
+        <section class="programs" id="programmes" style="padding: 100px 0; background: linear-gradient(135deg, #ffffff, #f8fafc); position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="programs-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(135deg, rgba(243,146,7,0.05) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.07) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="programs-header text-center" style="text-align: center; margin-bottom: 70px;">
+                    <span class="programs-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Nos initiatives</span>
                 <h2 class="section-title">Nos programmes</h2>
-                <div class="programs-grid stagger-animation">
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-book" aria-hidden="true"></i>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-color);">Découvrez nos initiatives phares qui concrétisent notre engagement pour la promotion et la défense des droits humains.</p>
                         </div>
-                        <h3>Revue des droits humains</h3>
-                        <p>Publication régulière d'analyses et d'études sur les droits humains.</p>
-                        <a href="revue.html" class="btn btn-small">En savoir plus</a>
+                
+                <div class="programs-grid stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                    <!-- Revue Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--primary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-book" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                     </div>
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Revue des droits humains</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Analyses juridiques approfondies
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Études de cas documentées
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Publication semestrielle
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="revue.html" class="btn btn-primary" style="width: 100%; padding: 12px; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Découvrir la revue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <h3>Formations</h3>
-                        <p>Modules de formation pour les juristes et acteurs de la société civile.</p>
-                        <a href="formations.html" class="btn btn-small">En savoir plus</a>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--primary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    
+                    <!-- Formations Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--secondary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(243,146,7,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
-                        <h3>Ressources & Documentation</h3>
-                        <p>Guides, rapports et ressources sur les droits fondamentaux.</p>
-                        <a href="resources.html" class="btn btn-small">En savoir plus</a>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Formations</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Modules spécialisés par thématique
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Formateurs experts du domaine
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Ateliers pratiques interactifs
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="formations.html" class="btn" style="width: 100%; padding: 12px; background: var(--secondary-gradient); color: white; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Explorer les formations</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                     </div>
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--secondary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                         </div>
-                        <h3>Soutien à la société civile</h3>
-                        <p>Accompagnement et assistance aux associations et collectifs.</p>
-                        <a href="civil-society.html" class="btn btn-small">En savoir plus</a>
+                    
+                    <!-- Resources Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--primary-color), #2c3e50);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, var(--primary-color), #2c3e50); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.2); transition: all 0.5s ease;">
+                            <i class="fas fa-file-alt" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
+                    </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Ressources & Documentation</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Guides pratiques accessibles
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Rapports thématiques détaillés
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Fiches d'information synthétiques
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="resources.html" class="btn" style="width: 100%; padding: 12px; background: linear-gradient(90deg, var(--primary-color), #2c3e50); color: white; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Accéder aux ressources</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #2c3e50; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                    
+                    <!-- Society Support Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(108,92,231,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
+                        </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Soutien à la société civile</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                Accompagnement personnalisé
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                Mise en réseau et partenariats
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                Renforcement des capacités
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="civil-society.html" class="btn" style="width: 100%; padding: 12px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: white; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Rejoindre notre réseau</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #6c5ce7; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                </div>
+                
+                <!-- Program Impact Section -->
+                <div class="program-impact" style="margin-top: 80px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05);">
+                    <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">Impact de nos programmes</h3>
+                    
+                    <div class="impact-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="3000">0</span>
+                                <span>+</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Personnes formées</div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="200">0</span>
+                                <span>+</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Publications produites</div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: #6c5ce7; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="45">0</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Associations soutenues</div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: #2c3e50; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="15">0</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Années d'expérience</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-highlight" id="galerie">
-            <div class="container">
-                <h2 class="section-title">Notre travail en images</h2>
-                <p class="gallery-intro">Découvrez les moments forts des activités et projets menés par la Fondation à travers notre galerie de photos.</p>
-                <div class="gallery-preview stagger-animation">
-                    <div class="gallery-preview-item">
-                        <img src="img/placeholder_images/gallery1.jpg" alt="Séminaire sur les droits humains">
-                        <div class="overlay">
-                            <h3>Séminaire</h3>
+        <section class="gallery-highlight" id="galerie" style="padding: 100px 0; background: white; position: relative;">
+            <!-- Background decorative elements -->
+            <div class="gallery-bg-accent" style="position: absolute; top: 0; right: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(60,180,150,0.03) 0%, rgba(60,180,150,0) 70%); z-index: 0;"></div>
+            <div class="gallery-bg-accent" style="position: absolute; bottom: 0; left: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(243,146,7,0.03) 0%, rgba(243,146,7,0) 70%); z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="gallery-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="gallery-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Notre travail en images</span>
+                    <h2 class="section-title">Galerie photo</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Découvrez les moments forts des activités et projets menés par la Fondation à travers notre galerie de photos.</p>
+                    
+                    <!-- Gallery Filter Categories -->
+                    <div class="gallery-filter" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">
+                        <button class="filter-btn active" data-filter="all" style="padding: 8px 20px; background: var(--primary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Tous</button>
+                        <button class="filter-btn" data-filter="formations" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Formations</button>
+                        <button class="filter-btn" data-filter="evenements" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Événements</button>
+                        <button class="filter-btn" data-filter="equipe" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Équipe</button>
                         </div>
                     </div>
-                    <div class="gallery-preview-item">
-                        <img src="img/placeholder_images/gallery2.jpg" alt="Atelier participatif">
-                        <div class="overlay">
-                            <h3>Ateliers</h3>
+                
+                <!-- Enhanced Gallery Grid - Masonry Style -->
+                <div class="gallery-masonry" style="columns: 4 250px; column-gap: 20px; orphans: 1; widows: 1;">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-preview-item" data-category="formations" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/youth-engagement.jpg" alt="Jeunes engagés dans la défense des droits" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: var(--primary-color); color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Formation</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Engagement jeunesse</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Atelier de formation avec de jeunes activistes sur les droits humains et la citoyenneté</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                    </div>
+                        </div>
+                    
+                    <!-- Gallery Item 2 - Vertical -->
+                    <div class="gallery-preview-item" data-category="equipe" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/diversity-team.jpg" alt="Équipe diverse collaborant sur des projets de droits" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: #6c5ce7; color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Équipe</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Collaboration</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Notre équipe diverse collaborant sur de nouveaux projets et initiatives</p>
+                    </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                </div>
+                    </div>
+                    
+                    <!-- Gallery Item 3 - Horizontal -->
+                    <div class="gallery-preview-item" data-category="formations" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/women-rights.jpg" alt="Promotion des droits des femmes" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: var(--secondary-color); color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Droits des femmes</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Émancipation féminine</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Atelier sur l'autonomisation juridique et les droits des femmes</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
                         </div>
                     </div>
-                    <div class="gallery-preview-item">
-                        <img src="img/placeholder_images/gallery3.jpg" alt="Conférence internationale">
-                        <div class="overlay">
-                            <h3>Conférences</h3>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-preview-item" data-category="evenements" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/advocacy.jpg" alt="Plaidoyer pour les droits" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: #2c3e50; color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Plaidoyer</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Campagne de sensibilisation</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Actions de plaidoyer auprès des décideurs et institutions</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-preview-item" data-category="evenements" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/workshop.jpg" alt="Atelier de formation juridique" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: var(--primary-color); color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Événement</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Atelier juridique</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Séminaire de formation sur l'accès à la justice et les procédures légales</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-preview-item" data-category="equipe" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/teamwork.jpg" alt="Travail d'équipe" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: #6c5ce7; color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Équipe</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Planification de projet</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Réunion de planification stratégique avec l'équipe de la Fondation</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
                         </div>
                     </div>
                 </div>
-                <div class="center">
-                    <a href="gallery.html" class="btn btn-primary">Voir toute la galerie</a>
+                
+                <!-- Enhanced Call to Action -->
+                <div class="center" style="margin-top: 50px; text-align: center;">
+                    <a href="gallery.html" class="btn btn-primary" style="position: relative; overflow: hidden; padding: 15px 40px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px;">
+                        <span>Explorer la galerie complète</span>
+                        <i class="fas fa-images"></i>
+                    </a>
+                </div>
+                
+                <!-- Simple Gallery Stats -->
+                <div class="gallery-stats" style="display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap;">
+                    <div class="stat-item" style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-camera"></i>
+                            <span>50+</span>
+                        </div>
+                        <p style="margin: 5px 0 0; color: var(--text-color); font-size: 0.9rem;">Photos</p>
+                    </div>
+                    <div class="stat-item" style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-video"></i>
+                            <span>10+</span>
+                        </div>
+                        <p style="margin: 5px 0 0; color: var(--text-color); font-size: 0.9rem;">Vidéos</p>
+                    </div>
+                    <div class="stat-item" style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: #6c5ce7; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>30+</span>
+                        </div>
+                        <p style="margin: 5px 0 0; color: var(--text-color); font-size: 0.9rem;">Événements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="temoignages" style="padding: 100px 0; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(243,146,7,0.05) 100%); position: relative; overflow: hidden;">
+            <!-- Decorative shapes -->
+            <div class="testimonial-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+                <div style="position: absolute; top: 10%; right: 5%; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(60,180,150,0.1) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; left: 5%; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(243,146,7,0.1) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; left: 15%; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="testimonials-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="testimonials-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Témoignages</span>
+                    <h2 class="section-title">Ce qu'ils disent de nous</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-color);">Découvrez les expériences de ceux qui ont participé à nos programmes et bénéficié de nos services.</p>
+                </div>
+                
+                <!-- Enhanced testimonial slider -->
+                <div class="testimonial-slider" style="max-width: 1000px; margin: 0 auto; position: relative;">
+                    <!-- Testimonial navigation arrows -->
+                    <div class="testimonial-arrows" style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%; z-index: 10; display: flex; justify-content: space-between; pointer-events: none;">
+                        <button class="testimonial-arrow prev" style="width: 50px; height: 50px; border-radius: 50%; background: white; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: var(--primary-color); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; pointer-events: auto;">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="testimonial-arrow next" style="width: 50px; height: 50px; border-radius: 50%; background: white; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: var(--primary-color); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; pointer-events: auto;">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Testimonial slides container -->
+                    <div class="testimonial-slides" style="display: flex; overflow: hidden; border-radius: 20px;">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial active" style="min-width: 100%; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap; gap: 30px; transition: all 0.5s ease;">
+                            <!-- Testimonial image -->
+                            <div class="testimonial-image" style="flex: 0 0 120px;">
+                                <img src="img/real/testimonial-woman.jpg" alt="Portrait d'Amina B." style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid rgba(60,180,150,0.1);">
+                                
+                                <!-- Rating stars -->
+                                <div class="rating" style="margin-top: 15px; text-align: center;">
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Testimonial content -->
+                            <div class="testimonial-content" style="flex: 1;">
+                                <div class="quote-icon" style="margin-bottom: 15px; color: var(--primary-color); opacity: 0.3; font-size: 2rem;">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                
+                                <blockquote style="font-size: 1.2rem; line-height: 1.8; color: var(--text-color); margin-bottom: 20px; font-style: italic;">
+                                    "La formation sur les droits juridiques a changé ma vision et m'a donné les outils pour mieux défendre ma communauté. L'approche pédagogique et les formateurs étaient exceptionnels. J'ai acquis des connaissances précieuses que j'utilise quotidiennement dans mon travail d'activiste."
+                                </blockquote>
+                                
+                                <div class="testimonial-author">
+                                    <h4 class="name" style="margin: 0; color: var(--primary-color); font-size: 1.2rem;">Amina B.</h4>
+                                    <p class="role" style="margin: 5px 0 0; color: var(--gray-color);">Activiste pour les droits des femmes, Oran</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial" style="min-width: 100%; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap; gap: 30px; transition: all 0.5s ease;">
+                            <!-- Testimonial image -->
+                            <div class="testimonial-image" style="flex: 0 0 120px;">
+                                <img src="img/real/testimonial-man.jpg" alt="Portrait de Mohamed D." style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid rgba(60,180,150,0.1);">
+                                
+                                <!-- Rating stars -->
+                                <div class="rating" style="margin-top: 15px; text-align: center;">
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                    <i class="fas fa-star" style="color: #f39207;"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Testimonial content -->
+                            <div class="testimonial-content" style="flex: 1;">
+                                <div class="quote-icon" style="margin-bottom: 15px; color: var(--primary-color); opacity: 0.3; font-size: 2rem;">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                
+                                <blockquote style="font-size: 1.2rem; line-height: 1.8; color: var(--text-color); margin-bottom: 20px; font-style: italic;">
+                                    "La sensibilisation et les formations que nous avons reçues ont été très utiles pour renforcer nos compétences en matière de droits humains."
+                                </blockquote>
+                                
+                                <div class="testimonial-author">
+                                    <h4 class="name" style="margin: 0; color: var(--primary-color); font-size: 1.2rem;">Mohamed D.</h4>
+                                    <p class="role" style="margin: 5px 0 0; color: var(--gray-color);">Activiste pour les droits des droits, Alger</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial navigation dots -->
+                <div class="testimonial-dots" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
+                    <button class="testimonial-dot active" data-index="0"></button>
+                    <button class="testimonial-dot" data-index="1"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section" id="partenaires" style="padding: 100px 0; background: white; position: relative; overflow: hidden;">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAgMzBtLTI4IDBhMjggMjggMCAxIDAgNTYgMCAyOCAyOCAwIDEgMC01NiAwIiBzdHJva2U9InJnYmEoNjAsIDE4MCwgMTUwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48cGF0aCBkPSJNMzAgMzBtLTE4IDBhMTggMTggMCAxIDAgMzYgMCAxOCAxOCAwIDEgMC0zNiAwIiBzdHJva2U9InJnYmEoNjAsIDE4MCwgMTUwLCAwLjA4KSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L2c+PC9zdmc+'); background-position: center; opacity: 0.3; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="partners-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="partners-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
+                    <h2 class="section-title">Nos partenaires</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-color);">Nous collaborons avec diverses organisations pour maximiser notre impact et atteindre nos objectifs communs.</p>
+                </div>
+                
+                <!-- Partners Categories -->
+                <div class="partners-categories" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">
+                    <button class="category-btn active" data-category="all" style="padding: 8px 20px; background: var(--primary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Tous</button>
+                    <button class="category-btn" data-category="institutional" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Institutionnels</button>
+                    <button class="category-btn" data-category="ngo" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">ONG</button>
+                    <button class="category-btn" data-category="academic" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Académiques</button>
+                </div>
+                
+                <!-- Partners Logos Grid -->
+                <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px; margin-bottom: 60px;">
+                    <!-- Partner 1 -->
+                    <div class="partner-item" data-category="institutional" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; height: 200px;">
+                        <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <img src="img/partners/un.png" alt="Logo des Nations Unies" style="max-width: 120px; max-height: 80px; transition: all 0.3s ease; filter: grayscale(100%);">
+                        </div>
+                        <h3 style="font-size: 1rem; margin: 0; color: var(--text-color); text-align: center; transition: all 0.3s ease;">Nations Unies</h3>
+                        <p style="font-size: 0.9rem; color: var(--gray-color); margin: 5px 0 0; text-align: center;">Partenaire institutionnel</p>
+                    </div>
+                    
+                    <!-- Partner 2 -->
+                    <div class="partner-item" data-category="ngo" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; height: 200px;">
+                        <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <img src="img/partners/amnesty.png" alt="Logo d'Amnesty International" style="max-width: 120px; max-height: 80px; transition: all 0.3s ease; filter: grayscale(100%);">
+                        </div>
+                        <h3 style="font-size: 1rem; margin: 0; color: var(--text-color); text-align: center; transition: all 0.3s ease;">Amnesty International</h3>
+                        <p style="font-size: 0.9rem; color: var(--gray-color); margin: 5px 0 0; text-align: center;">ONG internationale</p>
+                    </div>
+                    
+                    <!-- Partner 3 -->
+                    <div class="partner-item" data-category="academic" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; height: 200px;">
+                        <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <img src="img/partners/university.png" alt="Logo de l'Université d'Alger" style="max-width: 120px; max-height: 80px; transition: all 0.3s ease; filter: grayscale(100%);">
+                        </div>
+                        <h3 style="font-size: 1rem; margin: 0; color: var(--text-color); text-align: center; transition: all 0.3s ease;">Université d'Alger</h3>
+                        <p style="font-size: 0.9rem; color: var(--gray-color); margin: 5px 0 0; text-align: center;">Partenaire académique</p>
+                    </div>
+                    
+                    <!-- Partner 4 -->
+                    <div class="partner-item" data-category="ngo" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; height: 200px;">
+                        <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <img src="img/partners/hrw.png" alt="Logo de Human Rights Watch" style="max-width: 120px; max-height: 80px; transition: all 0.3s ease; filter: grayscale(100%);">
+                        </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px; color: var(--primary-color);">Assistance juridique</h4>
+                                    <p style="margin: 0; color: var(--text-color);">Fournir une assistance juridique aux personnes dont les droits ont été violés.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="about.html" class="btn btn-primary" style="padding: 12px 30px; border-radius: 50px;">Découvrir notre histoire</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side: Interactive Image & Quote -->
+                    <div class="mission-visual reveal-right">
+                        <div class="mission-image-wrapper" style="position: relative; margin-bottom: 30px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                            <!-- Main image -->
+                            <img src="img/real/justice-scale.jpg" alt="Justice et droits humains" style="width: 100%; height: 400px; object-fit: cover; display: block; transition: all 0.5s ease;">
+                            
+                            <!-- Hover overlay with facts -->
+                            <div class="image-hover-facts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(60,180,150,0.8) 0%, rgba(243,146,7,0.8) 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; opacity: 0; transition: all 0.3s ease; color: white; text-align: center;">
+                                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Nos valeurs</h3>
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Intégrité</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Justice</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Engagement</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Transparence</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Solidarité</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Inspirational quote -->
+                        <div class="inspirational-quote" style="background: var(--primary-gradient); padding: 30px; border-radius: 20px; color: white; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(60, 180, 150, 0.3);">
+                            <div style="position: absolute; top: 10px; left: 10px; font-size: 5rem; opacity: 0.1; font-family: Georgia, serif;">"</div>
+                            <blockquote style="position: relative; z-index: 1; font-size: 1.2rem; line-height: 1.7; font-style: italic; margin: 0 0 20px;">
+                                La justice n'est pas seulement ce que la loi nous dicte, mais ce que l'humanité exige de nous.
+                            </blockquote>
+                            <div style="text-align: right; font-weight: 600;">— Nelson Mandela</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="programs" id="programmes" style="padding: 100px 0; background: linear-gradient(135deg, #ffffff, #f8fafc); position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="programs-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(135deg, rgba(243,146,7,0.05) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.07) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="programs-header text-center" style="text-align: center; margin-bottom: 70px;">
+                    <span class="programs-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Nos initiatives</span>
+                    <h2 class="section-title">Nos programmes</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 20px; color: var(--text-color);">Découvrez nos initiatives phares qui concrétisent notre engagement pour la promotion et la défense des droits humains.</p>
+                </div>
+                
+                <div class="programs-grid stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                    <!-- Revue Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--primary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-book" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
+                        </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Revue des droits humains</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Analyses juridiques approfondies
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Études de cas documentées
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Publication semestrielle
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="revue.html" class="btn btn-primary" style="width: 100%; padding: 12px; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Découvrir la revue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--primary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                    
+                    <!-- Formations Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--secondary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(243,146,7,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
+                        </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Formations</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Modules spécialisés par thématique
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Formateurs experts du domaine
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Ateliers pratiques interactifs
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="formations.html" class="btn" style="width: 100%; padding: 12px; background: var(--secondary-gradient); color: white; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Explorer les formations</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--secondary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                    
+                    <!-- Resources Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--primary-color), #2c3e50);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, var(--primary-color), #2c3e50); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.2); transition: all 0.5s ease;">
+                            <i class="fas fa-file-alt" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
+                        </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Ressources & Documentation</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Guides pratiques accessibles
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Rapports thématiques détaillés
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                Fiches d'information synthétiques
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="resources.html" class="btn" style="width: 100%; padding: 12px; background: linear-gradient(90deg, var(--primary-color), #2c3e50); color: white; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Accéder aux ressources</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #2c3e50; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                    
+                    <!-- Society Support Program Card -->
+                    <div class="program-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="program-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(108,92,231,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
+                        </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Soutien à la société civile</h3>
+                        
+                        <!-- Benefits list -->
+                        <ul style="text-align: left; margin-bottom: 25px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                Accompagnement personnalisé
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                Mise en réseau et partenariats
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                Renforcement des capacités
+                            </li>
+                        </ul>
+                        
+                        <div class="program-cta" style="position: relative; z-index: 2;">
+                            <a href="civil-society.html" class="btn" style="width: 100%; padding: 12px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: white; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>Rejoindre notre réseau</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #6c5ce7; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                </div>
+                
+                <!-- Program Impact Section -->
+                <div class="program-impact" style="margin-top: 80px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05);">
+                    <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">Impact de nos programmes</h3>
+                    
+                    <div class="impact-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="3000">0</span>
+                                <span>+</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Personnes formées</div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="200">0</span>
+                                <span>+</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Publications produites</div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: #6c5ce7; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="45">0</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Associations soutenues</div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="impact-number" style="font-size: 3rem; font-weight: 800; color: #2c3e50; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span class="animate-number" data-target="15">0</span>
+                            </div>
+                            <div class="impact-label" style="color: var(--text-color); font-weight: 500;">Années d'expérience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-highlight" id="galerie" style="padding: 100px 0; background: white; position: relative;">
+            <!-- Background decorative elements -->
+            <div class="gallery-bg-accent" style="position: absolute; top: 0; right: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(60,180,150,0.03) 0%, rgba(60,180,150,0) 70%); z-index: 0;"></div>
+            <div class="gallery-bg-accent" style="position: absolute; bottom: 0; left: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(243,146,7,0.03) 0%, rgba(243,146,7,0) 70%); z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="gallery-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="gallery-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Notre travail en images</span>
+                    <h2 class="section-title">Galerie photo</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Découvrez les moments forts des activités et projets menés par la Fondation à travers notre galerie de photos.</p>
+                    
+                    <!-- Gallery Filter Categories -->
+                    <div class="gallery-filter" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">
+                        <button class="filter-btn active" data-filter="all" style="padding: 8px 20px; background: var(--primary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Tous</button>
+                        <button class="filter-btn" data-filter="formations" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Formations</button>
+                        <button class="filter-btn" data-filter="evenements" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Événements</button>
+                        <button class="filter-btn" data-filter="equipe" style="padding: 8px 20px; background: white; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Équipe</button>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Gallery Grid - Masonry Style -->
+                <div class="gallery-masonry" style="columns: 4 250px; column-gap: 20px; orphans: 1; widows: 1;">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-preview-item" data-category="formations" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/youth-engagement.jpg" alt="Jeunes engagés dans la défense des droits" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: var(--primary-color); color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Formation</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Engagement jeunesse</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Atelier de formation avec de jeunes activistes sur les droits humains et la citoyenneté</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 2 - Vertical -->
+                    <div class="gallery-preview-item" data-category="equipe" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/diversity-team.jpg" alt="Équipe diverse collaborant sur des projets de droits" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: #6c5ce7; color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Équipe</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Collaboration</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Notre équipe diverse collaborant sur de nouveaux projets et initiatives</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 3 - Horizontal -->
+                    <div class="gallery-preview-item" data-category="formations" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/women-rights.jpg" alt="Promotion des droits des femmes" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: var(--secondary-color); color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Droits des femmes</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Émancipation féminine</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Atelier sur l'autonomisation juridique et les droits des femmes</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-preview-item" data-category="evenements" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/advocacy.jpg" alt="Plaidoyer pour les droits" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: #2c3e50; color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Plaidoyer</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Campagne de sensibilisation</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Actions de plaidoyer auprès des décideurs et institutions</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-preview-item" data-category="evenements" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/workshop.jpg" alt="Atelier de formation juridique" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: var(--primary-color); color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Événement</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Atelier juridique</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Séminaire de formation sur l'accès à la justice et les procédures légales</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-preview-item" data-category="equipe" style="break-inside: avoid; margin-bottom: 20px; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <img src="img/real/teamwork.jpg" alt="Travail d'équipe" style="width: 100%; display: block; transition: all 0.5s ease;">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: 20px; color: white; transform: translateY(20px); opacity: 0; transition: all 0.3s ease;">
+                            <div class="category-tag" style="display: inline-block; padding: 5px 10px; background: #6c5ce7; color: white; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;">Équipe</div>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Planification de projet</h3>
+                            <p style="margin: 10px 0 0; font-size: 0.9rem; opacity: 0.8;">Réunion de planification stratégique avec l'équipe de la Fondation</p>
+                        </div>
+                        <div class="view-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                            <i class="fas fa-search-plus" style="color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Call to Action -->
+                <div class="center" style="margin-top: 50px; text-align: center;">
+                    <a href="gallery.html" class="btn btn-primary" style="position: relative; overflow: hidden; padding: 15px 40px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px;">
+                        <span>Explorer la galerie complète</span>
+                        <i class="fas fa-images"></i>
+                    </a>
+                </div>
+                
+                <!-- Simple Gallery Stats -->
+                <div class="gallery-stats" style="display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap;">
+                    <div class="stat-item" style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-camera"></i>
+                            <span>50+</span>
+                        </div>
+                        <p style="margin: 5px 0 0; color: var(--text-color); font-size: 0.9rem;">Photos</p>
+                    </div>
+                    <div class="stat-item" style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-video"></i>
+                            <span>10+</span>
+                        </div>
+                        <p style="margin: 5px 0 0; color: var(--text-color); font-size: 0.9rem;">Vidéos</p>
+                    </div>
+                    <div class="stat-item" style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: #6c5ce7; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>30+</span>
+                        </div>
+                        <p style="margin: 5px 0 0; color: var(--text-color); font-size: 0.9rem;">Événements</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -311,15 +1356,79 @@
             </div>
         </section>
 
-        <section class="newsletter" id="newsletter">
-            <div class="container">
-                <h2>Restez informés</h2>
-                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et ressources</p>
-                <form class="newsletter-form" action="#" method="post">
-                    <label for="email-newsletter" class="visually-hidden">Votre adresse email</label>
-                    <input type="email" id="email-newsletter" placeholder="Votre adresse email" required aria-required="true">
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <section class="newsletter" id="newsletter" style="position: relative; padding: 100px 0; overflow: hidden; background: linear-gradient(135deg, rgba(60,180,150,0.9) 0%, rgba(243,146,7,0.9) 100%);">
+            <!-- Background elements -->
+            <div class="newsletter-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <div style="position: absolute; width: 100%; height: 100%; background-image: url('img/real/pattern-bg.jpg'); background-size: cover; background-position: center; opacity: 0.1;"></div>
+                
+                <!-- Floating shapes animation -->
+                <div class="floating-shape shape1" style="position: absolute; top: 10%; left: 5%; width: 80px; height: 80px; border-radius: 20%; background: rgba(255,255,255,0.1); animation: float 8s ease-in-out infinite;"></div>
+                <div class="floating-shape shape2" style="position: absolute; bottom: 15%; right: 10%; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.1); animation: float 12s ease-in-out infinite;"></div>
+                <div class="floating-shape shape3" style="position: absolute; top: 40%; right: 20%; width: 60px; height: 60px; border-radius: 30%; background: rgba(255,255,255,0.1); animation: float 10s ease-in-out infinite;"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1; max-width: 900px;">
+                <div class="newsletter-content text-center" style="text-align: center; color: white;">
+                    <span class="newsletter-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 15px;">Restez informés</span>
+                    
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white;">Abonnez-vous à notre newsletter</h2>
+                    
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; color: rgba(255,255,255,0.9);">Recevez les dernières actualités, publications et événements de la Fondation directement dans votre boîte de réception.</p>
+                    
+                    <!-- Enhanced Newsletter Form -->
+                    <div class="newsletter-form-container" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); max-width: 600px; margin: 0 auto;">
+                        <form class="newsletter-form" action="#" method="post" style="position: relative;">
+                            <div style="position: relative; margin-bottom: 20px;">
+                                <i class="far fa-envelope" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); color: var(--gray-color);"></i>
+                                <input type="email" id="email-newsletter" placeholder="Votre adresse email" required aria-required="true" style="width: 100%; padding: 15px 20px 15px 50px; border: 2px solid #eee; border-radius: 50px; font-size: 1rem; transition: all 0.3s ease;">
+                            </div>
+                            
+                            <div class="newsletter-options" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; justify-content: center;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="actualites" checked style="accent-color: var(--primary-color);">
+                                    <span style="color: var(--text-color);">Actualités</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="events" checked style="accent-color: var(--primary-color);">
+                                    <span style="color: var(--text-color);">Événements</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="publications" checked style="accent-color: var(--primary-color);">
+                                    <span style="color: var(--text-color);">Publications</span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-footer" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary" style="padding: 15px 40px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; background: var(--primary-gradient);">
+                                    <span>S'abonner</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                                
+                                <p style="margin-top: 15px; font-size: 0.8rem; color: var(--gray-color);">En vous inscrivant, vous acceptez de recevoir nos emails. Vous pourrez vous désabonner à tout moment.</p>
+                            </div>
                 </form>
+                    </div>
+                    
+                    <!-- Social Media Follow -->
+                    <div class="newsletter-social" style="margin-top: 40px;">
+                        <p style="margin-bottom: 20px; color: rgba(255,255,255,0.9);">Suivez-nous également sur les réseaux sociaux :</p>
+                        
+                        <div class="social-links" style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -370,23 +1479,407 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Fondation pour la promotion des droits. Tous droits réservés.</p>
+                <p>&copy; 2024 Fondation pour la promotion des droits. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/enhanced-ui.js"></script>
     <script>
-        // Make gallery preview items clickable
         document.addEventListener('DOMContentLoaded', function() {
+            /* HERO SECTION ENHANCEMENTS */
+            // Scroll down indicator functionality
+            const scrollIndicator = document.querySelector('.scroll-down-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = document.getElementById('actualites');
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+            
+            /* ANIMATION FOR IMPACT STATS IN HERO */
+            // Animate numbers when they come into view
+            const animateNumbers = function() {
+                const numbers = document.querySelectorAll('.animate-number');
+                
+                numbers.forEach(number => {
+                    const target = parseInt(number.getAttribute('data-target'));
+                    const duration = 2000; // 2 seconds animation
+                    const startTime = performance.now();
+                    
+                    function updateNumber(timestamp) {
+                        const elapsed = timestamp - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        
+                        const currentValue = Math.floor(progress * target);
+                        number.textContent = currentValue;
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateNumber);
+                        } else {
+                            number.textContent = target;
+                        }
+                    }
+                    
+                    requestAnimationFrame(updateNumber);
+                });
+            };
+            
+            // Initialize number animation when the section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statsContainer = entry.target.querySelector('.animate-number');
+                        if (statsContainer) {
+                            animateNumbers();
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            const heroSection = document.querySelector('.hero');
+            const programImpact = document.querySelector('.program-impact');
+            
+            if (heroSection) observer.observe(heroSection);
+            if (programImpact) observer.observe(programImpact);
+            
+            /* NEWS CATEGORY FILTER */
+            // Category filter functionality
+            const categoryBtns = document.querySelectorAll('.news-categories .category-nav a');
+            if (categoryBtns.length > 0) {
+                categoryBtns.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all buttons
+                        categoryBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Here you would add actual filtering logic for the news items
+                        // For now it's just a UI demonstration
+                    });
+                });
+            }
+            
+            /* GALLERY IMAGE FILTERING */
+            // Gallery filter functionality
+            const filterBtns = document.querySelectorAll('.gallery-filter .filter-btn');
             const galleryItems = document.querySelectorAll('.gallery-preview-item');
+            
+            if (filterBtns.length > 0 && galleryItems.length > 0) {
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        const filter = this.getAttribute('data-filter');
+                        
+                        // Show/hide gallery items based on filter
             galleryItems.forEach(item => {
+                            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+            
+            /* GALLERY HOVER EFFECTS */
+            // Add hover effects to gallery items
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    const overlay = this.querySelector('.overlay');
+                    const viewIcon = this.querySelector('.view-icon');
+                    
+                    if (overlay) {
+                        overlay.style.transform = 'translateY(0)';
+                        overlay.style.opacity = '1';
+                    }
+                    
+                    if (viewIcon) {
+                        viewIcon.style.transform = 'translate(-50%, -50%) scale(1)';
+                        viewIcon.style.opacity = '1';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const overlay = this.querySelector('.overlay');
+                    const viewIcon = this.querySelector('.view-icon');
+                    
+                    if (overlay) {
+                        overlay.style.transform = 'translateY(20px)';
+                        overlay.style.opacity = '0';
+                    }
+                    
+                    if (viewIcon) {
+                        viewIcon.style.transform = 'translate(-50%, -50%) scale(0)';
+                        viewIcon.style.opacity = '0';
+                    }
+                });
+                
+                // Make gallery items clickable
                 item.addEventListener('click', function() {
                     window.location.href = 'gallery.html';
                 });
             });
+            
+            /* TESTIMONIAL SLIDER */
+            // Testimonial slider functionality
+            const testimonials = document.querySelectorAll('.testimonial-slides .testimonial');
+            const testimonialDots = document.querySelectorAll('.testimonial-dots .dot');
+            const prevArrow = document.querySelector('.testimonial-arrow.prev');
+            const nextArrow = document.querySelector('.testimonial-arrow.next');
+            
+            if (testimonials.length > 0) {
+                let currentIndex = 0;
+                
+                // Function to show a specific testimonial
+                const showTestimonial = (index) => {
+                    // Hide all testimonials
+                    testimonials.forEach(testimonial => {
+                        testimonial.classList.remove('active');
+                        testimonial.style.transform = 'translateX(100%)';
+                        testimonial.style.opacity = '0';
+                    });
+                    
+                    // Show the selected testimonial
+                    testimonials[index].classList.add('active');
+                    testimonials[index].style.transform = 'translateX(0)';
+                    testimonials[index].style.opacity = '1';
+                    
+                    // Update dots
+                    testimonialDots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.classList.add('active');
+                            dot.style.background = 'var(--primary-color)';
+                            dot.style.width = '30px';
+                            dot.style.borderRadius = '10px';
+                        } else {
+                            dot.classList.remove('active');
+                            dot.style.background = '#ddd';
+                            dot.style.width = '12px';
+                            dot.style.borderRadius = '50%';
+                        }
+                    });
+                    
+                    currentIndex = index;
+                };
+                
+                // Click events for dots
+                testimonialDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        showTestimonial(index);
+                    });
+                });
+                
+                // Click events for arrows
+                if (prevArrow && nextArrow) {
+                    prevArrow.addEventListener('click', () => {
+                        let newIndex = currentIndex - 1;
+                        if (newIndex < 0) newIndex = testimonials.length - 1;
+                        showTestimonial(newIndex);
+                    });
+                    
+                    nextArrow.addEventListener('click', () => {
+                        let newIndex = currentIndex + 1;
+                        if (newIndex >= testimonials.length) newIndex = 0;
+                        showTestimonial(newIndex);
+                    });
+                }
+                
+                // Auto-rotate testimonials
+                let testimonialInterval = setInterval(() => {
+                    let newIndex = currentIndex + 1;
+                    if (newIndex >= testimonials.length) newIndex = 0;
+                    showTestimonial(newIndex);
+                }, 5000);
+                
+                // Pause auto-rotation on hover
+                const testimonialSlider = document.querySelector('.testimonial-slider');
+                if (testimonialSlider) {
+                    testimonialSlider.addEventListener('mouseenter', () => {
+                        clearInterval(testimonialInterval);
+                    });
+                    
+                    testimonialSlider.addEventListener('mouseleave', () => {
+                        testimonialInterval = setInterval(() => {
+                            let newIndex = currentIndex + 1;
+                            if (newIndex >= testimonials.length) newIndex = 0;
+                            showTestimonial(newIndex);
+                        }, 5000);
+                    });
+                }
+                
+                // Initialize with first testimonial
+                showTestimonial(0);
+            }
+            
+            /* PARTNERS SECTION */
+            // Partners category filter
+            const partnerCategoryBtns = document.querySelectorAll('.partners-categories .category-btn');
+            const partnerItems = document.querySelectorAll('.partner-item');
+            
+            if (partnerCategoryBtns.length > 0 && partnerItems.length > 0) {
+                partnerCategoryBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        partnerCategoryBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        const filter = this.getAttribute('data-category');
+                        
+                        // Show/hide partner items based on filter
+                        partnerItems.forEach(item => {
+                            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                                item.style.display = 'flex';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+                
+                // Partner hover effects
+                partnerItems.forEach(item => {
+                    item.addEventListener('mouseenter', function() {
+                        const logo = this.querySelector('img');
+                        const title = this.querySelector('h3');
+                        
+                        this.style.transform = 'translateY(-10px)';
+                        this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+                        
+                        if (logo) {
+                            logo.style.filter = 'grayscale(0%)';
+                            logo.style.transform = 'scale(1.1)';
+                        }
+                        
+                        if (title) {
+                            title.style.color = 'var(--primary-color)';
+                        }
+                    });
+                    
+                    item.addEventListener('mouseleave', function() {
+                        const logo = this.querySelector('img');
+                        const title = this.querySelector('h3');
+                        
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+                        
+                        if (logo) {
+                            logo.style.filter = 'grayscale(100%)';
+                            logo.style.transform = 'scale(1)';
+                        }
+                        
+                        if (title) {
+                            title.style.color = 'var(--text-color)';
+                        }
+                    });
+                });
+            }
+            
+            /* NEWSLETTER FORM VALIDATION */
+            // Newsletter form validation
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const emailInput = this.querySelector('input[type="email"]');
+                    const email = emailInput.value.trim();
+                    
+                    if (email === '') {
+                        // Show error
+                        emailInput.style.borderColor = 'red';
+                        return;
+                    }
+                    
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        // Show error
+                        emailInput.style.borderColor = 'red';
+                        return;
+                    }
+                    
+                    // If validation passes
+                    emailInput.style.borderColor = 'green';
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.textContent = 'Merci pour votre inscription!';
+                    successMessage.style.color = 'green';
+                    successMessage.style.marginTop = '10px';
+                    
+                    this.appendChild(successMessage);
+                    
+                    // Reset form after 2 seconds
+                    setTimeout(() => {
+                        this.reset();
+                        emailInput.style.borderColor = '';
+                        successMessage.remove();
+                    }, 2000);
+                    
+                    // Here you would normally submit the form to your server
+                });
+            }
+            
+            /* MISSION SECTION ENHANCEMENTS */
+            // Mission image hover effect
+            const missionImageWrapper = document.querySelector('.mission-image-wrapper');
+            if (missionImageWrapper) {
+                missionImageWrapper.addEventListener('mouseenter', function() {
+                    const hoverFacts = this.querySelector('.image-hover-facts');
+                    if (hoverFacts) {
+                        hoverFacts.style.opacity = '1';
+                    }
+                });
+                
+                missionImageWrapper.addEventListener('mouseleave', function() {
+                    const hoverFacts = this.querySelector('.image-hover-facts');
+                    if (hoverFacts) {
+                        hoverFacts.style.opacity = '0';
+                    }
+                });
+            }
+            
+            /* FLOATING ANIMATION FOR NEWSLETTER SECTION */
+            // Add floating animation keyframes dynamically
+            const styleSheet = document.createElement('style');
+            styleSheet.textContent = `
+                @keyframes float {
+                    0% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(5deg); }
+                    100% { transform: translateY(0px) rotate(0deg); }
+                }
+                
+                .floating-shape.shape1 {
+                    animation-delay: 0s;
+                }
+                
+                .floating-shape.shape2 {
+                    animation-delay: 1s;
+                }
+                
+                .floating-shape.shape3 {
+                    animation-delay: 2s;
+                }
+            `;
+            document.head.appendChild(styleSheet);
         });
     </script>
-    <script src="js/enhanced-ui.js"></script>
 </body>
 </html> 

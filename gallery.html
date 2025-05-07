@@ -3,14 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie de photos - Fondation pour la promotion des droits - Images illustrant notre travail et nos activités">
     <title>Galerie - Fondation pour la promotion des droits</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/footer-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la galerie */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 25px;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            height: 300px;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Styles pour la modal */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .modal-img {
+            display: block;
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        /* Filtres de galerie */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        /* Animation de révélation */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+        
+        .reveal-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-gap: 15px;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .modal-content {
+                max-width: 95%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Passer au contenu</a>
+    
     <header>
         <div class="container">
             <div class="logo">
@@ -18,72 +208,226 @@
                     <h1>Fondation pour la promotion des droits</h1>
                 </a>
             </div>
-            <div class="language-switch">
-                <a href="#" class="active">FR</a>
-                <a href="ar/gallery.html">عربي</a>
-            </div>
             <nav>
-                <ul>
+                <ul class="main-nav">
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="news.html">Actualités & Projets</a></li>
-                    <li><a href="revue.html">Revue</a></li>
-                    <li><a href="formations.html">Formations</a></li>
-                    <li><a href="resources.html">Ressources</a></li>
+                    
+                    <li class="dropdown primary-nav-item">
+                        <a href="about.html" class="dropdown-toggle">À propos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#mission">Notre mission</a></li>
+                            <li><a href="about.html#vision">Notre vision</a></li>
+                            <li><a href="about.html#team">Notre équipe</a></li>
+                            <li><a href="about.html#history">Notre histoire</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown primary-nav-item">
+                        <a href="news.html" class="dropdown-toggle">Actualités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html#latest">Dernières actualités</a></li>
+                            <li><a href="news.html#projects">Projets en cours</a></li>
+                            <li><a href="news.html#press">Communiqués de presse</a></li>
+                            <li><a href="news.html#events">Événements à venir</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-separator"></li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="revue.html" class="dropdown-toggle">Revue</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="revue.html#current">Numéro actuel</a></li>
+                            <li><a href="revue.html#archives">Archives</a></li>
+                            <li><a href="revue.html#contribute">Comment contribuer</a></li>
+                            <li><a href="revue.html#editorial">Comité éditorial</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="formations.html" class="dropdown-toggle">Formations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="formations.html#programs">Programmes de formation</a></li>
+                            <li><a href="formations.html#workshops">Ateliers</a></li>
+                            <li><a href="formations.html#calendar">Calendrier</a></li>
+                            <li><a href="formations.html#registration">Inscription</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="resources.html" class="dropdown-toggle">Ressources</a>
+                        <ul class="dropdown-menu">
+                            <li><div class="dropdown-section-header">Documentation</div></li>
+                            <li><a href="resources.html#publications">Publications</a></li>
+                            <li><a href="resources.html#reports">Rapports</a></li>
+                            <li><a href="resources.html#guides">Guides pratiques</a></li>
+                            <li><div class="dropdown-section-header">Média</div></li>
+                            <li><a href="resources.html#multimedia">Multimédia</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-separator"></li>
+                    
                     <li><a href="testimonials.html">Témoignages</a></li>
                     <li><a href="civil-society.html">Société civile</a></li>
                     <li><a href="gallery.html" class="active">Galerie</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="language-switch">
+                <a href="#" class="active">FR</a>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Galerie</h1>
-            <div class="breadcrumb">
-                <a href="index.html">Accueil</a>
-                <span>&gt;</span>
-                <span>Galerie</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Notre travail en images</h2>
-            <p class="gallery-intro">Découvrez les moments forts des activités et projets menés par la Fondation à travers cette galerie de photos.</p>
-            
-            <div class="gallery-filter">
-                <button class="active" data-filter="all">Tous</button>
-                <button data-filter="formations">Formations</button>
-                <button data-filter="conferences">Conférences</button>
-                <button data-filter="terrain">Actions terrain</button>
-                <button data-filter="sensibilisation">Sensibilisation</button>
+    <main id="content">
+        <section class="hero animated-bg" style="position: relative; overflow: hidden;">
+            <!-- Background with overlay -->
+            <div class="hero-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6;">
+                <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(35, 107, 142, 0.85), rgba(20, 80, 160, 0.85)); z-index: 1;"></div>
+                <img src="img/real/human-rights.jpg" alt="" class="fallback-bg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;">
             </div>
             
-            <div class="gallery-grid stagger-animation">
-                <!-- Image items will be added dynamically for demo purposes -->
+            <div class="container" style="position: relative; z-index: 2; padding: 100px 0;">
+                <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                        Galerie
+                    </h1>
+                    
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                        Images illustrant notre travail et nos activités pour la promotion des droits
+                    </p>
+                    
+                    <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.7s;">
+                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <span style="opacity: 0.8;">/</span>
+                        <span style="font-weight: 600;">Galerie</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Curved Shape Divider -->
+            <div class="shape-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 70px; fill: white;">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="gallery-section" style="padding: 80px 0; background-color: white;">
+            <div class="container">
+                <div class="section-header text-center" style="max-width: 800px; margin: 0 auto 40px auto;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Nos images</span>
+                    <h2 class="section-title">Explorer notre travail en images</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-color); margin-top: 20px;">Découvrez les moments forts de nos activités, projets et événements à travers notre galerie de photos.</p>
+                </div>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Tout</button>
+                    <button class="filter-btn" data-filter="formations">Formations</button>
+                    <button class="filter-btn" data-filter="droits">Droits humains</button>
+                    <button class="filter-btn" data-filter="femmes">Droits des femmes</button>
+                    <button class="filter-btn" data-filter="jeunesse">Jeunesse</button>
+                    <button class="filter-btn" data-filter="evenements">Événements</button>
+                </div>
+                
+                <div class="gallery-container">
+                    <!-- Éléments de la galerie -->
+                    <div class="gallery-item reveal-item" data-category="droits">
+                        <img src="img/real/advocacy.jpg" alt="Atelier de plaidoyer" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Atelier de plaidoyer</h3>
+                            <p>Renforcement des capacités en plaidoyer pour les droits fondamentaux</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="femmes">
+                        <img src="img/real/women-rights.jpg" alt="Forum sur les droits des femmes" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Forum sur les droits des femmes</h3>
+                            <p>Discussions sur les avancées et défis pour l'égalité des genres</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="droits">
+                        <img src="img/real/human-rights.jpg" alt="Conférence internationale" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Conférence internationale</h3>
+                            <p>Échange d'expériences sur la promotion des droits</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="jeunesse">
+                        <img src="img/real/youth-engagement.jpg" alt="Engagement des jeunes" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Engagement des jeunes</h3>
+                            <p>Activités pour encourager la participation citoyenne des jeunes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="formations">
+                        <img src="img/real/education-rights.jpg" alt="Formation sur les droits" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Formation sur les droits</h3>
+                            <p>Session éducative sur les droits fondamentaux</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="evenements">
+                        <img src="img/real/collaboration.jpg" alt="Réunion de coordination" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Réunion de coordination</h3>
+                            <p>Planification stratégique avec nos partenaires</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="droits">
+                        <img src="img/real/justice-scale.jpg" alt="Accès à la justice" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Accès à la justice</h3>
+                            <p>Initiatives pour faciliter l'accès à la justice pour tous</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal-item" data-category="evenements">
+                        <img src="img/real/diversity-team.jpg" alt="Équipe diversifiée" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3>Notre équipe diversifiée</h3>
+                            <p>La diversité au cœur de notre approche</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section" style="padding: 80px 0; background: linear-gradient(135deg, #f1f8fc 0%, #e6eff6 100%);">
+            <div class="container">
+                <div class="cta-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #1a1a1a;">Vous avez des photos à partager ?</h2>
+                    <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px; line-height: 1.6;">Si vous avez participé à nos activités et souhaitez partager vos photos, nous serions ravis de les ajouter à notre galerie.</p>
+                    <a href="contact.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; padding: 15px 35px; border-radius: 50px; font-weight: 600; text-decoration: none; box-shadow: 0 10px 20px rgba(35, 107, 142, 0.2); transition: all 0.3s ease;">
+                        <i class="fas fa-camera"></i>
+                        <span>Partager vos photos</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal pour afficher les images en grand -->
+        <div class="gallery-modal">
+            <span class="close-modal"><i class="fas fa-times"></i></span>
+            <div class="modal-content">
+                <img src="" alt="" class="modal-img">
+                <div class="modal-caption">
+                    <h3 class="modal-title"></h3>
+                    <p class="modal-desc"></p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Gallery Modal -->
-    <div class="gallery-modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <img src="" alt="Image agrandie">
-            <div class="modal-caption"></div>
-        </div>
-        <div class="modal-nav">
-            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
+    </main>
 
     <footer>
         <div class="container">
@@ -98,7 +442,6 @@
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="about.html">À propos</a></li>
                         <li><a href="news.html">Actualités</a></li>
-                        <li><a href="gallery.html">Galerie</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -111,10 +454,22 @@
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="visually-hidden">Facebook</span>
+                        </a>
+                        <a href="https://x.com/FondationDZ" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="visually-hidden">Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/fondationdz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="visually-hidden">Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span class="visually-hidden">YouTube</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -127,214 +482,96 @@
     <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Gallery data - in a real site, this would be loaded from a database
-            const galleryData = [
-                {
-                    id: 1,
-                    src: 'img/placeholder_images/gallery1.jpg',
-                    title: 'Séminaire sur les droits humains',
-                    description: 'Formation sur les mécanismes internationaux de protection des droits humains, Alger 2023.',
-                    category: 'formations'
-                },
-                {
-                    id: 2,
-                    src: 'img/placeholder_images/gallery2.jpg',
-                    title: 'Atelier participatif',
-                    description: 'Atelier de travail avec des représentants de la société civile sur les enjeux des droits.',
-                    category: 'formations'
-                },
-                {
-                    id: 3,
-                    src: 'img/placeholder_images/gallery3.jpg',
-                    title: 'Conférence internationale',
-                    description: 'Participation à la conférence sur les droits et libertés fondamentales.',
-                    category: 'conferences'
-                },
-                {
-                    id: 4,
-                    src: 'img/placeholder_images/gallery4.jpg',
-                    title: 'Campagne de sensibilisation',
-                    description: 'Actions de sensibilisation auprès des jeunes sur leurs droits constitutionnels.',
-                    category: 'sensibilisation'
-                },
-                {
-                    id: 5,
-                    src: 'img/placeholder_images/gallery5.jpg',
-                    title: 'Clinique juridique mobile',
-                    description: 'Consultation juridique gratuite pour les populations des zones rurales.',
-                    category: 'terrain'
-                },
-                {
-                    id: 6,
-                    src: 'img/placeholder_images/gallery6.jpg',
-                    title: 'Table ronde',
-                    description: 'Discussion avec des experts sur les réformes législatives nécessaires.',
-                    category: 'conferences'
-                },
-                {
-                    id: 7,
-                    src: 'img/placeholder_images/gallery7.jpg',
-                    title: 'Formation des formateurs',
-                    description: 'Programme de formation destiné aux futurs formateurs en droits humains.',
-                    category: 'formations'
-                },
-                {
-                    id: 8,
-                    src: 'img/placeholder_images/gallery8.jpg',
-                    title: 'Campagne de plaidoyer',
-                    description: 'Actions de plaidoyer pour l\'amélioration des conditions carcérales.',
-                    category: 'sensibilisation'
-                },
-                {
-                    id: 9,
-                    src: 'img/placeholder_images/gallery9.jpg',
-                    title: 'Intervention communautaire',
-                    description: 'Distribution de matériel éducatif sur les droits dans une communauté rurale.',
-                    category: 'terrain'
-                }
-            ];
+            // Animation de révélation au scroll
+            const revealItems = document.querySelectorAll('.reveal-item');
             
-            // Function to initialize gallery
-            function initGallery() {
-                const galleryGrid = document.querySelector('.gallery-grid');
+            function revealOnScroll() {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 50;
                 
-                // Add gallery items
-                galleryData.forEach(item => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = `gallery-item ${item.category}`;
-                    galleryItem.setAttribute('data-id', item.id);
+                revealItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
                     
-                    galleryItem.innerHTML = `
-                        <img src="${item.src}" alt="${item.title}">
-                        <div class="overlay">
-                            <h3>${item.title}</h3>
-                            <p>${item.description}</p>
-                        </div>
-                    `;
-                    
-                    galleryGrid.appendChild(galleryItem);
-                });
-                
-                // Initialize filter functionality
-                initFilter();
-                
-                // Initialize modal functionality
-                initModal();
-            }
-            
-            // Function to initialize filter
-            function initFilter() {
-                const filterButtons = document.querySelectorAll('.gallery-filter button');
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        // Remove active class from all buttons
-                        filterButtons.forEach(btn => btn.classList.remove('active'));
-                        
-                        // Add active class to clicked button
-                        this.classList.add('active');
-                        
-                        // Get filter value
-                        const filterValue = this.getAttribute('data-filter');
-                        
-                        // Filter items
-                        galleryItems.forEach(item => {
-                            if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                                item.style.display = 'block';
-                                setTimeout(() => {
-                                    item.style.opacity = '1';
-                                    item.style.transform = 'scale(1)';
-                                }, 100);
-                            } else {
-                                item.style.opacity = '0';
-                                item.style.transform = 'scale(0.8)';
-                                setTimeout(() => {
-                                    item.style.display = 'none';
-                                }, 300);
-                            }
-                        });
-                    });
+                    if(itemTop < windowHeight - revealPoint) {
+                        item.classList.add('active');
+                    }
                 });
             }
             
-            // Function to initialize modal
-            function initModal() {
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                const modal = document.querySelector('.gallery-modal');
-                const modalImage = modal.querySelector('img');
-                const modalCaption = modal.querySelector('.modal-caption');
-                const closeButton = modal.querySelector('.close-modal');
-                const prevButton = modal.querySelector('.prev-btn');
-                const nextButton = modal.querySelector('.next-btn');
-                
-                let currentIndex = 0;
-                
-                // Open modal when clicking on a gallery item
-                galleryItems.forEach((item, index) => {
-                    item.addEventListener('click', function() {
-                        currentIndex = index;
-                        const itemId = parseInt(this.getAttribute('data-id'));
-                        const itemData = galleryData.find(item => item.id === itemId);
-                        
-                        modalImage.src = itemData.src;
-                        modalCaption.textContent = `${itemData.title} - ${itemData.description}`;
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
+            // Déclencher au chargement initial et au scroll
+            revealOnScroll();
+            window.addEventListener('scroll', revealOnScroll);
+            
+            // Filtrage de la galerie
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Mise à jour des classes active
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.classList.add('active');
+                            }, 100);
+                        } else {
+                            item.classList.remove('active');
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
                     });
                 });
-                
-                // Close modal
-                closeButton.addEventListener('click', function() {
+            });
+            
+            // Modal pour afficher les images en grand
+            const modal = document.querySelector('.gallery-modal');
+            const modalImg = document.querySelector('.modal-img');
+            const modalTitle = document.querySelector('.modal-title');
+            const modalDesc = document.querySelector('.modal-desc');
+            const closeModal = document.querySelector('.close-modal');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('.gallery-img').src;
+                    const imgTitle = this.querySelector('h3').textContent;
+                    const imgDesc = this.querySelector('p').textContent;
+                    
+                    modalImg.src = imgSrc;
+                    modalTitle.textContent = imgTitle;
+                    modalDesc.textContent = imgDesc;
+                    
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Fermer la modal en cliquant en dehors de l'image
+            modal.addEventListener('click', function(e) {
+                if(e.target === modal) {
                     modal.classList.remove('active');
                     document.body.style.overflow = 'auto';
-                });
-                
-                // Close modal when clicking outside content
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-                
-                // Navigate to previous image
-                prevButton.addEventListener('click', function() {
-                    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-                    const itemId = parseInt(galleryItems[currentIndex].getAttribute('data-id'));
-                    const itemData = galleryData.find(item => item.id === itemId);
-                    
-                    modalImage.src = itemData.src;
-                    modalCaption.textContent = `${itemData.title} - ${itemData.description}`;
-                });
-                
-                // Navigate to next image
-                nextButton.addEventListener('click', function() {
-                    currentIndex = (currentIndex + 1) % galleryItems.length;
-                    const itemId = parseInt(galleryItems[currentIndex].getAttribute('data-id'));
-                    const itemData = galleryData.find(item => item.id === itemId);
-                    
-                    modalImage.src = itemData.src;
-                    modalCaption.textContent = `${itemData.title} - ${itemData.description}`;
-                });
-                
-                // Keyboard navigation
-                document.addEventListener('keydown', function(e) {
-                    if (!modal.classList.contains('active')) return;
-                    
-                    if (e.key === 'Escape') {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    } else if (e.key === 'ArrowLeft') {
-                        prevButton.click();
-                    } else if (e.key === 'ArrowRight') {
-                        nextButton.click();
-                    }
-                });
-            }
+                }
+            });
             
-            // Initialize gallery
-            initGallery();
+            // Fermer la modal avec la touche Escape
+            document.addEventListener('keydown', function(e) {
+                if(e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
         });
     </script>
 </body>

@@ -3,14 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Témoignages de bénéficiaires, partenaires et acteurs des droits humains - Fondation pour la promotion des droits">
     <title>Témoignages - Fondation pour la promotion des droits</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/footer-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles pour assurer la visibilité des éléments animés */
+        .reveal-left, .reveal-right, .reveal-up {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: all 0.8s ease;
+        }
+        .reveal-left.active, .reveal-right.active, .reveal-up.active {
+            opacity: 1 !important;
+        }
+        
+        /* Styles pour les cartes de témoignages */
+        .testimonial-card {
+            transition: all 0.3s ease-in-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Styles pour les filtres de catégories */
+        .filter-pill {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-pill:hover, .filter-pill.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Media query pour l'affichage mobile */
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Styles pour les citations */
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+            position: absolute;
+            opacity: 0.1;
+            color: var(--primary-color);
+        }
+        
+        .quote-left {
+            top: 15px;
+            left: 15px;
+        }
+        
+        .quote-right {
+            bottom: 0;
+            right: 15px;
+        }
+    </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Passer au contenu</a>
+    
     <header>
         <div class="container">
             <div class="logo">
@@ -18,310 +91,529 @@
                     <h1>Fondation pour la promotion des droits</h1>
                 </a>
             </div>
-            <div class="language-switch">
-                <a href="#" class="active">FR</a>
-                <a href="ar/testimonials.html">عربي</a>
-            </div>
             <nav>
-                <ul>
+                <ul class="main-nav">
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="news.html">Actualités & Projets</a></li>
-                    <li><a href="revue.html">Revue</a></li>
-                    <li><a href="formations.html">Formations</a></li>
-                    <li><a href="resources.html">Ressources</a></li>
+                    
+                    <li class="dropdown primary-nav-item">
+                        <a href="about.html" class="dropdown-toggle">À propos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#mission">Notre mission</a></li>
+                            <li><a href="about.html#vision">Notre vision</a></li>
+                            <li><a href="about.html#team">Notre équipe</a></li>
+                            <li><a href="about.html#history">Notre histoire</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown primary-nav-item">
+                        <a href="news.html" class="dropdown-toggle">Actualités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html#latest">Dernières actualités</a></li>
+                            <li><a href="news.html#projects">Projets en cours</a></li>
+                            <li><a href="news.html#press">Communiqués de presse</a></li>
+                            <li><a href="news.html#events">Événements à venir</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-separator"></li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="revue.html" class="dropdown-toggle">Revue</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="revue.html#current">Numéro actuel</a></li>
+                            <li><a href="revue.html#archives">Archives</a></li>
+                            <li><a href="revue.html#contribute">Comment contribuer</a></li>
+                            <li><a href="revue.html#editorial">Comité éditorial</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="formations.html" class="dropdown-toggle">Formations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="formations.html#programs">Programmes de formation</a></li>
+                            <li><a href="formations.html#workshops">Ateliers</a></li>
+                            <li><a href="formations.html#calendar">Calendrier</a></li>
+                            <li><a href="formations.html#registration">Inscription</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="resources.html" class="dropdown-toggle">Ressources</a>
+                        <ul class="dropdown-menu">
+                            <li><div class="dropdown-section-header">Documentation</div></li>
+                            <li><a href="resources.html#publications">Publications</a></li>
+                            <li><a href="resources.html#reports">Rapports</a></li>
+                            <li><a href="resources.html#guides">Guides pratiques</a></li>
+                            <li><div class="dropdown-section-header">Média</div></li>
+                            <li><a href="resources.html#multimedia">Multimédia</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-separator"></li>
+                    
                     <li><a href="testimonials.html" class="active">Témoignages</a></li>
                     <li><a href="civil-society.html">Société civile</a></li>
+                    <li><a href="gallery.html">Galerie</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="language-switch">
+                <a href="#" class="active">FR</a>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Témoignages</h1>
-            <p>Des voix pour les droits, des histoires qui inspirent</p>
-            <div class="breadcrumb">
-                <a href="index.html">Accueil</a>
-                <span>/</span>
-                <span>Témoignages</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials-intro">
-        <div class="container">
-            <div class="intro-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2>Pourquoi les témoignages sont importants</h2>
-                <p>Les témoignages sont des outils puissants pour la promotion et la défense des droits. Ils donnent un visage humain aux enjeux, illustrent l'impact concret des violations, et mobilisent l'action.</p>
-                <p>À travers ces récits, nous mettons en lumière à la fois les défis auxquels sont confrontées les personnes dans leur quête de justice et de dignité, mais aussi les succès et les exemples inspirants de résilience et de changement positif.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-testimonial" style="padding: 100px 0; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/testimonials-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; color: white;">
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="featured-quote" style="max-width: 800px; margin: 0 auto; text-align: center; background-color: rgba(0,0,0,0.3); padding: 40px; border-radius: 15px; backdrop-filter: blur(5px); box-shadow: 0 15px 30px rgba(0,0,0,0.2);">
-                <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 30px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
-                    <i class="fas fa-quote-left" style="font-size: 32px; color: white;"></i>
-                </div>
-                <blockquote style="font-size: 24px; line-height: 1.7; font-style: italic; margin: 0 0 30px; letter-spacing: 0.5px; text-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Grâce à l'assistance juridique de la Fondation, j'ai pu faire valoir mes droits et obtenir justice. Ce n'est pas seulement ma vie qui a changé, mais aussi celle de toute ma communauté qui a pris conscience de ses droits.
-                </blockquote>
-                <div class="testimonial-author" style="position: relative; display: inline-block;">
-                    <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Amina K.</h3>
-                    <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8);">Activiste communautaire, Tlemcen</p>
-                    <div style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials-categories" style="padding: 80px 0; background-color: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 40px; font-size: 32px; position: relative; padding-bottom: 15px;">
-                Catégories de témoignages
-                <span style="display: block; width: 60px; height: 4px; background-color: var(--primary-color); margin: 15px auto 0;"></span>
-            </h2>
-            <div class="categories-tabs" style="display: flex; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; background-color: white; padding: 15px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 800px; margin-left: auto; margin-right: auto;">
-                <a href="#all" class="tab active" style="padding: 12px 25px; margin: 0 5px 10px; text-decoration: none; color: white; background-color: var(--primary-color); border-radius: 25px; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">Tous</a>
-                <a href="#rights-defenders" class="tab" style="padding: 12px 25px; margin: 0 5px 10px; text-decoration: none; color: #555; background-color: transparent; border-radius: 25px; transition: all 0.3s ease; font-weight: 500;">Défenseurs des droits</a>
-                <a href="#women" class="tab" style="padding: 12px 25px; margin: 0 5px 10px; text-decoration: none; color: #555; background-color: transparent; border-radius: 25px; transition: all 0.3s ease; font-weight: 500;">Femmes</a>
-                <a href="#youth" class="tab" style="padding: 12px 25px; margin: 0 5px 10px; text-decoration: none; color: #555; background-color: transparent; border-radius: 25px; transition: all 0.3s ease; font-weight: 500;">Jeunes</a>
-                <a href="#communities" class="tab" style="padding: 12px 25px; margin: 0 5px 10px; text-decoration: none; color: #555; background-color: transparent; border-radius: 25px; transition: all 0.3s ease; font-weight: 500;">Communautés</a>
+    <main id="content">
+        <section class="hero animated-bg" style="position: relative; overflow: hidden;">
+            <!-- Background with overlay -->
+            <div class="hero-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6;">
+                <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(56, 148, 182, 0.85), rgba(243, 146, 7, 0.85)); z-index: 1;"></div>
+                <img src="img/real/testimonials-bg.jpg" alt="" class="fallback-bg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;" onerror="this.src='img/testimonials-intro.jpg';">
             </div>
             
-            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; transition: all 0.3s ease;">
-                <div class="testimonial-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="testimonial-header" style="padding: 25px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); position: relative; color: white;">
-                        <div class="testimonial-image" style="width: 90px; height: 90px; border-radius: 50%; background-color: #fff; position: absolute; top: 20px; left: 20px; background-image: url('img/team-1.jpg'); background-size: cover; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
-                        <div style="margin-left: 110px;">
-                            <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Mohammed L.</h3>
-                            <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">Avocat, Alger</p>
-                        </div>
+            <div class="container" style="position: relative; z-index: 2; padding: 100px 0;">
+                <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                        Témoignages
+                    </h1>
+                    
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                        Des voix pour les droits, des histoires qui inspirent
+                    </p>
+                    
+                    <div class="hero-buttons animate-fadeIn" style="display: flex; gap: 20px; justify-content: center; margin-top: 30px; animation-delay: 0.5s;">
+                        <a href="#all-testimonials" class="btn-primary" style="background: white; color: var(--primary-color); padding: 15px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+                            <i class="fas fa-comments"></i>
+                            <span>Voir les témoignages</span>
+                        </a>
+                        <a href="#partagez" class="btn-outline" style="background: transparent; color: white; padding: 15px 35px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.3); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;">
+                            <i class="fas fa-share"></i>
+                            <span>Partagez votre histoire</span>
+                        </a>
                     </div>
-                    <div class="testimonial-content" style="padding: 25px; position: relative;">
-                        <div style="position: absolute; top: -15px; right: 30px; width: 30px; height: 30px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p style="font-style: italic; font-size: 16px; line-height: 1.6; color: #444;">"Les formations juridiques de la Fondation m'ont permis d'acquérir des compétences pratiques que l'université ne m'avait pas enseignées. J'ai notamment appris à utiliser les mécanismes internationaux de protection des droits, ce qui a considérablement renforcé mon efficacité dans la défense de mes clients."</p>
-                        <div class="testimonial-meta" style="margin-top: 20px; font-size: 14px; color: #666; display: flex; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="background-color: #f5f5f5; padding: 5px 10px; border-radius: 4px; margin-right: 15px;"><i class="fas fa-tag" style="color: var(--primary-color); margin-right: 5px;"></i> Défenseur des droits</span>
-                            <span><i class="fas fa-calendar-alt" style="color: var(--secondary-color); margin-right: 5px;"></i> Juillet 2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="testimonial-header" style="padding: 25px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); position: relative; color: white;">
-                        <div class="testimonial-image" style="width: 90px; height: 90px; border-radius: 50%; background-color: #fff; position: absolute; top: 20px; left: 20px; background-image: url('img/team-2.jpg'); background-size: cover; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
-                        <div style="margin-left: 110px;">
-                            <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Karima B.</h3>
-                            <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">Enseignante, Constantine</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content" style="padding: 25px; position: relative;">
-                        <div style="position: absolute; top: -15px; right: 30px; width: 30px; height: 30px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p style="font-style: italic; font-size: 16px; line-height: 1.6; color: #444;">"Après avoir participé à un atelier sur les droits des femmes, j'ai pris conscience de l'importance d'éduquer mes élèves sur ces questions. J'ai intégré ces connaissances dans mon enseignement et je vois déjà un changement de mentalité chez les jeunes. C'est un petit pas, mais significatif."</p>
-                        <div class="testimonial-meta" style="margin-top: 20px; font-size: 14px; color: #666; display: flex; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="background-color: #f5f5f5; padding: 5px 10px; border-radius: 4px; margin-right: 15px;"><i class="fas fa-tag" style="color: var(--primary-color); margin-right: 5px;"></i> Femmes</span>
-                            <span><i class="fas fa-calendar-alt" style="color: var(--secondary-color); margin-right: 5px;"></i> Mai 2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="testimonial-header" style="padding: 25px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); position: relative; color: white;">
-                        <div class="testimonial-image" style="width: 90px; height: 90px; border-radius: 50%; background-color: #fff; position: absolute; top: 20px; left: 20px; background-image: url('img/team-3.jpg'); background-size: cover; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
-                        <div style="margin-left: 110px;">
-                            <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Yacine A.</h3>
-                            <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">Étudiant, Oran</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content" style="padding: 25px; position: relative;">
-                        <div style="position: absolute; top: -15px; right: 30px; width: 30px; height: 30px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p style="font-style: italic; font-size: 16px; line-height: 1.6; color: #444;">"La Fondation m'a offert l'opportunité de devenir ambassadeur des droits dans mon université. Ce rôle m'a permis de sensibiliser mes camarades et d'organiser des débats sur des sujets cruciaux comme la liberté d'expression et l'égalité des chances. C'est une expérience qui a transformé ma vision de l'engagement citoyen."</p>
-                        <div class="testimonial-meta" style="margin-top: 20px; font-size: 14px; color: #666; display: flex; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="background-color: #f5f5f5; padding: 5px 10px; border-radius: 4px; margin-right: 15px;"><i class="fas fa-tag" style="color: var(--primary-color); margin-right: 5px;"></i> Jeunes</span>
-                            <span><i class="fas fa-calendar-alt" style="color: var(--secondary-color); margin-right: 5px;"></i> Avril 2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="testimonial-header" style="padding: 25px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); position: relative; color: white;">
-                        <div class="testimonial-image" style="width: 90px; height: 90px; border-radius: 50%; background-color: #fff; position: absolute; top: 20px; left: 20px; background-image: url('img/team-4.jpg'); background-size: cover; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
-                        <div style="margin-left: 110px;">
-                            <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Farid M.</h3>
-                            <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">Leader communautaire, Béjaïa</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content" style="padding: 25px; position: relative;">
-                        <div style="position: absolute; top: -15px; right: 30px; width: 30px; height: 30px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p style="font-style: italic; font-size: 16px; line-height: 1.6; color: #444;">"Le soutien juridique et technique de la Fondation a été crucial pour notre communauté dans notre combat contre un projet industriel qui menaçait notre environnement. Grâce à leur aide, nous avons pu documenter les impacts négatifs potentiels et faire entendre notre voix aux autorités."</p>
-                        <div class="testimonial-meta" style="margin-top: 20px; font-size: 14px; color: #666; display: flex; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="background-color: #f5f5f5; padding: 5px 10px; border-radius: 4px; margin-right: 15px;"><i class="fas fa-tag" style="color: var(--primary-color); margin-right: 5px;"></i> Communautés</span>
-                            <span><i class="fas fa-calendar-alt" style="color: var(--secondary-color); margin-right: 5px;"></i> Mars 2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="testimonial-header" style="padding: 25px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); position: relative; color: white;">
-                        <div class="testimonial-image" style="width: 90px; height: 90px; border-radius: 50%; background-color: #fff; position: absolute; top: 20px; left: 20px; background-image: url('img/team-1.jpg'); background-size: cover; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
-                        <div style="margin-left: 110px;">
-                            <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Samia T.</h3>
-                            <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">Journaliste, Alger</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content" style="padding: 25px; position: relative;">
-                        <div style="position: absolute; top: -15px; right: 30px; width: 30px; height: 30px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p style="font-style: italic; font-size: 16px; line-height: 1.6; color: #444;">"La formation sur le journalisme et les droits humains m'a donné des outils précieux pour couvrir des sujets sensibles de manière éthique. J'ai acquis une méthodologie rigoureuse pour vérifier les faits et protéger mes sources, ce qui est essentiel dans notre contexte."</p>
-                        <div class="testimonial-meta" style="margin-top: 20px; font-size: 14px; color: #666; display: flex; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="background-color: #f5f5f5; padding: 5px 10px; border-radius: 4px; margin-right: 15px;"><i class="fas fa-tag" style="color: var(--primary-color); margin-right: 5px;"></i> Défenseur des droits</span>
-                            <span><i class="fas fa-calendar-alt" style="color: var(--secondary-color); margin-right: 5px;"></i> Février 2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="testimonial-header" style="padding: 25px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); position: relative; color: white;">
-                        <div class="testimonial-image" style="width: 90px; height: 90px; border-radius: 50%; background-color: #fff; position: absolute; top: 20px; left: 20px; background-image: url('img/team-2.jpg'); background-size: cover; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
-                        <div style="margin-left: 110px;">
-                            <h3 style="margin: 0; font-size: 22px; font-weight: 600;">Nadia H.</h3>
-                            <p style="margin: 5px 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">Entrepreneure sociale, Annaba</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content" style="padding: 25px; position: relative;">
-                        <div style="position: absolute; top: -15px; right: 30px; width: 30px; height: 30px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p style="font-style: italic; font-size: 16px; line-height: 1.6; color: #444;">"Le programme de mentorat pour les femmes entrepreneurs de la Fondation m'a aidée à développer mon projet tout en comprenant mes droits. J'ai pu créer une entreprise socialement responsable qui emploie aujourd'hui 15 femmes de ma région et contribue à leur autonomisation économique."</p>
-                        <div class="testimonial-meta" style="margin-top: 20px; font-size: 14px; color: #666; display: flex; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="background-color: #f5f5f5; padding: 5px 10px; border-radius: 4px; margin-right: 15px;"><i class="fas fa-tag" style="color: var(--primary-color); margin-right: 5px;"></i> Femmes</span>
-                            <span><i class="fas fa-calendar-alt" style="color: var(--secondary-color); margin-right: 5px;"></i> Janvier 2023</span>
-                        </div>
+                    
+                    <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.7s;">
+                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <span style="opacity: 0.8;">/</span>
+                        <span style="font-weight: 600;">Témoignages</span>
                     </div>
                 </div>
             </div>
             
-            <div class="pagination" style="display: flex; justify-content: center; margin-top: 50px;">
-                <a href="#" class="active" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; line-height: 45px; text-align: center; margin: 0 5px; border-radius: 50%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); color: white; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; font-weight: 500;">1</a>
-                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; line-height: 45px; text-align: center; margin: 0 5px; border-radius: 50%; background-color: white; color: #333; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; font-weight: 500;">2</a>
-                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; line-height: 45px; text-align: center; margin: 0 5px; border-radius: 50%; background-color: white; color: #333; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; font-weight: 500;">3</a>
-                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; line-height: 45px; text-align: center; margin: 0 5px; border-radius: 50%; background-color: white; color: #333; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; font-weight: 500;"><i class="fas fa-angle-right"></i></a>
+            <!-- Curved Shape Divider -->
+            <div class="shape-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 70px; fill: white;">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                </svg>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="share-story" style="padding: 80px 0; background-color: var(--primary-color); color: white; text-align: center;">
-        <div class="container">
-            <h2>Partagez votre histoire</h2>
-            <p style="max-width: 700px; margin: 0 auto 20px;">Votre témoignage peut inspirer d'autres personnes et contribuer à faire avancer la cause des droits. Si vous souhaitez partager votre expérience, nous serions honorés de vous entendre.</p>
-            <a href="#" class="btn btn-light" style="display: inline-block; background-color: white; color: var(--primary-color); padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: 500;">Soumettre mon témoignage</a>
-        </div>
-    </section>
-
-    <section class="video-testimonials" style="padding: 100px 0; background-color: #f8f9fa; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8f9fa; opacity: 0.3;"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 50px; font-size: 32px; position: relative; padding-bottom: 15px;">
-                Témoignages vidéo
-                <span style="display: block; width: 60px; height: 4px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); margin: 15px auto 0;"></span>
-            </h2>
-            <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
-                <div class="video-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="video-thumbnail" style="height: 220px; background-color: #333; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('img/placeholder_images/gallery1.jpg'); background-size: cover; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); transition: all 0.3s ease;"></div>
-                        <a href="#" class="play-button" style="width: 70px; height: 70px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);">
-                            <i class="fas fa-play" style="color: white; font-size: 22px; margin-left: 5px;"></i>
-                        </a>
-                        <div style="position: absolute; top: 15px; right: 15px; background-color: rgba(0,0,0,0.6); color: white; padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 2;">
-                            <i class="fas fa-clock" style="margin-right: 5px;"></i> 5:24
+        <section class="testimonials-intro" id="about-testimonials" style="position: relative; padding: 100px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); overflow: hidden;">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAgMzBtLTI4IDBhMjggMjggMCAxIDAgNTYgMCAyOCAyOCAwIDEgMC01NiAwIiBzdHJva2U9InJnYmEoNTYsIDE0OCwgMTgyLCAwLjEpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMTggMGExOCAxOCAwIDEgMCAzNiAwIDE4IDE4IDAgMSAwLTM2IDAiIHN0cm9rZT0icmdiYSgyNDMsIDE0NiwgNywgMC4xNSkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9nPjwvc3ZnPg=='); background-position: center; opacity: 0.6; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="intro-header text-center" style="text-align: center; margin-bottom: 50px;">
+                    <span class="intro-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #3894b6; letter-spacing: 2px; display: block; margin-bottom: 15px;">Des histoires inspirantes</span>
+                    <h2 class="section-title">L'impact de notre travail</h2>
+                </div>
+                
+                <div class="intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                    <div class="intro-content" style="opacity: 1; transform: none;">
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color); display: block !important; visibility: visible !important;">Les <strong style="color: var(--primary-color);">témoignages</strong> présentés sur cette page sont partagés par des individus et organisations qui ont bénéficié de notre soutien ou qui ont collaboré avec nous dans le cadre de nos différentes activités.</p>
+                        
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color); display: block !important; visibility: visible !important;">Ces récits personnels illustrent l'impact concret de notre travail sur le terrain et mettent en lumière les expériences vécues par ceux qui s'engagent pour la défense et la promotion des droits.</p>
+                        
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color); display: block !important; visibility: visible !important;">Nous croyons que ces témoignages constituent une ressource précieuse pour comprendre les enjeux réels auxquels sont confrontés les défenseurs des droits et pour inspirer d'autres personnes à s'engager dans cette cause.</p>
+                        
+                        <div class="testimonial-stats" style="margin-top: 30px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.08);">
+                            <h3 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--primary-color);">Impact en chiffres</h3>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: #3894b6;">120+</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Témoignages recueillis</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color);">35+</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Organisations</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">15</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Wilayas représentées</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="video-content" style="padding: 25px;">
-                        <h3 style="margin: 0 0 15px; font-size: 20px; color: #333;">L'impact des programmes d'assistance juridique</h3>
-                        <p style="margin: 0 0 20px; color: #666; line-height: 1.6;">Ahmed raconte comment l'assistance juridique l'a aidé à obtenir justice après une violation de ses droits au travail.</p>
-                        <div class="video-meta" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="color: var(--primary-color);"><i class="fas fa-user"></i> Ahmed K.</span>
-                            <span style="color: #888;"><i class="fas fa-calendar-alt"></i> Décembre 2022</span>
+                    
+                    <div class="intro-image-container" style="position: relative;">
+                        <div class="intro-image-frame" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; z-index: 1;">
+                            <img src="img/testimonials-intro.jpg" alt="Témoignages de bénéficiaires et partenaires" style="width: 100%; height: auto; display: block;" onerror="this.src='img/real/people-discussing.jpg';" />
+                        </div>
+                        
+                        <!-- Floating element -->
+                        <div class="floating-card" style="position: absolute; bottom: -30px; right: -30px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); z-index: 2; max-width: 250px;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                                <div style="width: 60px; height: 60px; background: rgba(243, 146, 7, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-quote-right" style="color: var(--secondary-color); font-size: 1.8rem;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.2rem; color: var(--text-color);">Témoignage vedette</h4>
+                                    <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--text-muted);">Mis en avant ce mois-ci</p>
+                                </div>
+                            </div>
+                            <div style="background: rgba(243, 146, 7, 0.05); padding: 15px; border-radius: 10px; border-left: 3px solid var(--secondary-color);">
+                                <p style="margin: 0; font-weight: 600; color: var(--text-color);">« La formation a changé ma vision du plaidoyer... »</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative elements -->
+                        <div style="position: absolute; top: -20px; left: -20px; width: 80px; height: 80px; background: rgba(56, 148, 182, 0.2); border-radius: 50%; z-index: 0;"></div>
+                        <div style="position: absolute; bottom: 30%; right: -40px; width: 60px; height: 60px; background: rgba(243, 146, 7, 0.15); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; z-index: 0;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-testimonials" id="featured" style="padding: 100px 0; background: white; position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="featured-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 15%; right: 5%; width: 250px; height: 250px; border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; background: rgba(56, 148, 182, 0.03);"></div>
+                <div style="position: absolute; bottom: 10%; left: 5%; width: 200px; height: 200px; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; background: rgba(243, 146, 7, 0.03);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="section-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #3894b6; letter-spacing: 2px; display: block; margin-bottom: 15px;">Histoires marquantes</span>
+                    <h2 class="section-title">Témoignages en vedette</h2>
+                    <p style="font-size: 1.1rem; max-width: 700px; margin: 20px auto 0; color: var(--text-color);">Découvrez les témoignages de ceux qui ont bénéficié de notre soutien ou collaboré avec nous</p>
+                </div>
+                
+                <div class="testimonials-grid reveal-up" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px;">
+                    <!-- Témoignage 1 -->
+                    <div class="testimonial-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); height: 100%; display: flex; flex-direction: column; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(to right, #3894b6, var(--secondary-color));"></div>
+                        
+                        <div class="testimonial-content" style="padding: 35px; position: relative; flex-grow: 1; display: flex; flex-direction: column;">
+                            <!-- Icône de citation -->
+                            <div class="quote-mark quote-left">"</div>
+                            <div class="quote-mark quote-right">"</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color); margin-bottom: 25px; font-style: italic; position: relative; z-index: 1; flex-grow: 1;">La formation sur les techniques de plaidoyer m'a fourni les outils dont j'avais besoin pour mener une campagne efficace au niveau local. Grâce aux compétences acquises, notre association a réussi à convaincre les autorités locales de créer un comité consultatif incluant des femmes issues de la société civile.</p>
+                            
+                            <div class="testimonial-author" style="display: flex; align-items: center; margin-top: 15px;">
+                                <div class="author-image" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <img src="img/real/testimonial-1.jpg" alt="Fatima B." style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/60x60/3894b6/FFFFFF?text=FB';">
+                                </div>
+                                <div class="author-info">
+                                    <h4 style="margin: 0 0 5px; font-size: 1.1rem; color: var(--text-color);">Fatima B.</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Présidente d'association, Tlemcen</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-category" style="position: absolute; top: 20px; right: 20px; background: rgba(56, 148, 182, 0.1); color: #3894b6; padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-users"></i> Formation
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Témoignage 2 -->
+                    <div class="testimonial-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); height: 100%; display: flex; flex-direction: column; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(to right, var(--primary-color), #3894b6);"></div>
+                        
+                        <div class="testimonial-content" style="padding: 35px; position: relative; flex-grow: 1; display: flex; flex-direction: column;">
+                            <!-- Icône de citation -->
+                            <div class="quote-mark quote-left">"</div>
+                            <div class="quote-mark quote-right">"</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color); margin-bottom: 25px; font-style: italic; position: relative; z-index: 1; flex-grow: 1;">Le soutien juridique de la Fondation a été décisif dans notre affaire. Leur expertise et leur accompagnement nous ont permis de constituer un dossier solide pour défendre les droits des habitants face à un projet polluant. Nous avons obtenu gain de cause et protégé notre environnement.</p>
+                            
+                            <div class="testimonial-author" style="display: flex; align-items: center; margin-top: 15px;">
+                                <div class="author-image" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <img src="img/real/testimonial-2.jpg" alt="Ahmed M." style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/60x60/3CB496/FFFFFF?text=AM';">
+                                </div>
+                                <div class="author-info">
+                                    <h4 style="margin: 0 0 5px; font-size: 1.1rem; color: var(--text-color);">Ahmed M.</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Collectif citoyen, Bejaia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-category" style="position: absolute; top: 20px; right: 20px; background: rgba(60, 180, 150, 0.1); color: var(--primary-color); padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-balance-scale"></i> Soutien juridique
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Témoignage 3 -->
+                    <div class="testimonial-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); height: 100%; display: flex; flex-direction: column; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(to right, var(--secondary-color), var(--primary-color));"></div>
+                        
+                        <div class="testimonial-content" style="padding: 35px; position: relative; flex-grow: 1; display: flex; flex-direction: column;">
+                            <!-- Icône de citation -->
+                            <div class="quote-mark quote-left">"</div>
+                            <div class="quote-mark quote-right">"</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color); margin-bottom: 25px; font-style: italic; position: relative; z-index: 1; flex-grow: 1;">En tant que jeune journaliste, les ressources et l'accompagnement de la Fondation m'ont aidé à développer une approche basée sur les droits dans mes reportages. J'ai pu réaliser une série d'articles sur l'accès à l'éducation dans les zones rurales qui a été primée au niveau national.</p>
+                            
+                            <div class="testimonial-author" style="display: flex; align-items: center; margin-top: 15px;">
+                                <div class="author-image" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <img src="img/real/testimonial-3.jpg" alt="Yasmine K." style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/60x60/F39207/FFFFFF?text=YK';">
+                                </div>
+                                <div class="author-info">
+                                    <h4 style="margin: 0 0 5px; font-size: 1.1rem; color: var(--text-color);">Yasmine K.</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Journaliste, Oran</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-category" style="position: absolute; top: 20px; right: 20px; background: rgba(243, 146, 7, 0.1); color: var(--secondary-color); padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-newspaper"></i> Média
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="video-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="video-thumbnail" style="height: 220px; background-color: #333; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('img/placeholder_images/gallery2.jpg'); background-size: cover; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); transition: all 0.3s ease;"></div>
-                        <a href="#" class="play-button" style="width: 70px; height: 70px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);">
-                            <i class="fas fa-play" style="color: white; font-size: 22px; margin-left: 5px;"></i>
-                        </a>
-                        <div style="position: absolute; top: 15px; right: 15px; background-color: rgba(0,0,0,0.6); color: white; padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 2;">
-                            <i class="fas fa-clock" style="margin-right: 5px;"></i> 8:17
-                        </div>
+                <div class="view-all-container" style="text-align: center; margin-top: 50px;">
+                    <a href="#all-testimonials" class="btn-view-all" style="display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #3894b6; padding: 12px 25px; border: 2px solid #3894b6; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                        <span>Voir tous les témoignages</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-filter" id="all-testimonials" style="padding: 80px 0; background: linear-gradient(135deg, rgba(245, 247, 250, 1) 0%, rgba(240, 245, 255, 1) 100%); position: relative; overflow: hidden;">
+            <!-- Background elements -->
+            <div class="filter-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 20%; left: 5%; width: 180px; height: 180px; border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%; background: rgba(56, 148, 182, 0.05);"></div>
+                <div style="position: absolute; bottom: 10%; right: 8%; width: 220px; height: 220px; border-radius: 50% 50% 30% 70% / 30% 50% 50% 70%; background: rgba(243, 146, 7, 0.05);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="section-header text-center" style="text-align: center; margin-bottom: 40px;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Explorer par catégorie</span>
+                    <h2 class="section-title" style="margin-bottom: 15px;">Tous nos témoignages</h2>
+                    <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--text-color);">Filtrez les témoignages par catégorie pour découvrir des expériences qui vous intéressent</p>
+                </div>
+                
+                <div class="filter-pills reveal-up" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 50px;">
+                    <div class="filter-pill active" style="background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-th-large"></i>
+                        <span>Tous</span>
                     </div>
-                    <div class="video-content" style="padding: 25px;">
-                        <h3 style="margin: 0 0 15px; font-size: 20px; color: #333;">Témoignages de jeunes activistes</h3>
-                        <p style="margin: 0 0 20px; color: #666; line-height: 1.6;">Trois jeunes activistes partagent leur parcours et comment ils ont été inspirés à s'engager pour les droits humains.</p>
-                        <div class="video-meta" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="color: var(--primary-color);"><i class="fas fa-users"></i> Jeunes Activistes</span>
-                            <span style="color: #888;"><i class="fas fa-calendar-alt"></i> Octobre 2022</span>
-                        </div>
+                    <div class="filter-pill" style="background: white; color: var(--text-color); padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-users"></i>
+                        <span>Formations</span>
+                    </div>
+                    <div class="filter-pill" style="background: white; color: var(--text-color); padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Soutien juridique</span>
+                    </div>
+                    <div class="filter-pill" style="background: white; color: var(--text-color); padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Médias</span>
+                    </div>
+                    <div class="filter-pill" style="background: white; color: var(--text-color); padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Partenariats</span>
+                    </div>
+                    <div class="filter-pill" style="background: white; color: var(--text-color); padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-book-reader"></i>
+                        <span>Ressources</span>
                     </div>
                 </div>
                 
-                <div class="video-card" style="background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; transform: translateY(0);">
-                    <div class="video-thumbnail" style="height: 220px; background-color: #333; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('img/placeholder_images/gallery3.jpg'); background-size: cover; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); transition: all 0.3s ease;"></div>
-                        <a href="#" class="play-button" style="width: 70px; height: 70px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);">
-                            <i class="fas fa-play" style="color: white; font-size: 22px; margin-left: 5px;"></i>
-                        </a>
-                        <div style="position: absolute; top: 15px; right: 15px; background-color: rgba(0,0,0,0.6); color: white; padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 2;">
-                            <i class="fas fa-clock" style="margin-right: 5px;"></i> 12:43
+                <div class="all-testimonials-grid reveal-up" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
+                    <!-- Premiers témoignages -->
+                    <!-- Témoignage 4 -->
+                    <div class="testimonial-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); height: 100%; display: flex; flex-direction: column; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(to right, #3894b6, #4b7bd3);"></div>
+                        
+                        <div class="testimonial-content" style="padding: 35px; position: relative; flex-grow: 1; display: flex; flex-direction: column;">
+                            <!-- Icône de citation -->
+                            <div class="quote-mark quote-left">"</div>
+                            <div class="quote-mark quote-right">"</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color); margin-bottom: 25px; font-style: italic; position: relative; z-index: 1; flex-grow: 1;">Le guide pratique sur les droits des femmes a été un outil indispensable pour notre association. Nous l'utilisons maintenant régulièrement dans nos sessions de sensibilisation dans les zones rurales, et il a considérablement amélioré notre impact.</p>
+                            
+                            <div class="testimonial-author" style="display: flex; align-items: center; margin-top: 15px;">
+                                <div class="author-image" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <img src="img/real/testimonial-4.jpg" alt="Naima H." style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/60x60/4b7bd3/FFFFFF?text=NH';">
+                                </div>
+                                <div class="author-info">
+                                    <h4 style="margin: 0 0 5px; font-size: 1.1rem; color: var(--text-color);">Naima H.</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Association pour les droits des femmes, Sétif</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-category" style="position: absolute; top: 20px; right: 20px; background: rgba(75, 123, 211, 0.1); color: #4b7bd3; padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-book-reader"></i> Ressources
+                            </div>
                         </div>
                     </div>
-                    <div class="video-content" style="padding: 25px;">
-                        <h3 style="margin: 0 0 15px; font-size: 20px; color: #333;">Voix des femmes rurales</h3>
-                        <p style="margin: 0 0 20px; color: #666; line-height: 1.6;">Un documentaire sur l'impact des programmes de sensibilisation aux droits dans les communautés rurales du sud algérien.</p>
-                        <div class="video-meta" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
-                            <span style="color: var(--primary-color);"><i class="fas fa-female"></i> Femmes Rurales</span>
-                            <span style="color: #888;"><i class="fas fa-calendar-alt"></i> Août 2022</span>
+                    
+                    <!-- Témoignage 5 -->
+                    <div class="testimonial-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); height: 100%; display: flex; flex-direction: column; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></div>
+                        
+                        <div class="testimonial-content" style="padding: 35px; position: relative; flex-grow: 1; display: flex; flex-direction: column;">
+                            <!-- Icône de citation -->
+                            <div class="quote-mark quote-left">"</div>
+                            <div class="quote-mark quote-right">"</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color); margin-bottom: 25px; font-style: italic; position: relative; z-index: 1; flex-grow: 1;">Notre partenariat avec la Fondation nous a permis d'étendre notre programme d'aide juridique à trois nouvelles wilayas. L'expertise et le réseau qu'ils ont partagés ont été essentiels pour adapter notre approche aux besoins locaux.</p>
+                            
+                            <div class="testimonial-author" style="display: flex; align-items: center; margin-top: 15px;">
+                                <div class="author-image" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <img src="img/real/testimonial-5.jpg" alt="Karim L." style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/60x60/3CB496/FFFFFF?text=KL';">
+                                </div>
+                                <div class="author-info">
+                                    <h4 style="margin: 0 0 5px; font-size: 1.1rem; color: var(--text-color);">Karim L.</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Directeur d'ONG nationale, Alger</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-category" style="position: absolute; top: 20px; right: 20px; background: rgba(243, 146, 7, 0.1); color: var(--secondary-color); padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-hands-helping"></i> Partenariat
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Témoignage 6 -->
+                    <div class="testimonial-card" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); height: 100%; display: flex; flex-direction: column; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(to right, #3894b6, var(--primary-color));"></div>
+                        
+                        <div class="testimonial-content" style="padding: 35px; position: relative; flex-grow: 1; display: flex; flex-direction: column;">
+                            <!-- Icône de citation -->
+                            <div class="quote-mark quote-left">"</div>
+                            <div class="quote-mark quote-right">"</div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color); margin-bottom: 25px; font-style: italic; position: relative; z-index: 1; flex-grow: 1;">En tant qu'avocat débutant, j'ai pu bénéficier du programme de mentorat de la Fondation. Cette expérience m'a donné les compétences et la confiance nécessaires pour prendre en charge des affaires complexes liées aux droits fondamentaux.</p>
+                            
+                            <div class="testimonial-author" style="display: flex; align-items: center; margin-top: 15px;">
+                                <div class="author-image" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <img src="img/real/testimonial-6.jpg" alt="Sofiane R." style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/60x60/3894b6/FFFFFF?text=SR';">
+                                </div>
+                                <div class="author-info">
+                                    <h4 style="margin: 0 0 5px; font-size: 1.1rem; color: var(--text-color);">Sofiane R.</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Avocat, Constantine</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-category" style="position: absolute; top: 20px; right: 20px; background: rgba(56, 148, 182, 0.1); color: #3894b6; padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-balance-scale"></i> Soutien juridique
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reste des témoignages à suivre -->
+                    
+                </div>
+                
+                <div class="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 50px;">
+                    <a href="#" class="active" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--primary-color); color: white; border-radius: 50%; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">1</a>
+                    <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; color: var(--text-color); border-radius: 50%; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">2</a>
+                    <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; color: var(--text-color); border-radius: 50%; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">3</a>
+                    <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; color: var(--text-color); border-radius: 50%; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">4</a>
+                    <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; color: var(--text-color); border-radius: 50%; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.05);"><i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="share-testimonial" id="partagez" style="padding: 100px 0; background: white; position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="share-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 15%; left: 5%; width: 250px; height: 250px; border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; background: rgba(243, 146, 7, 0.03);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 200px; height: 200px; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; background: rgba(56, 148, 182, 0.03);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="share-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                    <div class="share-content reveal-left" style="opacity: 1 !important; transform: none !important;">
+                        <span class="share-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Participez</span>
+                        <h2 class="section-title" style="margin-bottom: 20px;">Partagez votre histoire</h2>
+                        
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color);">Vous avez bénéficié des activités de la Fondation pour la promotion des droits ou collaboré avec nous ? Nous vous invitons à partager votre expérience.</p>
+                        
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color);">Votre témoignage est précieux pour illustrer l'impact de notre travail et inspirer d'autres personnes à s'engager pour la défense des droits.</p>
+                        
+                        <div class="share-info" style="background: rgba(243, 146, 7, 0.05); border-left: 3px solid var(--secondary-color); padding: 20px; border-radius: 10px; margin: 30px 0;">
+                            <h3 style="font-size: 1.2rem; color: var(--text-color); margin-bottom: 10px;">Comment participer</h3>
+                            <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.6;">
+                                <li style="margin-bottom: 10px;">Remplissez le formulaire ci-contre avec vos coordonnées et votre témoignage</li>
+                                <li style="margin-bottom: 10px;">Notre équipe vous contactera pour vérifier les informations</li>
+                                <li>Après votre approbation, votre témoignage sera publié sur notre site</li>
+                            </ul>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">Note : Nous respectons votre vie privée. Si vous le souhaitez, votre témoignage peut être anonymisé ou publié sous un pseudonyme.</p>
+                    </div>
+                    
+                    <div class="share-form-container reveal-right" style="opacity: 1 !important; transform: none !important;">
+                        <div class="share-form" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08);">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px; text-align: center;">Formulaire de témoignage</h3>
+                            
+                            <form class="testimonial-form" style="display: flex; flex-direction: column; gap: 20px;">
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label for="name" style="font-weight: 600; color: var(--text-color);">Nom et prénom</label>
+                                    <input type="text" id="name" placeholder="Votre nom complet" style="width: 100%; padding: 15px; border: 1px solid #e5e9f2; border-radius: 10px; font-size: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+                                </div>
+                                
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label for="organization" style="font-weight: 600; color: var(--text-color);">Organisation (si applicable)</label>
+                                    <input type="text" id="organization" placeholder="Nom de votre organisation" style="width: 100%; padding: 15px; border: 1px solid #e5e9f2; border-radius: 10px; font-size: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+                                </div>
+                                
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label for="email" style="font-weight: 600; color: var(--text-color);">Email</label>
+                                    <input type="email" id="email" placeholder="Votre adresse email" style="width: 100%; padding: 15px; border: 1px solid #e5e9f2; border-radius: 10px; font-size: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+                                </div>
+                                
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label for="category" style="font-weight: 600; color: var(--text-color);">Catégorie de témoignage</label>
+                                    <select id="category" style="width: 100%; padding: 15px; border: 1px solid #e5e9f2; border-radius: 10px; font-size: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03); appearance: none; background-repeat: no-repeat; background-position: right 15px center; background-color: white;">
+                                        <option value="">Sélectionnez une catégorie</option>
+                                        <option value="formation">Formation</option>
+                                        <option value="juridique">Soutien juridique</option>
+                                        <option value="media">Média</option>
+                                        <option value="partnership">Partenariat</option>
+                                        <option value="resources">Ressources</option>
+                                        <option value="other">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label for="testimonial" style="font-weight: 600; color: var(--text-color);">Votre témoignage</label>
+                                    <textarea id="testimonial" rows="5" placeholder="Partagez votre expérience ici..." style="width: 100%; padding: 15px; border: 1px solid #e5e9f2; border-radius: 10px; font-size: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03); resize: vertical;"></textarea>
+                                </div>
+                                
+                                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="checkbox" id="consent" style="width: 20px; height: 20px; accent-color: var(--primary-color);">
+                                    <label for="consent" style="color: var(--text-muted); font-size: 0.9rem;">J'accepte que mon témoignage soit publié sur le site de la Fondation</label>
+                                </div>
+                                
+                                <button type="submit" class="btn-submit" style="background: linear-gradient(135deg, var(--secondary-color), #3894b6); color: white; border: none; padding: 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 10px 25px rgba(243, 146, 7, 0.2); margin-top: 10px; transition: all 0.3s ease;">
+                                    Envoyer mon témoignage
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="center" style="text-align: center; margin-top: 50px;">
-                <a href="#" class="btn btn-outline" style="display: inline-block; border: none; color: white; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: 500; box-shadow: 0 8px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
-                    <span style="position: relative; z-index: 2;">Voir tous les témoignages vidéo</span>
-                    <span style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); transition: all 0.3s ease; z-index: 2;"><i class="fas fa-arrow-right"></i></span>
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); opacity: 0; transition: all 0.3s ease; z-index: 1;"></div>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="newsletter">
-        <div class="container">
-            <h2>Restez informés</h2>
-            <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et témoignages</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Votre adresse email" required>
-                <button type="submit" class="btn btn-primary">S'inscrire</button>
-            </form>
-        </div>
-    </section>
+        <section class="newsletter">
+            <div class="container">
+                <h2>Restez informés</h2>
+                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et ressources</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -362,6 +654,131 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation des éléments au chargement de la page
+            document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up').forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Animations au défilement
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+                
+                reveals.forEach(element => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+            
+            // Exécuter au chargement de la page
+            revealOnScroll();
+            
+            // Exécuter au défilement
+            window.addEventListener('scroll', revealOnScroll);
+            
+            // Animation des cartes de témoignages
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            testimonialCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.08)';
+                });
+            });
+            
+            // Animation des pills de filtrage
+            const filterPills = document.querySelectorAll('.filter-pill');
+            filterPills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Retirer la classe active de tous les pills
+                    filterPills.forEach(function(p) {
+                        p.classList.remove('active');
+                        p.style.background = 'white';
+                        p.style.color = 'var(--text-color)';
+                    });
+                    
+                    // Ajouter la classe active au pill cliqué
+                    this.classList.add('active');
+                    this.style.background = 'var(--primary-color)';
+                    this.style.color = 'white';
+                });
+                
+                pill.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.background = 'rgba(60, 180, 150, 0.1)';
+                        this.style.color = 'var(--primary-color)';
+                    }
+                });
+                
+                pill.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.background = 'white';
+                        this.style.color = 'var(--text-color)';
+                    }
+                });
+            });
+            
+            // Animation des boutons hero
+            const heroBtns = document.querySelectorAll('.hero-buttons a');
+            heroBtns.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    if (this.classList.contains('btn-primary')) {
+                        this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+                    } else {
+                        this.style.background = 'rgba(255,255,255,0.2)';
+                    }
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    if (this.classList.contains('btn-primary')) {
+                        this.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
+                    } else {
+                        this.style.background = 'transparent';
+                    }
+                });
+            });
+            
+            // Animation du bouton de soumission du formulaire
+            const submitBtn = document.querySelector('.btn-submit');
+            if (submitBtn) {
+                submitBtn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 15px 30px rgba(243, 146, 7, 0.3)';
+                });
+                
+                submitBtn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 25px rgba(243, 146, 7, 0.2)';
+                });
+            }
+            
+            // Amélioration des champs de formulaire
+            const formInputs = document.querySelectorAll('.testimonial-form input, .testimonial-form textarea, .testimonial-form select');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.boxShadow = '0 0 0 2px rgba(60, 180, 150, 0.3), 0 5px 15px rgba(0,0,0,0.05)';
+                    this.style.borderColor = 'var(--primary-color)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.03)';
+                    this.style.borderColor = '#e5e9f2';
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
 

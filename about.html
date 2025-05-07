@@ -30,8 +30,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="#mission">Notre mission</a></li>
                             <li><a href="#vision">Notre vision</a></li>
-                            <li><a href="#team">Notre équipe</a></li>
                             <li><a href="#history">Notre histoire</a></li>
+                            <li><a href="#manager">Mot du gérant</a></li>
                         </ul>
                     </li>
                     
@@ -117,8 +117,7 @@
                 </ul>
             </nav>
             <div class="language-switch">
-                <a href="#" class="active" aria-current="page">FR</a>
-                <a href="ar/about.html">عربي</a>
+                <a href="#" class="active">FR</a>
             </div>
             <div class="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -127,213 +126,565 @@
     </header>
 
     <main id="content">
-        <section class="page-header">
-            <div class="container">
-                <h1>À propos de la Fondation</h1>
-                <p>Découvrez notre mission, nos valeurs et notre équipe</p>
-                <div class="breadcrumb">
-                    <a href="index.html">Accueil</a>
-                    <span>/</span>
-                    <span>À propos</span>
-                </div>
+        <section class="hero animated-bg" style="position: relative; overflow: hidden;">
+            <!-- Video Background Option -->
+            <div class="hero-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6;">
+                <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(60, 180, 150, 0.85), rgba(243, 146, 7, 0.85)); z-index: 1;"></div>
+                <img src="img/real/teamwork.jpg" alt="" class="fallback-bg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;">
             </div>
-        </section>
-
-        <section id="mission" class="about-section">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-content">
-                        <h2>Notre mission</h2>
-                        <p>Notre mission est de promouvoir et défendre les droits par la sensibilisation, la formation, la documentation des violations et le soutien aux acteurs de la société civile.</p>
-                        <p>Face aux défis, nous restons engagés et mobilisés pour faire avancer la justice et contribuer à la construction d'une société plus équitable et respectueuse des droits fondamentaux.</p>
-                        <p>La Fondation pour la promotion des droits s'engage à travailler en étroite collaboration avec les communautés locales, les organisations de la société civile, les institutions académiques et les organismes internationaux pour créer un impact durable.</p>
+            
+            <div class="container" style="position: relative; z-index: 2; padding: 100px 0;">
+                <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                        À propos de la Fondation
+                    </h1>
+                    
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                        Découvrez notre mission, nos valeurs et notre équipe dédiée à la promotion et à la défense des droits humains.
+                    </p>
+                    
+                    <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.5s;">
+                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <span style="opacity: 0.8;">/</span>
+                        <span style="font-weight: 600;">À propos</span>
                     </div>
-                    <div class="about-image" style="background-image: url('img/about-mission.jpg');" aria-hidden="true"></div>
+                </div>
+            </div>
+            
+            <!-- Curved Shape Divider -->
+            <div class="shape-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 70px; fill: white;">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section id="mission" class="mission" style="position: relative; padding: 100px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAgMzBtLTI4IDBhMjggMjggMCAxIDAgNTYgMCAyOCAyOCAwIDEgMC01NiAwIiBzdHJva2U9InJnYmEoNjAsIDE4MCwgMTUwLCAwLjEpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMTggMGExOCAxOCAwIDEgMCAzNiAwIDE4IDE4IDAgMSAwLTM2IDAiIHN0cm9rZT0icmdiYSg2MCwgMTgwLCAxNTAsIDAuMTUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvZz48L3N2Zz4='); background-position: center; opacity: 0.5; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="mission-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <h2 class="section-title">Notre mission</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Face aux défis, nous restons engagés et mobilisés pour faire avancer la justice et promouvoir le respect des droits fondamentaux.</p>
+                </div>
+                
+                <div class="mission-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 50px; align-items: center;">
+                    <!-- Left side: Vision & Principles -->
+                    <div class="mission-content reveal-left">
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">Notre mission est de promouvoir et défendre les droits par la sensibilisation, la formation, la documentation des violations et le soutien aux acteurs de la société civile.</p>
+                        
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">La Fondation pour la promotion des droits s'engage à travailler en étroite collaboration avec les communautés locales, les organisations de la société civile, les institutions académiques et les organismes internationaux pour créer un impact durable.</p>
+                        
+                        <!-- Vision statement -->
+                        <div class="vision-statement" style="margin-bottom: 30px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; height: 100%; width: 5px; background: var(--primary-gradient);"></div>
+                            <h3 style="margin-bottom: 15px; color: var(--primary-color); font-size: 1.5rem;">Notre vision</h3>
+                            <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: var(--text-color);">
+                                "Contribuer à l'édification d'une société où la dignité humaine est respectée et où les droits sont garantis pour tous, sans discrimination."
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="#objectives" class="btn btn-primary" style="padding: 12px 30px; border-radius: 50px;">Découvrir nos objectifs</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side: Interactive Image & Quote -->
+                    <div class="mission-visual reveal-right">
+                        <div class="mission-image-wrapper" style="position: relative; margin-bottom: 30px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                            <!-- Main image -->
+                            <img src="img/real/justice-scale.jpg" alt="Justice et droits humains" style="width: 100%; height: 400px; object-fit: cover; display: block; transition: all 0.5s ease;">
+                            
+                            <!-- Hover overlay with facts -->
+                            <div class="image-hover-facts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(60,180,150,0.8) 0%, rgba(243,146,7,0.8) 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; opacity: 0; transition: all 0.3s ease; color: white; text-align: center;">
+                                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Nos valeurs</h3>
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Intégrité</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Justice</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Engagement</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Transparence</div>
+                                    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(5px);">Solidarité</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Inspirational quote -->
+                        <div class="inspirational-quote" style="background: var(--primary-gradient); padding: 30px; border-radius: 20px; color: white; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(60, 180, 150, 0.3);">
+                            <div style="position: absolute; top: 10px; left: 10px; font-size: 5rem; opacity: 0.1; font-family: Georgia, serif;">"</div>
+                            <blockquote style="position: relative; z-index: 1; font-size: 1.2rem; line-height: 1.7; font-style: italic; margin: 0 0 20px;">
+                                La justice n'est pas seulement ce que la loi nous dicte, mais ce que l'humanité exige de nous.
+                            </blockquote>
+                            <div style="text-align: right; font-weight: 600;">— Nelson Mandela</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="vision" class="objectives-section" style="padding: 80px 0; background-color: var(--light-color);">
-            <div class="container">
+        <section id="vision" class="objectives-section" style="padding: 100px 0; background: linear-gradient(135deg, #ffffff, #f8fafc); position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="objectives-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(135deg, rgba(243,146,7,0.05) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.07) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="objectives-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="objectives-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Notre engagement</span>
                 <h2 class="section-title">Nos objectifs</h2>
-                <div class="objectives-list">
-                    <div class="objective-item">
-                        <div class="objective-number">1</div>
-                        <div class="objective-text">
-                            <h3>Construction d'un État de droit</h3>
-                            <p>Contribuer et œuvrer à la construction d'un État de droit en exhortant les citoyens à s'engager à faire appliquer et respecter la loi et à promouvoir les droits.</p>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">La Fondation pour la promotion des droits poursuit les objectifs suivants pour concrétiser sa vision d'une société juste et respectueuse des droits fondamentaux.</p>
+                </div>
+                
+                <div class="objectives-grid stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                    <!-- Objectif 1 -->
+                    <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--primary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-balance-scale" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Construction d'un État de droit</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Contribuer et œuvrer à la construction d'un État de droit en exhortant les citoyens à s'engager à faire appliquer et respecter la loi et à promouvoir les droits.</p>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--primary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">2</div>
-                        <div class="objective-text">
-                            <h3>Sensibilisation et médias</h3>
-                            <p>Réaliser toute activité de sensibilisation et médiatique liée à la promotion des droits.</p>
+                    
+                    <!-- Objectif 2 -->
+                    <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--secondary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(243,146,7,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-bullhorn" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Sensibilisation et médias</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Réaliser toute activité de sensibilisation et médiatique liée à la promotion des droits pour informer et éduquer le public.</p>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--secondary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">3</div>
-                        <div class="objective-text">
-                            <h3>Formations et recherches</h3>
-                            <p>Organiser des formations continues et des forums et réaliser des recherches et des études dans le domaine de la promotion des droits.</p>
+                    
+                    <!-- Objectif 3 -->
+                    <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--primary-color), #2c3e50);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, var(--primary-color), #2c3e50); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.2); transition: all 0.5s ease;">
+                            <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Formations et recherches</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Organiser des formations continues et des forums et réaliser des recherches et des études dans le domaine de la promotion des droits.</p>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #2c3e50; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">4</div>
-                        <div class="objective-text">
-                            <h3>Conseil aux instances officielles</h3>
-                            <p>Remettre des avis et des propositions aux instances officielles et gouvernementales afin de promouvoir les droits.</p>
+                    
+                    <!-- Objectif 4 -->
+                    <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(108,92,231,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-landmark" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Conseil aux instances officielles</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Remettre des avis et des propositions aux instances officielles et gouvernementales afin de promouvoir les droits.</p>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #6c5ce7; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">5</div>
-                        <div class="objective-text">
-                            <h3>Lutte contre la discrimination</h3>
-                            <p>Combattre toutes les formes de racisme et de discrimination et promouvoir une culture de tolérance et de coexistence entre tous.</p>
+                    
+                    <!-- Objectif 5 -->
+                    <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #e17055, #ff7675);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #e17055, #ff7675); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(225,112,85,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-handshake" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Lutte contre la discrimination</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Combattre toutes les formes de racisme et de discrimination et promouvoir une culture de tolérance et de coexistence entre tous.</p>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #e17055; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">6</div>
-                        <div class="objective-text">
-                            <h3>Égalité des sexes</h3>
-                            <p>Promouvoir les droits par la non-discrimination entre les sexes et l'égalité entre les hommes et les femmes.</p>
+                    
+                    <!-- Objectif 6 -->
+                    <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #00cec9, #81ecec);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #00cec9, #81ecec); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(0,206,201,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-venus-mars" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Égalité des sexes</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Promouvoir les droits par la non-discrimination entre les sexes et l'égalité entre les hommes et les femmes.</p>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #00cec9; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">7</div>
-                        <div class="objective-text">
-                            <h3>Assistance aux chercheurs</h3>
-                            <p>Fournir une assistance à tous les chercheurs dans le domaine du droit et aux étudiants par le biais de références, d'ouvrages juridiques et d'expertises juridiques.</p>
+                </div>
+                
+                <!-- More Objectives Button -->
+                <div class="center" style="margin-top: 50px; text-align: center;">
+                    <button id="show-more-objectives" class="btn btn-outline" style="padding: 15px 35px; border: 2px solid var(--primary-color); display: inline-flex; align-items: center; gap: 10px; cursor: pointer; background: transparent; color: var(--primary-color); border-radius: 50px; font-family: inherit; font-size: 1rem; font-weight: 600; transition: all 0.3s ease;">
+                        <span>Voir tous nos objectifs</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                
+                <!-- Additional Objectives (Hidden by Default) -->
+                <div id="additional-objectives" class="additional-objectives" style="display: none; margin-top: 40px; opacity: 0; transition: opacity 0.5s ease;">
+                    <div class="objectives-grid stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                        <!-- Objectif 7 -->
+                        <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #a55eea, #d6a2e8);"></div>
+                            <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #a55eea, #d6a2e8); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(165,94,234,0.3);">
+                                <i class="fas fa-book-reader" style="font-size: 2.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Assistance aux chercheurs</h3>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Fournir une assistance à tous les chercheurs dans le domaine du droit et aux étudiants par le biais de références, d'ouvrages juridiques et d'expertises juridiques.</p>
                         </div>
+                        
+                        <!-- Objectif 8 -->
+                        <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #ff9f43, #feca57);"></div>
+                            <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #ff9f43, #feca57); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(255,159,67,0.3);">
+                                <i class="fas fa-gavel" style="font-size: 2.5rem; color: white;"></i>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">8</div>
-                        <div class="objective-text">
-                            <h3>Assistance juridique</h3>
-                            <p>Fournir une assistance juridique à des fins de promotion des droits.</p>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Assistance juridique</h3>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Fournir une assistance juridique à des fins de promotion des droits aux personnes et communautés marginalisées.</p>
                         </div>
+                        
+                        <!-- Objectif 9 -->
+                        <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #10ac84, #1dd1a1);"></div>
+                            <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #10ac84, #1dd1a1); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(16,172,132,0.3);">
+                                <i class="fas fa-tree" style="font-size: 2.5rem; color: white;"></i>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">9</div>
-                        <div class="objective-text">
-                            <h3>Protection de l'environnement</h3>
-                            <p>Promouvoir, préserver et protéger en permanence les droits dans le domaine de l'environnement.</p>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Protection de l'environnement</h3>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Promouvoir, préserver et protéger en permanence les droits dans le domaine de l'environnement.</p>
                         </div>
+                        
+                        <!-- Objectif 10 -->
+                        <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #2e86de, #54a0ff);"></div>
+                            <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #2e86de, #54a0ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(46,134,222,0.3);">
+                                <i class="fas fa-globe" style="font-size: 2.5rem; color: white;"></i>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">10</div>
-                        <div class="objective-text">
-                            <h3>Coopération</h3>
-                            <p>Établir des relations de coopération avec des organisations officielles qui poursuivent les mêmes objectifs fixés par la fondation.</p>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Coopération</h3>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Établir des relations de coopération avec des organisations officielles qui poursuivent les mêmes objectifs fixés par la fondation.</p>
                         </div>
+                        
+                        <!-- Objectif 11 -->
+                        <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #FC427B, #FD7272);"></div>
+                            <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #FC427B, #FD7272); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(252,66,123,0.3);">
+                                <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: white;"></i>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">11</div>
-                        <div class="objective-text">
-                            <h3>Formation des juristes</h3>
-                            <p>Organiser des formations pour les juristes et les personnes intéressées par le domaine de la promotion des droits conformément à la législation applicable.</p>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Formation des juristes</h3>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Organiser des formations pour les juristes et les personnes intéressées par le domaine de la promotion des droits conformément à la législation applicable.</p>
                         </div>
+                        
+                        <!-- Objectif 12 -->
+                        <div class="objective-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--primary-gradient);"></div>
+                            <div class="objective-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.3);">
+                                <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: white;"></i>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-number">12</div>
-                        <div class="objective-text">
-                            <h3>Protection générale des droits</h3>
-                            <p>D'une manière générale, protéger et promouvoir les droits dans leur généralité et dans leur spécificité.</p>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Protection générale des droits</h3>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">D'une manière générale, protéger et promouvoir les droits dans leur généralité et dans leur spécificité.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="public-section" style="padding: 80px 0;">
-            <div class="container">
+        <section class="public-section" style="padding: 100px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="public-bg-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(135deg, rgba(243,146,7,0.05) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, rgba(60,180,150,0.07) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="public-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="public-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Qui nous servons</span>
                 <h2 class="section-title">Notre public cible</h2>
-                <div class="public-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px;">
-                    <div class="public-card" style="background-color: white; border-radius: 8px; padding: 30px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <div class="public-icon" style="font-size: 40px; color: var(--secondary-color); margin-bottom: 20px;">
-                            <i class="fas fa-users"></i>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Nos actions et programmes sont conçus pour répondre aux besoins spécifiques de différentes catégories de personnes concernées par les droits humains.</p>
+                </div>
+                
+                <div class="public-grid stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                    <!-- Public 1 -->
+                    <div class="public-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; transform: translateY(0); cursor: pointer;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--primary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="public-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(60,180,150,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-users" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
-                        <h3>Citoyens et citoyennes</h3>
-                        <p>Souhaitant mieux comprendre et défendre leurs droits fondamentaux.</p>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Citoyens et citoyennes</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Souhaitant mieux comprendre et défendre leurs droits fondamentaux dans un contexte social et politique en évolution.</p>
+                        
+                        <!-- Features list (hidden initially) -->
+                        <div class="public-features" style="height: 0; overflow: hidden; transition: height 0.3s ease; text-align: left; margin-top: 20px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--primary-color);">Comment nous les soutenons:</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                    Guides pratiques sur les droits
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                    Sessions d'information publiques
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: var(--primary-color); position: absolute; left: 0; top: 5px;"></i>
+                                    Conseil juridique accessible
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--primary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="public-card" style="background-color: white; border-radius: 8px; padding: 30px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <div class="public-icon" style="font-size: 40px; color: var(--secondary-color); margin-bottom: 20px;">
-                            <i class="fas fa-graduation-cap"></i>
+                    
+                    <!-- Public 2 -->
+                    <div class="public-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; transform: translateY(0); cursor: pointer;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--secondary-gradient);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="public-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(243,146,7,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
-                        <h3>Jeunes et étudiants</h3>
-                        <p>Particulièrement sensibles aux enjeux de justice sociale et de transformation sociale par la connaissance.</p>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Jeunes et étudiants</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Particulièrement sensibles aux enjeux de justice sociale et de transformation sociale par la connaissance et l'action civique.</p>
+                        
+                        <!-- Features list (hidden initially) -->
+                        <div class="public-features" style="height: 0; overflow: hidden; transition: height 0.3s ease; text-align: left; margin-top: 20px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--secondary-color);">Comment nous les soutenons:</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                    Programmes de formation adaptés
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                    Soutien aux initiatives jeunesse
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0; top: 5px;"></i>
+                                    Ressources éducatives innovantes
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--secondary-color); opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="public-card" style="background-color: white; border-radius: 8px; padding: 30px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <div class="public-icon" style="font-size: 40px; color: var(--secondary-color); margin-bottom: 20px;">
-                            <i class="fas fa-hands-helping"></i>
+                    
+                    <!-- Public 3 -->
+                    <div class="public-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; transform: translateY(0); cursor: pointer;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="public-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(108,92,231,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
-                        <h3>Acteurs de la société civile</h3>
-                        <p>ONG, associations, collectifs, engagés sur le terrain et en quête d'appui, de formation ou de documentation.</p>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Acteurs de la société civile</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">ONG, associations, collectifs, engagés sur le terrain et en quête d'appui, de formation ou de documentation pour leurs actions.</p>
+                        
+                        <!-- Features list (hidden initially) -->
+                        <div class="public-features" style="height: 0; overflow: hidden; transition: height 0.3s ease; text-align: left; margin-top: 20px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: #6c5ce7;">Comment nous les soutenons:</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                    Renforcement des capacités
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                    Création de réseaux et collaborations
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: #6c5ce7; position: absolute; left: 0; top: 5px;"></i>
+                                    Outils de plaidoyer et documentation
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #6c5ce7; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
                     </div>
-                    <div class="public-card" style="background-color: white; border-radius: 8px; padding: 30px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <div class="public-icon" style="font-size: 40px; color: var(--secondary-color); margin-bottom: 20px;">
-                            <i class="fas fa-shield-alt"></i>
+                    
+                    <!-- Public 4 -->
+                    <div class="public-card" style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; transform: translateY(0); cursor: pointer;">
+                        <!-- Colorful top accent -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #e17055, #ff7675);"></div>
+                        
+                        <!-- Icon with enhanced styling -->
+                        <div class="public-icon" style="width: 90px; height: 90px; margin: 0 auto 25px; background: linear-gradient(90deg, #e17055, #ff7675); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 25px rgba(225,112,85,0.3); transition: all 0.5s ease;">
+                            <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: white; transition: all 0.5s ease;"></i>
                         </div>
-                        <h3>Défenseurs des droits humains</h3>
-                        <p>Confrontés à des situations de violations ou de restriction des libertés.</p>
+                        
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Défenseurs des droits humains</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Confrontés à des situations de violations ou de restriction des libertés et engagés dans la protection des droits fondamentaux.</p>
+                        
+                        <!-- Features list (hidden initially) -->
+                        <div class="public-features" style="height: 0; overflow: hidden; transition: height 0.3s ease; text-align: left; margin-top: 20px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: #e17055;">Comment nous les soutenons:</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: #e17055; position: absolute; left: 0; top: 5px;"></i>
+                                    Assistance juridique spécialisée
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: #e17055; position: absolute; left: 0; top: 5px;"></i>
+                                    Protection et plaidoyer
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="color: #e17055; position: absolute; left: 0; top: 5px;"></i>
+                                    Documentation des violations
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Background decoration -->
+                        <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #e17055; opacity: 0.03; border-radius: 50%; z-index: 0;"></div>
+                    </div>
+                </div>
+                
+                <!-- Engagement Call to Action -->
+                <div class="engagement-cta" style="margin-top: 60px; background: linear-gradient(135deg, rgba(60,180,150,0.1) 0%, rgba(243,146,7,0.1) 100%); padding: 40px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="margin-bottom: 10px; font-size: 1.5rem; color: var(--primary-color);">Vous souhaitez vous impliquer ?</h3>
+                        <p style="color: var(--text-color);">Rejoignez nos programmes adaptés à votre profil et contribuez à la promotion des droits</p>
+                    </div>
+                    <div style="flex-shrink: 0;">
+                        <a href="contact.html" class="btn btn-primary" style="position: relative; overflow: hidden; padding: 15px 40px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;">
+                            <span>Contactez-nous</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="team" class="team-section">
-            <div class="container">
-                <h2 class="section-title">Notre équipe</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-image" style="background-image: url('img/team-1.jpg');"></div>
-                        <div class="team-info">
-                            <h3>Amina Kadi</h3>
-                            <span class="role">Présidente</span>
-                            <p>Juriste de formation avec 15 ans d'expérience dans le domaine des droits humains.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="far fa-envelope"></i></a>
+        <section id="history" class="history-section" style="padding: 100px 0; background: white; position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="history-bg-accent" style="position: absolute; top: 0; right: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(60,180,150,0.03) 0%, rgba(60,180,150,0) 70%); z-index: 0;"></div>
+            <div class="history-bg-accent" style="position: absolute; bottom: 0; left: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(243,146,7,0.03) 0%, rgba(243,146,7,0) 70%); z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="history-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="history-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">D'où nous venons</span>
+                    <h2 class="section-title">Notre histoire</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Découvrez l'évolution de la Fondation pour la promotion des droits depuis sa création et les événements qui ont marqué son parcours.</p>
+                </div>
+                
+                <div class="history-content-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                    <!-- Left side: Main content -->
+                    <div class="history-content reveal-left" style="position: relative;">
+                        <div class="history-image" style="position: relative; margin-bottom: 30px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                            <img src="img/real/diversity-team.jpg" alt="Notre équipe diverse" style="width: 100%; display: block; border-radius: 20px;">
+                            
+                            <!-- Image overlay with date -->
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); color: white;">
+                                <div style="display: inline-block; padding: 5px 15px; background: var(--primary-gradient); border-radius: 20px; font-weight: 600; margin-bottom: 10px;">Février 2024</div>
+                                <h3 style="margin: 0; font-size: 1.3rem;">Naissance de la Fondation</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image" style="background-image: url('img/team-2.jpg');"></div>
-                        <div class="team-info">
-                            <h3>Karim Benali</h3>
-                            <span class="role">Directeur Exécutif</span>
-                            <p>Expert en gestion de projets et en développement organisationnel.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="far fa-envelope"></i></a>
+                        
+                        <div class="history-main-text" style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                            <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">Créée le <strong>14 février 2024</strong>, la Fondation pour la promotion des droits est née de l'initiative de militantes, militants et avocat(e)s engagé(e)s, forts d'une longue expérience dans le domaine des droits humains. Constituée sous l'égide de la loi 12/06 relative aux associations, notre Fondation s'inscrit dans une dynamique citoyenne, juridique et sociale en faveur de la dignité humaine, de la justice et de l'État de droit.</p>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">Notre histoire est avant tout celle d'un engagement collectif. Face aux défis persistants liés au respect des droits fondamentaux, nous avons choisi d'unir nos expertises et nos convictions pour créer une structure indépendante, transparente et active.</p>
+                            
+                            <div class="history-quote" style="background: var(--primary-gradient); padding: 30px; border-radius: 15px; color: white; margin: 30px 0; position: relative;">
+                                <div style="position: absolute; top: 10px; left: 10px; font-size: 3rem; opacity: 0.1; font-family: Georgia, serif;">"</div>
+                                <blockquote style="position: relative; z-index: 1; font-size: 1.2rem; line-height: 1.7; font-style: italic; margin: 0 0 10px;">
+                                    Portée par des valeurs d'intégrité, de liberté, d'équité et de respect de la dignité humaine, la Fondation est bien plus qu'une organisation : c'est un mouvement, un espoir, un levier pour le changement.
+                                </blockquote>
                             </div>
+                            
+                            <p style="font-size: 1.1rem; line-height: 1.7;">Depuis sa création, la Fondation oeuvre pour renforcer la culture des droits humains, sensibiliser les citoyennes et citoyens à leurs droits et devoirs, et promouvoir une société fondée sur la loi, la justice et l'égalité.</p>
                         </div>
                     </div>
-                    <div class="team-card">
-                        <div class="team-image" style="background-image: url('img/team-3.jpg');"></div>
-                        <div class="team-info">
-                            <h3>Leila Hadj</h3>
-                            <span class="role">Responsable des Formations</span>
-                            <p>Formatrice en droits humains avec une expérience dans les organisations internationales.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="far fa-envelope"></i></a>
+                    
+                    <!-- Right side: Timeline -->
+                    <div class="history-timeline reveal-right" style="position: relative;">
+                        <!-- Timeline line -->
+                        <div style="position: absolute; top: 0; bottom: 0; left: 30px; width: 4px; background: var(--primary-gradient); border-radius: 2px; z-index: 0;"></div>
+                        
+                        <!-- Timeline items -->
+                        <div class="timeline-item" style="position: relative; padding-left: 80px; margin-bottom: 50px;">
+                            <div class="timeline-dot" style="position: absolute; left: 22px; top: 0; width: 20px; height: 20px; background: var(--primary-color); border-radius: 50%; z-index: 1; border: 4px solid white; box-shadow: 0 0 0 4px var(--primary-color-light);"></div>
+                            <div class="timeline-date" style="position: absolute; left: 60px; top: -5px; background: var(--primary-gradient); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Février 2024</div>
+                            <div class="timeline-content" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 30px;">
+                                <h3 style="margin-bottom: 15px; color: var(--primary-color);">Création officielle</h3>
+                                <p style="margin: 0; line-height: 1.6;">Fondation de l'association le 14 février 2024 par un groupe de militants des droits humains et d'avocats.</p>
                             </div>
                         </div>
+                        
+                        <div class="timeline-item" style="position: relative; padding-left: 80px; margin-bottom: 50px;">
+                            <div class="timeline-dot" style="position: absolute; left: 22px; top: 0; width: 20px; height: 20px; background: var(--secondary-color); border-radius: 50%; z-index: 1; border: 4px solid white; box-shadow: 0 0 0 4px rgba(243,146,7,0.3);"></div>
+                            <div class="timeline-date" style="position: absolute; left: 60px; top: -5px; background: var(--secondary-gradient); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Mars 2024</div>
+                            <div class="timeline-content" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 30px;">
+                                <h3 style="margin-bottom: 15px; color: var(--secondary-color);">Premier programme de formation</h3>
+                                <p style="margin: 0; line-height: 1.6;">Lancement du premier cycle de formation sur les droits juridiques fondamentaux à Alger.</p>
+                        </div>
                     </div>
-                    <div class="team-card">
-                        <div class="team-image" style="background-image: url('img/team-4.jpg');"></div>
-                        <div class="team-info">
-                            <h3>Yacine Ferhat</h3>
-                            <span class="role">Juriste Principal</span>
-                            <p>Spécialiste en droit constitutionnel et en droits des minorités.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="far fa-envelope"></i></a>
+                        
+                        <div class="timeline-item" style="position: relative; padding-left: 80px; margin-bottom: 50px;">
+                            <div class="timeline-dot" style="position: absolute; left: 22px; top: 0; width: 20px; height: 20px; background: #6c5ce7; border-radius: 50%; z-index: 1; border: 4px solid white; box-shadow: 0 0 0 4px rgba(108,92,231,0.3);"></div>
+                            <div class="timeline-date" style="position: absolute; left: 60px; top: -5px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Avril 2024</div>
+                            <div class="timeline-content" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 30px;">
+                                <h3 style="margin-bottom: 15px; color: #6c5ce7;">Premier partenariat international</h3>
+                                <p style="margin: 0; line-height: 1.6;">Signature d'un accord de collaboration avec une ONG internationale reconnue dans le domaine des droits humains.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" style="position: relative; padding-left: 80px;">
+                            <div class="timeline-dot" style="position: absolute; left: 22px; top: 0; width: 20px; height: 20px; background: #10ac84; border-radius: 50%; z-index: 1; border: 4px solid white; box-shadow: 0 0 0 4px rgba(16,172,132,0.3);"></div>
+                            <div class="timeline-date" style="position: absolute; left: 60px; top: -5px; background: linear-gradient(90deg, #10ac84, #1dd1a1); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Juin 2024</div>
+                            <div class="timeline-content" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 30px;">
+                                <h3 style="margin-bottom: 15px; color: #10ac84;">Lancement du site web</h3>
+                                <p style="margin: 0; line-height: 1.6;">Mise en ligne de notre plateforme digitale pour amplifier notre impact et élargir notre audience.</p>
+                        </div>
+                    </div>
+                        
+                        <!-- Future timeline item (coming soon) -->
+                        <div class="timeline-future" style="position: relative; padding-left: 80px; margin-top: 50px;">
+                            <div class="timeline-dot" style="position: absolute; left: 22px; top: 0; width: 20px; height: 20px; background: #ddd; border-radius: 50%; z-index: 1; border: 4px solid white; box-shadow: 0 0 0 4px rgba(0,0,0,0.1);"></div>
+                            <div class="timeline-content" style="background: rgba(255,255,255,0.7); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-top: 10px; border: 2px dashed #ddd;">
+                                <h3 style="margin-bottom: 15px; color: #777; display: flex; align-items: center;">
+                                    <i class="fas fa-hourglass-half" style="margin-right: 10px;"></i>
+                                    À suivre...
+                                </h3>
+                                <p style="margin: 0; line-height: 1.6; color: #777;">Notre histoire continue de s'écrire. Rejoignez-nous dans ce parcours pour la défense et la promotion des droits fondamentaux.</p>
                             </div>
                         </div>
                     </div>
@@ -341,87 +692,144 @@
             </div>
         </section>
 
-        <section id="history" class="history-section">
-            <div class="container">
-                <h2 class="section-title">Notre histoire</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2010</div>
-                        <div class="timeline-content">
-                            <h3>Création de la Fondation</h3>
-                            <p>La Fondation pour la promotion des droits est créée par un groupe de juristes et d'activistes engagés pour la défense des droits fondamentaux.</p>
+        <section id="manager" class="manager-section" style="padding: 100px 0; background: linear-gradient(135deg, rgba(60,180,150,0.05) 0%, rgba(243,146,7,0.05) 100%); position: relative; overflow: hidden;">
+            <!-- Background decorative elements -->
+            <div class="manager-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(60,180,150,0.1) 0%, rgba(60,180,150,0) 70%);"></div>
+                <div style="position: absolute; bottom: 10%; right: 5%; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(243,146,7,0.1) 0%, rgba(243,146,7,0) 70%);"></div>
+                <div style="position: absolute; top: 40%; left: 15%; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(60,180,150,0.05) 0%, rgba(60,180,150,0) 70%);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="manager-header text-center" style="text-align: center; margin-bottom: 60px;">
+                    <span class="manager-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Notre direction</span>
+                    <h2 class="section-title">Mot du Gérant</h2>
+                </div>
+                
+                <div class="manager-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 50px; align-items: center;">
+                    <!-- Left side: Manager Photo & Info -->
+                    <div class="manager-profile reveal-left" style="position: relative;">
+                        <div class="manager-photo-wrapper" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                            <!-- Manager Photo -->
+                            <img src="img/real/advocacy.jpg" alt="Zakaria Benlahrech - Gérant de la Fondation" style="width: 100%; height: 400px; object-fit: cover; display: block; transition: all 0.5s ease;">
+                            
+                            <!-- Photo overlay with name & title -->
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); color: white;">
+                                <h3 style="margin: 0 0 5px 0; font-size: 1.6rem;">Zakaria Benlahrech</h3>
+                                <p style="margin: 0; font-size: 1.1rem; opacity: 0.9;">Avocat et défenseur des droits humains</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Manager Social Links -->
+                        <div class="manager-social" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px;">
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: var(--primary-gradient); border-radius: 50%; color: white; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(60,180,150,0.3);">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: var(--secondary-gradient); border-radius: 50%; color: white; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(243,146,7,0.3);">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Email" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 50%; color: white; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(108,92,231,0.3);">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Manager Quote -->
+                        <div class="manager-quote" style="background: var(--primary-gradient); padding: 30px; border-radius: 20px; color: white; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(60,180,150,0.3);">
+                            <div style="position: absolute; top: 10px; left: 10px; font-size: 4rem; opacity: 0.1; font-family: Georgia, serif;">"</div>
+                            <blockquote style="position: relative; z-index: 1; font-size: 1.2rem; line-height: 1.7; font-style: italic; margin: 0 0 15px;">
+                                La loi est un outil de protection, non de répression ; un instrument d'équilibre, non de pouvoir.
+                            </blockquote>
+                            <div style="text-align: right; font-weight: 600;">— Zakaria Benlahrech</div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2012</div>
-                        <div class="timeline-content">
-                            <h3>Premiers projets de formation</h3>
-                            <p>Lancement des premiers cycles de formation pour les activistes et les défenseurs des droits humains.</p>
+                    
+                    <!-- Right side: Message -->
+                    <div class="manager-message reveal-right" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); position: relative;">
+                        <!-- Decorative elements -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--primary-gradient);"></div>
+                        
+                        <div class="message-header" style="margin-bottom: 25px;">
+                            <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px;">Chères amies, chers amis,</h3>
+                            <p style="font-size: 1.1rem; color: var(--text-color); font-style: italic;">Un message de notre fondateur</p>
+                        </div>
+                        
+                        <div class="message-content" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color);">
+                            <p style="margin-bottom: 15px;">C'est avec une grande fierté et une profonde conviction que je vous adresse ces quelques mots en tant que gérant de la Fondation pour la promotion des droits.</p>
+                            
+                            <p style="margin-bottom: 15px;">Notre monde traverse une période où les droits fondamentaux sont souvent remis en question, ignorés, voire bafoués. Face à ces défis, il est impératif de ne pas rester silencieux. C'est cette urgence qui a motivé, avec mes collègues militants et avocats, la création de cette Fondation : un espace d'action, de veille et d'engagement en faveur de la justice, de la dignité et de l'État de droit.</p>
+                            
+                            <p style="margin-bottom: 15px;">Notre Fondation est née d'un combat de terrain, d'une volonté collective d'apporter une contribution concrète à l'édification d'une société plus équitable, plus libre, et plus humaine. Elle se veut une passerelle entre le droit et la citoyenneté, entre la justice et la conscience.</p>
+                            
+                            <div class="message-highlight" style="background: rgba(60,180,150,0.05); padding: 20px; border-left: 4px solid var(--primary-color); border-radius: 5px; margin: 20px 0;">
+                                <p style="margin: 0; font-weight: 500;">En tant qu'avocat et défenseur des droits humains, je reste convaincu que seule une mobilisation citoyenne consciente et informée peut permettre des avancées durables. Nous croyons en la force de l'engagement, en la puissance de la parole, mais surtout en l'efficacité de l'action.</p>
+                    </div>
+                            
+                            <p style="margin-bottom: 15px;">Je vous invite à nous rejoindre, à soutenir nos initiatives, et à faire entendre votre voix pour que la justice ne soit pas un privilège, mais un droit partagé par toutes et tous.</p>
+                            
+                            <p style="margin-bottom: 15px;">Ensemble pour des droits connus, reconnus et défendus.</p>
+                            
+                            <div class="message-signature" style="margin-top: 30px;">
+                                <p style="margin-bottom: 5px; color: var(--primary-color);">Avec respect et détermination,</p>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAxMDAgNTAiPjxwYXRoIGQ9Ik0xMCwzNSBDMjAsMjUgMzAsNDAgNDUsMzUgQzYwLDMwIDY1LDEwIDgwLDIwIEM5MCwyNSA5MCwzNSA5NSw0MCIgc3Ryb2tlPSIjM2NiNDk2IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==" alt="Signature" style="height: 50px;">
+                                    <span style="font-weight: 600; font-size: 1.1rem;">Zakaria Benlahrech</span>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2015</div>
-                        <div class="timeline-content">
-                            <h3>Création de la revue juridique</h3>
-                            <p>Publication du premier numéro de notre revue spécialisée dans l'analyse des enjeux juridiques liés aux droits fondamentaux.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2018</div>
-                        <div class="timeline-content">
-                            <h3>Extension des activités</h3>
-                            <p>Élargissement de notre champ d'action à de nouvelles régions et développement de partenariats internationaux.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020</div>
-                        <div class="timeline-content">
-                            <h3>Adaptation numérique</h3>
-                            <p>Face à la pandémie, transformation de nos activités vers des formats numériques pour continuer notre mission.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2023</div>
-                        <div class="timeline-content">
-                            <h3>Aujourd'hui</h3>
-                            <p>La Fondation continue de se développer avec de nouveaux programmes et une portée élargie pour défendre les droits fondamentaux.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="partners-section" style="padding: 80px 0; background-color: var(--light-color);">
-            <div class="container">
-                <h2 class="section-title">Nos partenaires</h2>
-                <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
-                    <div class="partner-logo" style="background-color: white; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <span style="color: var(--gray-color); font-weight: 600;">Partenaire 1</span>
+        <section class="newsletter" style="padding: 100px 0; background: linear-gradient(135deg, rgba(60,180,150,0.95) 0%, rgba(243,146,7,0.95) 100%), url('img/real/teamwork.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; color: white; position: relative; overflow: hidden;">
+            <!-- Decorative elements -->
+            <div class="newsletter-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                <div style="position: absolute; top: 10%; left: 15%; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
+                <div style="position: absolute; bottom: 10%; right: 10%; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
+                <div style="position: absolute; top: 40%; right: 20%; width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,0.07);"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
+                <div class="newsletter-content text-center" style="text-align: center;">
+                    <div class="newsletter-icon" style="margin-bottom: 20px;">
+                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; backdrop-filter: blur(5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+                            <i class="fas fa-envelope-open-text" style="font-size: 2.5rem; color: white;"></i>
                     </div>
-                    <div class="partner-logo" style="background-color: white; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <span style="color: var(--gray-color); font-weight: 600;">Partenaire 2</span>
                     </div>
-                    <div class="partner-logo" style="background-color: white; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <span style="color: var(--gray-color); font-weight: 600;">Partenaire 3</span>
+                    
+                    <h2 style="font-size: 2.8rem; margin-bottom: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Restez informés</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px; color: rgba(255,255,255,0.9); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités, ressources et opportunités d'engagement pour la promotion des droits.</p>
+                    
+                    <form class="newsletter-form" style="max-width: 600px; margin: 0 auto; position: relative;">
+                        <div style="position: relative; display: flex; flex-wrap: wrap; gap: 15px;">
+                            <input type="email" placeholder="Votre adresse email" required style="flex: 1; min-width: 250px; padding: 18px 25px; font-size: 1.1rem; border: none; border-radius: 50px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                            <button type="submit" class="btn btn-subscribe" style="padding: 18px 35px; border: none; border-radius: 50px; background: white; color: var(--primary-color); font-weight: 700; font-size: 1.1rem; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                                <span>S'inscrire</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
                     </div>
-                    <div class="partner-logo" style="background-color: white; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <span style="color: var(--gray-color); font-weight: 600;">Partenaire 4</span>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">En vous inscrivant, vous acceptez de recevoir nos communications. Vous pourrez vous désinscrire à tout moment.</p>
+                    </form>
+                    
+                    <!-- Social Follow -->
+                    <div class="social-follow" style="margin-top: 50px;">
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; color: white;">Suivez-nous sur les réseaux sociaux</p>
+                        <div class="social-icons" style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                     </div>
-                    <div class="partner-logo" style="background-color: white; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                        <span style="color: var(--gray-color); font-weight: 600;">Partenaire 5</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="newsletter">
-            <div class="container">
-                <h2>Restez informés</h2>
-                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et ressources</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Votre adresse email" required>
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
-                </form>
             </div>
         </section>
     </main>

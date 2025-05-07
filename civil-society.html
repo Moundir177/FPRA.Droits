@@ -3,14 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Société Civile - Fondation pour la promotion des droits</title>
+    <meta name="description" content="Espace pour la société civile - Renforcer les acteurs locaux pour un impact durable dans la défense des droits.">
+    <title>Société civile - Fondation pour la promotion des droits</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/footer-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles pour assurer la visibilité des éléments animés */
+        .reveal-left, .reveal-right, .reveal-up {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: all 0.8s ease;
+        }
+        .reveal-left.active, .reveal-right.active, .reveal-up.active {
+            opacity: 1 !important;
+        }
+        
+        /* Styles pour les cartes */
+        .civil-box {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .civil-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .civil-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            margin-bottom: 20px;
+            color: white;
+            font-size: 28px;
+        }
+        
+        /* Styles pour les éléments de réseau */
+        .network-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .network-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .network-actions {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        
+        .network-actions li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Styles pour les cartes de support */
+        .support-card {
+            display: flex;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .support-icon {
+            width: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+        }
+        
+        .support-content {
+            padding: 25px;
+            flex: 1;
+        }
+        
+        .support-details {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .support-details li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .support-details li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+        
+        /* Media query pour l'affichage mobile */
+        @media (max-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .support-details {
+                grid-template-columns: 1fr;
+            }
+            .support-card {
+                flex-direction: column;
+            }
+            .support-icon {
+                width: 100%;
+                height: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Passer au contenu</a>
+    
     <header>
         <div class="container">
             <div class="logo">
@@ -18,237 +159,809 @@
                     <h1>Fondation pour la promotion des droits</h1>
                 </a>
             </div>
-            <div class="language-switch">
-                <a href="#" class="active">FR</a>
-                <a href="ar/civil-society.html">عربي</a>
-            </div>
             <nav>
-                <ul>
+                <ul class="main-nav">
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="news.html">Actualités & Projets</a></li>
-                    <li><a href="revue.html">Revue</a></li>
-                    <li><a href="formations.html">Formations</a></li>
-                    <li><a href="resources.html">Ressources</a></li>
+                    
+                    <li class="dropdown primary-nav-item">
+                        <a href="about.html" class="dropdown-toggle">À propos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#mission">Notre mission</a></li>
+                            <li><a href="about.html#vision">Notre vision</a></li>
+                            <li><a href="about.html#team">Notre équipe</a></li>
+                            <li><a href="about.html#history">Notre histoire</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown primary-nav-item">
+                        <a href="news.html" class="dropdown-toggle">Actualités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html#latest">Dernières actualités</a></li>
+                            <li><a href="news.html#projects">Projets en cours</a></li>
+                            <li><a href="news.html#press">Communiqués de presse</a></li>
+                            <li><a href="news.html#events">Événements à venir</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-separator"></li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="revue.html" class="dropdown-toggle">Revue</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="revue.html#current">Numéro actuel</a></li>
+                            <li><a href="revue.html#archives">Archives</a></li>
+                            <li><a href="revue.html#contribute">Comment contribuer</a></li>
+                            <li><a href="revue.html#editorial">Comité éditorial</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="formations.html" class="dropdown-toggle">Formations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="formations.html#programs">Programmes de formation</a></li>
+                            <li><a href="formations.html#workshops">Ateliers</a></li>
+                            <li><a href="formations.html#calendar">Calendrier</a></li>
+                            <li><a href="formations.html#registration">Inscription</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown resources-nav-item">
+                        <a href="resources.html" class="dropdown-toggle">Ressources</a>
+                        <ul class="dropdown-menu">
+                            <li><div class="dropdown-section-header">Documentation</div></li>
+                            <li><a href="resources.html#publications">Publications</a></li>
+                            <li><a href="resources.html#reports">Rapports</a></li>
+                            <li><a href="resources.html#guides">Guides pratiques</a></li>
+                            <li><div class="dropdown-section-header">Média</div></li>
+                            <li><a href="resources.html#multimedia">Multimédia</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-separator"></li>
+                    
                     <li><a href="testimonials.html">Témoignages</a></li>
                     <li><a href="civil-society.html" class="active">Société civile</a></li>
+                    <li><a href="gallery.html">Galerie</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="language-switch">
+                <a href="#" class="active">FR</a>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Espace Société Civile</h1>
-            <p>Renforcer les acteurs locaux pour un impact durable</p>
-            <div class="breadcrumb">
-                <a href="index.html">Accueil</a>
-                <span>/</span>
-                <span>Société civile</span>
+    <main id="content">
+        <section class="hero animated-bg" style="position: relative; overflow: hidden;">
+            <!-- Background with overlay -->
+            <div class="hero-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6;">
+                <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(35, 107, 142, 0.85), rgba(20, 80, 160, 0.85)); z-index: 1;"></div>
+                <img src="img/real/collaboration.jpg" alt="" class="fallback-bg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;" onerror="this.src='img/real/advocacy.jpg';">
             </div>
-        </div>
-    </section>
-
-    <section class="civil-society-intro">
-        <div class="container">
-            <div class="intro-text">
-                <h2 class="section-title">Notre engagement auprès de la société civile</h2>
-                <p>La Fondation pour la promotion des droits reconnaît le rôle crucial que joue la société civile dans la défense et la promotion des droits. Notre mission est de renforcer les capacités des organisations locales, des militants et des collectifs citoyens pour qu'ils puissent agir efficacement sur le terrain.</p>
-                <p>Nous proposons des programmes de soutien adaptés aux besoins spécifiques des acteurs de la société civile, qu'il s'agisse d'accompagnement technique, juridique, ou de mise en réseau.</p>
-                <img src="img/civil-society.jpg" alt="Atelier avec des acteurs de la société civile" style="width: 100%; border-radius: 10px; margin-top: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-            </div>
-        </div>
-    </section>
-
-    <section class="civil-society-grid" style="padding: 80px 0; background-color: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title">Nos services de soutien</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-                <div class="civil-box">
-                    <div class="civil-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Assistance juridique</h3>
-                    <p>Conseils et accompagnement juridique pour les associations et les défenseurs des droits dans leurs activités.</p>
-                    <a href="contact.html" class="btn btn-small">Demander une assistance</a>
-                </div>
-                <div class="civil-box">
-                    <div class="civil-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Renforcement de capacités</h3>
-                    <p>Formations et ateliers spécialisés pour développer les compétences des acteurs de la société civile.</p>
-                    <a href="formations.html" class="btn btn-small">Voir nos formations</a>
-                </div>
-                <div class="civil-box">
-                    <div class="civil-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Mise en réseau</h3>
-                    <p>Facilitation des échanges et des collaborations entre diverses organisations à l'échelle nationale et internationale.</p>
-                    <a href="#networks" class="btn btn-small">Explorer</a>
-                </div>
-                <div class="civil-box">
-                    <div class="civil-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>Soutien aux projets</h3>
-                    <p>Accompagnement dans la conception, mise en œuvre et évaluation de projets en faveur des droits.</p>
-                    <a href="contact.html" class="btn btn-small">Proposer un projet</a>
-                </div>
-                <div class="civil-box">
-                    <div class="civil-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Plaidoyer</h3>
-                    <p>Stratégies et outils de plaidoyer pour porter les voix des communautés et influencer les politiques publiques.</p>
-                    <a href="resources.html" class="btn btn-small">Ressources</a>
-                </div>
-                <div class="civil-box">
-                    <div class="civil-icon">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <h3>Accès aux financements</h3>
-                    <p>Information sur les opportunités de financement et appui à la recherche de fonds pour les organisations locales.</p>
-                    <a href="contact.html" class="btn btn-small">Nous contacter</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="networks" class="networks">
-        <div class="container">
-            <div class="network-intro">
-                <h2 class="section-title">Réseaux et collaborations</h2>
-                <p>La Fondation pour la promotion des droits facilite et participe à plusieurs réseaux thématiques qui rassemblent diverses organisations de la société civile. Ces plateformes offrent des opportunités d'échange d'expériences, de coordination d'actions et de mutualisation des ressources.</p>
-            </div>
-
-            <div class="network-list">
-                <div class="network-item">
-                    <h3><i class="fas fa-users"></i> Réseau des Défenseurs des Droits</h3>
-                    <p>Coalition d'organisations et d'individus engagés dans la protection et la promotion des droits humains fondamentaux en Algérie.</p>
-                    <ul class="network-actions">
-                        <li><i class="fas fa-calendar-alt"></i> Réunions trimestrielles</li>
-                        <li><i class="fas fa-envelope"></i> Groupe de discussion en ligne</li>
-                        <li><i class="fas fa-file-alt"></i> Publications conjointes</li>
-                    </ul>
-                </div>
-                <div class="network-item">
-                    <h3><i class="fas fa-female"></i> Collectif pour les Droits des Femmes</h3>
-                    <p>Alliance d'associations œuvrant pour l'égalité des genres et l'autonomisation des femmes à travers différentes régions.</p>
-                    <ul class="network-actions">
-                        <li><i class="fas fa-bullhorn"></i> Campagnes de sensibilisation</li>
-                        <li><i class="fas fa-gavel"></i> Assistance juridique mutuelle</li>
-                        <li><i class="fas fa-handshake"></i> Projets collaboratifs</li>
-                    </ul>
-                </div>
-                <div class="network-item">
-                    <h3><i class="fas fa-child"></i> Plateforme Jeunesse et Droits</h3>
-                    <p>Espace dédié aux organisations dirigées par des jeunes et travaillant sur les problématiques de la jeunesse et de l'engagement civique.</p>
-                    <ul class="network-actions">
-                        <li><i class="fas fa-lightbulb"></i> Incubation d'initiatives</li>
-                        <li><i class="fas fa-chalkboard-teacher"></i> Mentorat entre pairs</li>
-                        <li><i class="fas fa-comments"></i> Forums de dialogue</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="support-programs">
-        <div class="container">
-            <h2 class="section-title">Programmes de soutien spécifiques</h2>
-            <div class="support-grid">
-                <div class="support-card">
-                    <div class="support-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="support-content">
-                        <h3>Incubateur d'initiatives</h3>
-                        <p>Un programme d'accompagnement intensif pour les nouvelles associations et initiatives citoyennes dans leur phase de démarrage.</p>
-                        <ul class="support-details">
-                            <li>Mentorat personnalisé</li>
-                            <li>Ateliers pratiques</li>
-                            <li>Micro-financement</li>
-                            <li>Durée: 6 mois</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="support-card">
-                    <div class="support-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="support-content">
-                        <h3>Protection des défenseurs</h3>
-                        <p>Mécanisme de soutien pour les défenseurs des droits confrontés à des risques ou des menaces en raison de leur travail.</p>
-                        <ul class="support-details">
-                            <li>Réponse d'urgence</li>
-                            <li>Assistance juridique</li>
-                            <li>Soutien psychosocial</li>
-                            <li>Mise en sécurité</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="support-card">
-                    <div class="support-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <div class="support-content">
-                        <h3>Gouvernance associative</h3>
-                        <p>Programme visant à renforcer les structures de gouvernance et les processus organisationnels des associations établies.</p>
-                        <ul class="support-details">
-                            <li>Audit organisationnel</li>
-                            <li>Planification stratégique</li>
-                            <li>Gestion financière</li>
-                            <li>Évaluation d'impact</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="join-network">
-        <div class="container">
-            <h2>Rejoignez nos réseaux</h2>
-            <p>Vous êtes une organisation de la société civile, une association ou un collectif citoyen ? Rejoignez nos réseaux pour renforcer votre impact et bénéficier de nos programmes de soutien.</p>
             
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="contact.html" class="btn btn-primary" style="margin-right: 20px;">Contactez-nous</a>
-                <a href="#" class="btn btn-secondary">Télécharger le formulaire d'adhésion</a>
+            <div class="container" style="position: relative; z-index: 2; padding: 100px 0;">
+                <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                        Espace Société Civile
+                    </h1>
+                    
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                        Renforcer les acteurs locaux pour un impact durable
+                    </p>
+                    
+                    <div class="hero-buttons animate-fadeIn" style="display: flex; gap: 20px; justify-content: center; margin-top: 30px; animation-delay: 0.5s;">
+                        <a href="#networks" class="btn-primary" style="background: white; color: var(--primary-color); padding: 15px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Nos réseaux</span>
+                        </a>
+                        <a href="contact.html" class="btn-outline" style="background: transparent; color: white; padding: 15px 35px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.3); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;">
+                            <i class="fas fa-handshake"></i>
+                            <span>Collaborer</span>
+                        </a>
+                    </div>
+                    
+                    <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.7s;">
+                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <span style="opacity: 0.8;">/</span>
+                        <span style="font-weight: 600;">Société civile</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="partners">
-        <div class="container">
-            <h2 class="section-title">Nos partenaires</h2>
-            <div class="partners-grid">
-                <!-- Partenaires logos would go here -->
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
+            
+            <!-- Curved Shape Divider -->
+            <div class="shape-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 70px; fill: white;">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                </svg>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="newsletter">
-        <div class="container">
-            <h2>Restez informés</h2>
-            <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et opportunités pour la société civile</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Votre adresse email" required>
-                <button type="submit" class="btn btn-primary">S'inscrire</button>
-            </form>
-        </div>
-    </section>
+        <section class="civil-society-intro" id="about-civil-society" style="position: relative; padding: 100px 0; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); overflow: hidden;">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAgMzBtLTI4IDBhMjggMjggMCAxIDAgNTYgMCAyOCAyOCAwIDEgMC01NiAwIiBzdHJva2U9InJnYmEoMzUsIDEwNywgMTQyLCAwLjEpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxwYXRoIGQ9Ik0zMCAzMG0tMTggMGExOCAxOCAwIDEgMCAzNiAwIDE4IDE4IDAgMSAwLTM2IDAiIHN0cm9rZT0icmdiYSgyMCwgODAsIDE2MCwgMC4xNSkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9nPjwvc3ZnPg=='); background-position: center; opacity: 0.6; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="intro-header text-center" style="text-align: center; margin-bottom: 50px;">
+                    <span class="intro-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Notre engagement</span>
+                    <h2 class="section-title">Engagement auprès de la société civile</h2>
+                </div>
+                
+                <div class="intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                    <div class="intro-content" style="opacity: 1; transform: none;">
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color); display: block !important; visibility: visible !important;">La <strong style="color: var(--primary-color);">Fondation pour la promotion des droits</strong> reconnaît le rôle crucial que joue la société civile dans la défense et la promotion des droits. Notre mission est de renforcer les capacités des organisations locales, des militants et des collectifs citoyens pour qu'ils puissent agir efficacement sur le terrain.</p>
+                        
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color); display: block !important; visibility: visible !important;">Nous proposons des programmes de soutien adaptés aux besoins spécifiques des acteurs de la société civile, qu'il s'agisse d'accompagnement technique, juridique, ou de mise en réseau pour maximiser l'impact de leurs actions.</p>
+                        
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; color: var(--text-color); display: block !important; visibility: visible !important;">Notre approche est fondée sur la conviction que le renforcement de la société civile est essentiel pour créer un environnement propice à la protection et à la promotion des droits humains fondamentaux.</p>
+                        
+                        <div class="resource-stats" style="margin-top: 30px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.08);">
+                            <h3 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--primary-color);">Notre impact en chiffres</h3>
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: #236b8e;">50+</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Organisations soutenues</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: #1450a0;">25+</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Projets accompagnés</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">12</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Réseaux actifs</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color);">500+</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-color);">Personnes formées</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="intro-image-container" style="position: relative;">
+                        <div class="intro-image-frame" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; z-index: 1;">
+                            <img src="img/real/collaboration.jpg" alt="Collaboration entre acteurs de la société civile" style="width: 100%; height: auto; display: block;" />
+                        </div>
+                        
+                        <!-- Floating element -->
+                        <div class="floating-tag" style="position: absolute; bottom: -20px; right: -20px; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; padding: 15px 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 2; display: flex; align-items: center; gap: 15px;">
+                            <i class="fas fa-handshake" style="font-size: 2rem;"></i>
+                            <div>
+                                <div style="font-size: 0.9rem; opacity: 0.9;">Ensemble pour</div>
+                                <div style="font-weight: 700; font-size: 1.1rem;">un impact durable</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-services" id="services" style="padding: 100px 0; background: linear-gradient(135deg, #f1f8fc 0%, #e8f4f8 100%); position: relative; overflow: hidden;">
+            <!-- Background dots pattern -->
+            <div class="bg-dots" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#236b8e 1px, transparent 1px); background-size: 20px 20px; opacity: 0.15;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="section-header text-center" style="max-width: 700px; margin: 0 auto 60px auto; text-align: center;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Comment nous vous aidons</span>
+                    <h2 class="section-title" style="margin-bottom: 20px;">Nos services de soutien</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-color); opacity: 0.9;">Nos services sont conçus pour répondre aux besoins spécifiques des acteurs de la société civile et maximiser leur impact dans la défense des droits.</p>
+                </div>
+                
+                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
+                        <div class="civil-icon" style="position: relative;">
+                            <i class="fas fa-balance-scale"></i>
+                            <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Assistance juridique</h3>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Conseils et accompagnement juridique pour les associations et les défenseurs des droits dans leurs activités quotidiennes.</p>
+                        <div class="service-features" style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Conseils juridiques spécialisés</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Révision de documents</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Orientation en cas de litige</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
+                            <span>Demander une assistance</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
+                        <div class="civil-icon" style="position: relative;">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Renforcement de capacités</h3>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Formations et ateliers spécialisés pour développer les compétences des acteurs de la société civile.</p>
+                        <div class="service-features" style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Formations thématiques</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Ateliers pratiques</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Coaching personnalisé</span>
+                            </div>
+                        </div>
+                        <a href="formations.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
+                            <span>Voir nos formations</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
+                        <div class="civil-icon" style="position: relative;">
+                            <i class="fas fa-network-wired"></i>
+                            <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Mise en réseau</h3>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Facilitation des échanges et des collaborations entre diverses organisations à l'échelle nationale et internationale.</p>
+                        <div class="service-features" style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Mise en relation</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Plateformes d'échange</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Projets collaboratifs</span>
+                            </div>
+                        </div>
+                        <a href="#networks" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
+                            <span>Explorer</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
+                        <div class="civil-icon" style="position: relative;">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Soutien aux projets</h3>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Accompagnement dans la conception, mise en œuvre et évaluation de projets en faveur des droits.</p>
+                        <div class="service-features" style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Conception de projets</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Suivi et évaluation</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Capitalisation</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
+                            <span>Proposer un projet</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
+                        <div class="civil-icon" style="position: relative;">
+                            <i class="fas fa-bullhorn"></i>
+                            <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Plaidoyer</h3>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Stratégies et outils de plaidoyer pour porter les voix des communautés et influencer les politiques publiques.</p>
+                        <div class="service-features" style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Stratégies d'influence</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Campagnes thématiques</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Communication d'impact</span>
+                            </div>
+                        </div>
+                        <a href="resources.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
+                            <span>Ressources</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
+                        <div class="civil-icon" style="position: relative;">
+                            <i class="fas fa-search-dollar"></i>
+                            <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Accès aux financements</h3>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Information sur les opportunités de financement et appui à la recherche de fonds pour les organisations locales.</p>
+                        <div class="service-features" style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Veille sur les financements</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Appui aux demandes</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                <span>Diversification des ressources</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
+                            <span>Nous contacter</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="networks" class="networks" style="padding: 100px 0; background-color: white; position: relative; overflow: hidden;">
+            <!-- Background wave pattern -->
+            <div class="wave-bg" style="position: absolute; top: 0; right: 0; width: 30%; height: 100%; background: linear-gradient(135deg, rgba(35, 107, 142, 0.06), rgba(20, 80, 160, 0.08)); border-radius: 0 0 0 100%;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="section-header" style="max-width: 700px; margin-bottom: 60px;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
+                    <h2 class="section-title" style="margin-bottom: 20px;">Réseaux et collaborations</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color);">La Fondation pour la promotion des droits facilite et participe à plusieurs réseaux thématiques qui rassemblent diverses organisations de la société civile. Ces plateformes offrent des opportunités d'échange d'expériences, de coordination d'actions et de mutualisation des ressources.</p>
+                </div>
+
+                <div class="networks-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div class="network-item reveal-left" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; position: relative;">
+                        <div class="network-image" style="height: 200px; position: relative;">
+                            <img src="img/real/advocacy.jpg" alt="Réseau des Défenseurs des Droits" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='img/placeholder.jpg';">
+                            <div class="image-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));"></div>
+                            <div class="network-icon" style="position: absolute; bottom: -25px; left: 30px; width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #236b8e, #1450a0); display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+                                <i class="fas fa-users" style="color: white; font-size: 28px;"></i>
+                            </div>
+                        </div>
+                        <div class="network-content" style="padding: 35px 30px 30px;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 600;">Réseau des Défenseurs des Droits</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6; color: #555;">Coalition d'organisations et d'individus engagés dans la protection et la promotion des droits humains fondamentaux en Algérie.</p>
+                            
+                            <div class="network-actions" style="margin-top: 20px; background-color: #f8f9fa; border-radius: 10px; padding: 20px;">
+                                <h4 style="font-size: 1rem; margin-bottom: 15px; color: #333;">Activités principales</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-calendar-alt" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Réunions trimestrielles</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-envelope" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Groupe de discussion en ligne</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-file-alt" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Publications conjointes</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <a href="contact.html" class="btn-link" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: #236b8e; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                                <span>Rejoindre ce réseau</span>
+                                <i class="fas fa-arrow-right" style="font-size: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="network-item reveal-right" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; position: relative;">
+                        <div class="network-image" style="height: 200px; position: relative;">
+                            <img src="img/real/women-rights.jpg" alt="Collectif pour les Droits des Femmes" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='img/placeholder.jpg';">
+                            <div class="image-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));"></div>
+                            <div class="network-icon" style="position: absolute; bottom: -25px; left: 30px; width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #236b8e, #1450a0); display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+                                <i class="fas fa-female" style="color: white; font-size: 28px;"></i>
+                            </div>
+                        </div>
+                        <div class="network-content" style="padding: 35px 30px 30px;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 600;">Collectif pour les Droits des Femmes</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6; color: #555;">Alliance d'associations œuvrant pour l'égalité des genres et l'autonomisation des femmes à travers différentes régions.</p>
+                            
+                            <div class="network-actions" style="margin-top: 20px; background-color: #f8f9fa; border-radius: 10px; padding: 20px;">
+                                <h4 style="font-size: 1rem; margin-bottom: 15px; color: #333;">Activités principales</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-bullhorn" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Campagnes de sensibilisation</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-gavel" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Assistance juridique mutuelle</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-handshake" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Projets collaboratifs</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <a href="contact.html" class="btn-link" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: #236b8e; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                                <span>Rejoindre ce réseau</span>
+                                <i class="fas fa-arrow-right" style="font-size: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="network-item reveal-left" style="background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; position: relative;">
+                        <div class="network-image" style="height: 200px; position: relative;">
+                            <img src="img/real/youth.jpg" alt="Plateforme Jeunesse et Droits" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='img/placeholder.jpg';">
+                            <div class="image-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));"></div>
+                            <div class="network-icon" style="position: absolute; bottom: -25px; left: 30px; width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #236b8e, #1450a0); display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+                                <i class="fas fa-child" style="color: white; font-size: 28px;"></i>
+                            </div>
+                        </div>
+                        <div class="network-content" style="padding: 35px 30px 30px;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 600;">Plateforme Jeunesse et Droits</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6; color: #555;">Espace dédié aux organisations dirigées par des jeunes et travaillant sur les problématiques de la jeunesse et de l'engagement civique.</p>
+                            
+                            <div class="network-actions" style="margin-top: 20px; background-color: #f8f9fa; border-radius: 10px; padding: 20px;">
+                                <h4 style="font-size: 1rem; margin-bottom: 15px; color: #333;">Activités principales</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-lightbulb" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Incubation d'initiatives</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-chalkboard-teacher" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Mentorat entre pairs</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center;">
+                                            <i class="fas fa-comments" style="color: #236b8e; font-size: 14px;"></i>
+                                        </div>
+                                        <span>Forums de dialogue</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <a href="contact.html" class="btn-link" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: #236b8e; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                                <span>Rejoindre ce réseau</span>
+                                <i class="fas fa-arrow-right" style="font-size: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="network-cta reveal-right" style="background: linear-gradient(135deg, #236b8e, #1450a0); color: white; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 10px 30px rgba(35, 107, 142, 0.2);">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-weight: 600;">Créez votre réseau</h3>
+                        <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.9; line-height: 1.6;">Vous souhaitez créer un nouveau réseau thématique? La Fondation peut vous accompagner dans toutes les étapes.</p>
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <a href="contact.html" class="btn-white" style="background: white; color: #236b8e; padding: 12px 25px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Proposer un réseau</span>
+                            </a>
+                            <a href="resources.html" class="btn-outline" style="border: 2px solid rgba(255, 255, 255, 0.3); color: white; padding: 12px 25px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;">
+                                <i class="fas fa-info-circle"></i>
+                                <span>En savoir plus</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-programs" style="padding: 100px 0; background: linear-gradient(135deg, #f0f7fc 0%, #e6eff6 100%); position: relative; overflow: hidden;">
+            <!-- Background pattern -->
+            <div class="pattern-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCA4MCI+PGRlZnM+PHBhdHRlcm4gaWQ9InBhdHRlcm4iIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiMzNjhCQjkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); background-position: center; opacity: 0.15; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="section-header text-center" style="max-width: 700px; margin: 0 auto 60px auto; text-align: center;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Nos dispositifs</span>
+                    <h2 class="section-title">Programmes de soutien spécifiques</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-color); opacity: 0.9; margin-top: 20px;">Découvrez nos programmes spécialement conçus pour répondre aux différents défis que rencontrent les acteurs de la société civile.</p>
+                </div>
+                
+                <div class="support-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px;">
+                    <div class="support-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="support-header" style="background: linear-gradient(to right, #236b8e, #1450a0); padding: 30px; position: relative;">
+                            <div class="support-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                                <i class="fas fa-seedling" style="color: white; font-size: 36px;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 1.6rem; margin-bottom: 10px;">Incubateur d'initiatives</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.5;">Un programme d'accompagnement intensif pour les nouvelles associations et initiatives citoyennes dans leur phase de démarrage.</p>
+                        </div>
+                        <div class="support-body" style="padding: 30px;">
+                            <ul class="support-features" style="list-style: none; padding: 0; margin: 0 0 25px 0;">
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-user-friends" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Mentorat personnalisé</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Accompagnement par des experts selon les besoins</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-chalkboard" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Ateliers pratiques</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Formations ciblées sur les besoins des initiatives</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-coins" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Micro-financement</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Appui financier limité pour démarrer les activités</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-calendar-alt" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Durée: 6 mois</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Processus intensif avec suivi régulier</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="btn-apply" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 15px rgba(35, 107, 142, 0.2);">
+                                <span>Postuler au programme</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="support-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="support-header" style="background: linear-gradient(to right, #1450a0, #0d3d7a); padding: 30px; position: relative;">
+                            <div class="support-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                                <i class="fas fa-shield-alt" style="color: white; font-size: 36px;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 1.6rem; margin-bottom: 10px;">Protection des défenseurs</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.5;">Mécanisme de soutien pour les défenseurs des droits confrontés à des risques ou des menaces en raison de leur travail.</p>
+                        </div>
+                        <div class="support-body" style="padding: 30px;">
+                            <ul class="support-features" style="list-style: none; padding: 0; margin: 0 0 25px 0;">
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-ambulance" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Réponse d'urgence</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Assistance rapide en cas de situation critique</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-gavel" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Assistance juridique</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Conseils et représentation juridique</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-heart" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Soutien psychosocial</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Accompagnement pour gérer le stress et l'anxiété</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-home" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Mise en sécurité</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Relocalisation temporaire si nécessaire</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="btn-apply" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #1450a0, #0d3d7a); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 15px rgba(20, 80, 160, 0.2);">
+                                <span>Demander une assistance</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="support-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="support-header" style="background: linear-gradient(to right, #2a7d9f, #236b8e); padding: 30px; position: relative;">
+                            <div class="support-icon" style="width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                                <i class="fas fa-landmark" style="color: white; font-size: 36px;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 1.6rem; margin-bottom: 10px;">Gouvernance associative</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.5;">Programme visant à renforcer les structures de gouvernance et les processus organisationnels des associations établies.</p>
+                        </div>
+                        <div class="support-body" style="padding: 30px;">
+                            <ul class="support-features" style="list-style: none; padding: 0; margin: 0 0 25px 0;">
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-search" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Audit organisationnel</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Évaluation des forces et faiblesses</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-route" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Planification stratégique</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Définition d'objectifs à moyen et long terme</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-chart-line" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Gestion financière</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Renforcement des processus budgétaires</p>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(35, 107, 142, 0.1); display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+                                        <i class="fas fa-tasks" style="color: #236b8e;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem;">Évaluation d'impact</h4>
+                                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Développement d'indicateurs et de systèmes de suivi</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="btn-apply" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2a7d9f, #236b8e); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 15px rgba(42, 125, 159, 0.2);">
+                                <span>Demander un accompagnement</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-network" style="background: linear-gradient(135deg, #1450a0, #0d3d7a); color: white; padding: 100px 0; position: relative; overflow: hidden;">
+            <!-- Background pattern -->
+            <div class="pattern-circles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px); background-size: 30px 30px; opacity: 0.2;"></div>
+            
+            <!-- Floating shapes -->
+            <div class="floating-shape shape1" style="position: absolute; top: 20%; left: 5%; width: 100px; height: 100px; background: rgba(255,255,255,0.05); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; animation: floating 8s infinite ease-in-out;"></div>
+            <div class="floating-shape shape2" style="position: absolute; bottom: 20%; right: 10%; width: 150px; height: 150px; background: rgba(255,255,255,0.05); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; animation: floating 10s infinite ease-in-out;"></div>
+            
+            <div class="container" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">Rejoignez nos réseaux</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto;">Vous êtes une organisation de la société civile, une association ou un collectif citoyen ? Rejoignez nos réseaux pour renforcer votre impact et bénéficier de nos programmes de soutien.</p>
+                
+                <div class="join-benefits" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 50px 0;">
+                    <div class="benefit-item" style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="benefit-icon" style="font-size: 40px; margin-bottom: 20px;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Communauté</h3>
+                        <p style="opacity: 0.8; line-height: 1.5;">Rejoignez une communauté dynamique partageant des valeurs communes.</p>
+                    </div>
+                    <div class="benefit-item" style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="benefit-icon" style="font-size: 40px; margin-bottom: 20px;">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Expertise</h3>
+                        <p style="opacity: 0.8; line-height: 1.5;">Accédez à l'expertise et aux ressources de la Fondation et de ses partenaires.</p>
+                    </div>
+                    <div class="benefit-item" style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="benefit-icon" style="font-size: 40px; margin-bottom: 20px;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Visibilité</h3>
+                        <p style="opacity: 0.8; line-height: 1.5;">Amplifiez la visibilité de vos actions et renforcez votre crédibilité.</p>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                    <a href="contact.html" class="btn-white" style="background: white; color: #1450a0; padding: 15px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contactez-nous</span>
+                    </a>
+                    <a href="#" class="btn-outline" style="background: transparent; color: white; padding: 15px 40px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.3); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;">
+                        <i class="fas fa-download"></i>
+                        <span>Télécharger le formulaire</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners" style="padding: 80px 0; background: white; position: relative;">
+            <div class="container">
+                <div class="section-header text-center" style="max-width: 700px; margin: 0 auto 50px auto; text-align: center;">
+                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
+                    <h2 class="section-title">Nos partenaires</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-color); opacity: 0.9; margin-top: 20px;">Nous travaillons avec un réseau diversifié de partenaires locaux et internationaux qui partagent notre engagement pour la promotion des droits.</p>
+                </div>
+                
+                <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; align-items: center; margin-top: 40px;">
+                    <div class="partner-logo" style="background-color: #f8f9fa; height: 100px; border-radius: 10px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                        <img src="img/partners/partner1.png" alt="Logo partenaire" style="max-width: 80%; max-height: 70px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';" onerror="this.src='https://via.placeholder.com/150x70?text=Partenaire'; this.onerror='';">
+                    </div>
+                    <div class="partner-logo" style="background-color: #f8f9fa; height: 100px; border-radius: 10px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                        <img src="img/partners/partner2.png" alt="Logo partenaire" style="max-width: 80%; max-height: 70px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';" onerror="this.src='https://via.placeholder.com/150x70?text=Partenaire'; this.onerror='';">
+                    </div>
+                    <div class="partner-logo" style="background-color: #f8f9fa; height: 100px; border-radius: 10px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                        <img src="img/partners/partner3.png" alt="Logo partenaire" style="max-width: 80%; max-height: 70px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';" onerror="this.src='https://via.placeholder.com/150x70?text=Partenaire'; this.onerror='';">
+                    </div>
+                    <div class="partner-logo" style="background-color: #f8f9fa; height: 100px; border-radius: 10px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                        <img src="img/partners/partner4.png" alt="Logo partenaire" style="max-width: 80%; max-height: 70px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';" onerror="this.src='https://via.placeholder.com/150x70?text=Partenaire'; this.onerror='';">
+                    </div>
+                    <div class="partner-logo" style="background-color: #f8f9fa; height: 100px; border-radius: 10px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                        <img src="img/partners/partner5.png" alt="Logo partenaire" style="max-width: 80%; max-height: 70px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';" onerror="this.src='https://via.placeholder.com/150x70?text=Partenaire'; this.onerror='';">
+                    </div>
+                    <div class="partner-logo" style="background-color: #f8f9fa; height: 100px; border-radius: 10px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                        <img src="img/partners/partner6.png" alt="Logo partenaire" style="max-width: 80%; max-height: 70px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';" onerror="this.src='https://via.placeholder.com/150x70?text=Partenaire'; this.onerror='';">
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 40px; text-align: center;">
+                    <a href="contact.html" class="btn-outline" style="display: inline-flex; align-items: center; gap: 10px; border: 2px solid #236b8e; color: #236b8e; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                        <i class="fas fa-handshake"></i>
+                        <span>Devenir partenaire</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter" style="padding: 100px 0; background: linear-gradient(135deg, #f1f8fc 0%, #e6eff6 100%); position: relative; overflow: hidden;">
+            <!-- Background pattern -->
+            <div class="dots-pattern" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#236b8e 1px, transparent 1px); background-size: 20px 20px; opacity: 0.1; z-index: 0;"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="newsletter-content" style="background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); padding: 50px; max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="newsletter-icon" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; font-size: 32px; display: flex; justify-content: center; align-items: center; margin: 0 auto 30px auto;">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    
+                    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #1a1a1a;">Restez informés</h2>
+                    <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px; line-height: 1.6;">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et opportunités pour la société civile</p>
+                    
+                    <form class="newsletter-form" style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
+                        <input type="email" placeholder="Votre adresse email" required style="flex: 1; padding: 15px 20px; border-radius: 50px; border: 1px solid #ddd; font-size: 16px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); outline: none;">
+                        <button type="submit" class="btn-primary" style="background: linear-gradient(135deg, #236b8e, #1450a0); color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: 600; font-size: 16px; cursor: pointer; white-space: nowrap; box-shadow: 0 5px 15px rgba(35, 107, 142, 0.2); transition: all 0.3s ease;">S'inscrire</button>
+                    </form>
+                    
+                    <p style="font-size: 0.9rem; color: #777; margin-top: 20px;">En vous inscrivant, vous acceptez de recevoir nos communications. Vous pourrez vous désinscrire à tout moment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -275,10 +988,22 @@
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="visually-hidden">Facebook</span>
+                        </a>
+                        <a href="https://x.com/FondationDZ" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="visually-hidden">Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/fondationdz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="visually-hidden">Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span class="visually-hidden">YouTube</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -289,5 +1014,127 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Animations pour les éléments au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les éléments reveal
+            const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+            
+            const revealOnScroll = function() {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+                
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    
+                    if(elementTop < windowHeight - revealPoint) {
+                        element.classList.add('active');
+                    } else {
+                        element.classList.remove('active');
+                    }
+                });
+            };
+            
+            // Vérifier au chargement initial
+            revealOnScroll();
+            
+            // Vérifier au scroll
+            window.addEventListener('scroll', revealOnScroll);
+            
+            // Animation hover pour les cartes de service
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animation pour les cartes de support
+            const supportCards = document.querySelectorAll('.support-card');
+            
+            supportCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.08)';
+                });
+            });
+            
+            // Animation pour les éléments de réseau
+            const networkItems = document.querySelectorAll('.network-item');
+            
+            networkItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.12)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+                });
+            });
+            
+            // Animation pour les items bénéfices
+            const benefitItems = document.querySelectorAll('.benefit-item');
+            
+            benefitItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-7px)';
+                    this.style.background = 'rgba(255,255,255,0.15)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.background = 'rgba(255,255,255,0.1)';
+                });
+            });
+            
+            // Animation de pulse pour les icônes
+            const addPulseAnimation = () => {
+                document.head.insertAdjacentHTML('beforeend', `
+                    <style>
+                        @keyframes pulse {
+                            0% {
+                                transform: scale(1);
+                                opacity: 0.2;
+                            }
+                            50% {
+                                transform: scale(1.3);
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: scale(1);
+                                opacity: 0;
+                            }
+                        }
+                        
+                        @keyframes floating {
+                            0% {
+                                transform: translateY(0px) rotate(0deg);
+                            }
+                            50% {
+                                transform: translateY(-20px) rotate(5deg);
+                            }
+                            100% {
+                                transform: translateY(0px) rotate(0deg);
+                            }
+                        }
+                    </style>
+                `);
+            };
+            
+            addPulseAnimation();
+        });
+    </script>
 </body>
 </html> 
