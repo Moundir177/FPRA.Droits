@@ -7,13 +7,21 @@
     <title>Actualités & Projets - Fondation pour la promotion des droits</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhanced-style.css">\n    <link rel="stylesheet" href="css/footer-fix.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/rtl-styles.css">
+    <script src="js/translations.js"></script>
 </head>
 <body>
     <a href="#content" class="skip-link">Passer au contenu</a>
+    
+    <!-- Menu backdrop for mobile navigation -->
+    <div class="menu-backdrop"></div>
+    
     <header>
         <div class="container">
             <div class="logo">
@@ -23,101 +31,103 @@
             </div>
             <nav>
                 <ul class="main-nav">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a data-i18n="nav_home" href="index.html">Accueil</a></li>
                     
                     <li class="dropdown primary-nav-item">
-                        <a href="about.html" class="dropdown-toggle">À propos</a>
+                        <a data-i18n="nav_about" href="about.html" class="dropdown-toggle">À propos</a>
                         <ul class="dropdown-menu">
-                            <li><a href="about.html#mission">Notre mission</a></li>
-                            <li><a href="about.html#vision">Notre vision</a></li>
-                            <li><a href="about.html#team">Notre équipe</a></li>
-                            <li><a href="about.html#history">Notre histoire</a></li>
+                            <li><a data-i18n="nav_mission" href="about.html#mission">Notre mission</a></li>
+                            <li><a data-i18n="nav_vision" href="about.html#vision">Notre vision</a></li>
+                            <li><a data-i18n="nav_team" href="about.html#team">Notre équipe</a></li>
+                            <li><a data-i18n="nav_history" href="about.html#history">Notre histoire</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown primary-nav-item">
-                        <a href="news.html" class="dropdown-toggle active">Actualités</a>
+                        <a data-i18n="nav_news" href="news.html" class="dropdown-toggle active">Actualités</a>
                         <ul class="dropdown-menu">
-                            <li><a href="news.html#latest">Dernières actualités</a></li>
-                            <li><a href="news.html#projects">Projets en cours</a></li>
-                            <li><a href="news.html#press">Communiqués de presse</a></li>
-                            <li><a href="news.html#events">Événements à venir</a></li>
+                            <li><a data-i18n="nav_latest_news" href="news.html#latest">Dernières actualités</a></li>
+                            <li><a data-i18n="nav_projects" href="news.html#projects">Projets en cours</a></li>
+                            <li><a data-i18n="nav_press" href="news.html#press">Communiqués de presse</a></li>
+                            <li><a data-i18n="nav_events" href="news.html#events">Événements à venir</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-separator"></li>
                     
                     <li class="dropdown resources-nav-item">
-                        <a href="revue.html" class="dropdown-toggle">Revue</a>
+                        <a data-i18n="nav_review" href="revue.html" class="dropdown-toggle">Revue</a>
                         <ul class="dropdown-menu">
-                            <li><a href="revue.html#current">Numéro actuel</a></li>
-                            <li><a href="revue.html#archives">Archives</a></li>
-                            <li><a href="revue.html#contribute">Comment contribuer</a></li>
-                            <li><a href="revue.html#editorial">Comité éditorial</a></li>
+                            <li><a data-i18n="nav_current_issue" href="revue.html#current">Numéro actuel</a></li>
+                            <li><a data-i18n="nav_archives" href="revue.html#archives">Archives</a></li>
+                            <li><a data-i18n="nav_contribute" href="revue.html#contribute">Comment contribuer</a></li>
+                            <li><a data-i18n="nav_editorial" href="revue.html#editorial">Comité éditorial</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown resources-nav-item">
-                        <a href="formations.html" class="dropdown-toggle">Formations</a>
+                        <a data-i18n="nav_training" href="formations.html" class="dropdown-toggle">Formations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#programs">Programmes de formation</a></li>
-                            <li><a href="#workshops">Ateliers</a></li>
-                            <li><a href="#calendar">Calendrier</a></li>
-                            <li><a href="#registration">Inscription</a></li>
+                            <li><a data-i18n="nav_training_programs" href="#programs">Programmes de formation</a></li>
+                            <li><a data-i18n="nav_workshops" href="#workshops">Ateliers</a></li>
+                            <li><a data-i18n="nav_calendar" href="#calendar">Calendrier</a></li>
+                            <li><a data-i18n="nav_registration" href="#registration">Inscription</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown resources-nav-item">
-                        <a href="resources.html" class="dropdown-toggle">Ressources</a>
+                        <a data-i18n="nav_resources" href="resources.html" class="dropdown-toggle">Ressources</a>
                         <ul class="dropdown-menu">
-                            <li><div class="dropdown-section-header">Documentation</div></li>
-                            <li><a href="#publications">Publications</a></li>
-                            <li><a href="#reports">Rapports</a></li>
-                            <li><a href="#guides">Guides pratiques</a></li>
-                            <li><div class="dropdown-section-header">Média</div></li>
-                            <li><a href="#multimedia">Multimédia</a></li>
+                            <li><div class="dropdown-section-header" data-i18n="nav_documentation">Documentation</div></li>
+                            <li><a data-i18n="nav_publications" href="#publications">Publications</a></li>
+                            <li><a data-i18n="nav_reports" href="#reports">Rapports</a></li>
+                            <li><a data-i18n="nav_guides" href="#guides">Guides pratiques</a></li>
+                            <li><div class="dropdown-section-header" data-i18n="nav_media">Média</div></li>
+                            <li><a data-i18n="nav_multimedia" href="#multimedia">Multimédia</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-separator"></li>
                     
                     <li class="dropdown">
-                        <a href="testimonials.html" class="dropdown-toggle">Témoignages</a>
+                        <a data-i18n="nav_testimonials" href="testimonials.html" class="dropdown-toggle">Témoignages</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#beneficiaries">Bénéficiaires</a></li>
-                            <li><a href="#partners">Partenaires</a></li>
-                            <li><a href="#experts">Experts</a></li>
-                            <li><a href="#share">Partagez votre témoignage</a></li>
+                            <li><a data-i18n="nav_beneficiaries" href="#beneficiaries">Bénéficiaires</a></li>
+                            <li><a data-i18n="nav_partners_list" href="#partners">Partenaires</a></li>
+                            <li><a data-i18n="nav_experts" href="#experts">Experts</a></li>
+                            <li><a data-i18n="nav_share_testimonial" href="#share">Partagez votre témoignage</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown">
-                        <a href="civil-society.html" class="dropdown-toggle">Société civile</a>
+                        <a data-i18n="nav_civil_society" href="civil-society.html" class="dropdown-toggle">Société civile</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#network">Notre réseau</a></li>
-                            <li><a href="#partners">Nos partenaires</a></li>
-                            <li><a href="#collaborations">Collaborations</a></li>
-                            <li><a href="#join">Rejoindre notre réseau</a></li>
+                            <li><a data-i18n="nav_network" href="#network">Notre réseau</a></li>
+                            <li><a data-i18n="nav_partners" href="#partners">Nos partenaires</a></li>
+                            <li><a data-i18n="nav_collaborations" href="#collaborations">Collaborations</a></li>
+                            <li><a data-i18n="nav_join_network" href="#join">Rejoindre notre réseau</a></li>
                         </ul>
                     </li>
                     
-                    <li><a href="gallery.html">Galerie</a></li>
+                    <li><a data-i18n="nav_gallery" href="gallery.html">Galerie</a></li>
                     
                     <li class="nav-separator"></li>
                     
                     <li class="dropdown action-nav-item">
-                        <a href="contact.html" class="dropdown-toggle">Contact</a>
+                        <a data-i18n="nav_contact" href="contact.html" class="dropdown-toggle">Contact</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#general">Informations générales</a></li>
-                            <li><a href="#media">Relations médias</a></li>
-                            <li><a href="#support">Support</a></li>
-                            <li><a href="#careers">Carrières</a></li>
+                            <li><a data-i18n="nav_general_info" href="#general">Informations générales</a></li>
+                            <li><a data-i18n="nav_media_relations" href="#media">Relations médias</a></li>
+                            <li><a data-i18n="nav_support" href="#support">Support</a></li>
+                            <li><a data-i18n="nav_careers" href="#careers">Carrières</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
+            
             <div class="language-switch">
-                <a href="#" class="active">FR</a>
+                <a href="#" data-lang="fr" class="active">FR</a>
+                <a href="#" data-lang="ar">AR</a>
             </div>
             <div class="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -135,18 +145,18 @@
             
             <div class="container" style="position: relative; z-index: 2; padding: 100px 0;">
                 <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);">
+                    <h1 class="animate-fadeIn" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.3);" data-i18n="news_page_title">
                         Actualités & Projets
                     </h1>
                     
-                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2); line-height: 1.6;">
+                    <p class="animate-fadeIn" style="animation-delay: 0.3s; font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95); text-shadow: 1px 1px 5px rgba(0,0,0,0.2);" data-i18n="news_page_subtitle">
                         Suivez nos activités et initiatives pour la promotion et la défense des droits humains
                     </p>
                     
                     <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.5s;">
-                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <a data-i18n="nav_home" href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
                         <span style="opacity: 0.8;">/</span>
-                        <span style="font-weight: 600;">Actualités & Projets</span>
+                        <span style="font-weight: 600;" data-i18n="news_page_title">Actualités & Projets</span>
                     </div>
                 </div>
             </div>
@@ -165,8 +175,8 @@
             
             <div class="container" style="position: relative; z-index: 1;">
                 <div class="social-connect-header" style="text-align: center; margin-bottom: 40px;">
-                    <span class="social-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Suivez notre actualité</span>
-                    <h2 class="section-title">Restez connectés</h2>
+                    <span class="social-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;" data-i18n="follow_our_news">Suivez notre actualité</span>
+                    <h2 class="section-title" data-i18n="stay_connected">Restez connectés</h2>
                 </div>
                 
                 <div class="social-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
@@ -181,11 +191,11 @@
                             </div>
                             
                             <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">Facebook</h3>
-                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);">Les actualités et informations présentées sur cette page sont issues de notre page Facebook officielle.</p>
+                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);" data-i18n="facebook_description">Les actualités et informations présentées sur cette page sont issues de notre page Facebook officielle.</p>
                             
                             <div style="text-align: center;">
                                 <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 12px 25px; display: inline-flex; align-items: center; gap: 8px; border-radius: 50px;">
-                                    <span>Visiter notre page</span>
+                                    <span data-i18n="visit_page">Visiter notre page</span>
                                     <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
                                 </a>
                             </div>
@@ -203,11 +213,11 @@
                             </div>
                             
                             <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">X (Twitter)</h3>
-                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);">Suivez-nous sur X pour des mises à jour quotidiennes et des ressources en temps réel.</p>
+                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);" data-i18n="twitter_description">Suivez-nous sur X pour des mises à jour quotidiennes et des ressources en temps réel.</p>
                             
                             <div style="text-align: center;">
                                 <a href="https://x.com/FondationDZ" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 12px 25px; display: inline-flex; align-items: center; gap: 8px; border: 2px solid #1DA1F2; color: #1DA1F2; border-radius: 50px; background: transparent;">
-                                    <span>Nous suivre</span>
+                                    <span data-i18n="follow_us">Nous suivre</span>
                                     <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
                                 </a>
                             </div>
@@ -225,11 +235,11 @@
                             </div>
                             
                             <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">Instagram</h3>
-                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);">Explorez notre galerie de photos et découvrez les coulisses de nos activités.</p>
+                            <p style="text-align: center; margin-bottom: 25px; color: var(--text-color);" data-i18n="instagram_description">Explorez notre galerie de photos et découvrez les coulisses de nos activités.</p>
                             
                             <div style="text-align: center;">
                                 <a href="https://www.instagram.com/fondationdz" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 12px 25px; display: inline-flex; align-items: center; gap: 8px; border: 2px solid #dc2743; color: #dc2743; border-radius: 50px; background: transparent;">
-                                    <span>Voir les photos</span>
+                                    <span data-i18n="view_photos">Voir les photos</span>
                                     <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
                                 </a>
                             </div>
@@ -241,7 +251,7 @@
                 <div class="youtube-link" style="margin-top: 40px; text-align: center;">
                     <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: #FF0000; color: white; padding: 15px 30px; border-radius: 50px; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2); transition: all 0.3s ease;">
                         <i class="fab fa-youtube" style="font-size: 1.5rem;"></i>
-                        <span style="font-weight: 600;">Découvrez notre chaîne YouTube</span>
+                        <span style="font-weight: 600;" data-i18n="discover_youtube">Découvrez notre chaîne YouTube</span>
                     </a>
                 </div>
             </div>
@@ -257,17 +267,17 @@
             
             <div class="container" style="position: relative; z-index: 1;">
                 <div class="news-header text-center" style="text-align: center; margin-bottom: 60px;">
-                    <span class="news-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;">Nos actualités</span>
-                    <h2 class="section-title">Nos dernières activités</h2>
-                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);">Découvrez les dernières nouvelles concernant nos activités, projets et événements pour la promotion des droits humains.</p>
+                    <span class="news-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 2px; display: block; margin-bottom: 15px;" data-i18n="our_news">Nos actualités</span>
+                    <h2 class="section-title" data-i18n="latest_activities">Nos dernières activités</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--text-color);" data-i18n="news_section_description">Découvrez les dernières nouvelles concernant nos activités, projets et événements pour la promotion des droits humains.</p>
                 </div>
                 
                 <!-- Filtres modernisés -->
                 <div class="news-filter" style="display: flex; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; gap: 10px;">
-                    <button class="filter-btn active" style="padding: 12px 25px; background: var(--primary-gradient); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.3); transition: all 0.3s ease;">Tout</button>
-                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Actualités</button>
-                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Projets</button>
-                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Événements</button>
+                    <button class="filter-btn active" style="padding: 12px 25px; background: var(--primary-gradient); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; box-shadow: 0 5px 15px rgba(60, 180, 150, 0.3); transition: all 0.3s ease;" data-i18n="category_all">Tout</button>
+                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;" data-i18n="nav_news">Actualités</button>
+                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;" data-i18n="nav_projects">Projets</button>
+                    <button class="filter-btn" style="padding: 12px 25px; background: white; color: var(--text-color); border: 2px solid #e0e0e0; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;" data-i18n="nav_events">Événements</button>
                 </div>
                 
                 <!-- Grille d'articles améliorée -->
@@ -277,7 +287,7 @@
                         <!-- Image de l'article avec overlay -->
                         <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
                             <div class="news-image" style="background-image: url('img/real/education-rights.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
-                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: var(--primary-gradient); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Formation</div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: var(--primary-gradient); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;" data-i18n="news_category_training">Formation</div>
                         </div>
                         
                         <!-- Contenu de l'article -->
@@ -288,12 +298,12 @@
                                 </span>
                             </div>
                             
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Formation sur les droits fondamentaux</h3>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;" data-i18n="news_1_title">Formation sur les droits fondamentaux</h3>
                             
-                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Nouvelle session de formation prévue à Alger pour les défenseurs des droits. Cette formation vise à renforcer les capacités des acteurs locaux.</p>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;" data-i18n="news_1_content">Nouvelle session de formation prévue à Alger pour les défenseurs des droits. Cette formation vise à renforcer les capacités des acteurs locaux.</p>
                             
                             <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
-                                <span>Lire plus</span>
+                                <span data-i18n="read_more">Lire plus</span>
                                 <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
                             </a>
                         </div>
@@ -304,7 +314,7 @@
                         <!-- Image de l'article avec overlay -->
                         <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
                             <div class="news-image" style="background-image: url('img/real/advocacy.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
-                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #e17055, #ff7675); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Publication</div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #e17055, #ff7675); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;" data-i18n="category_reports">Publication</div>
                         </div>
                         
                         <!-- Contenu de l'article -->
@@ -315,12 +325,12 @@
                                 </span>
                             </div>
                             
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Publication du rapport annuel</h3>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;" data-i18n="featured_news_title">Publication du rapport annuel</h3>
                             
-                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Notre rapport sur l'état des droits en Algérie est maintenant disponible. Le document offre une analyse détaillée des avancées.</p>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;" data-i18n="featured_news_content">Notre rapport sur l'état des droits en Algérie est maintenant disponible. Le document offre une analyse détaillée des avancées.</p>
                             
                             <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
-                                <span>Lire plus</span>
+                                <span data-i18n="read_more">Lire plus</span>
                                 <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
                             </a>
                         </div>
@@ -331,7 +341,7 @@
                         <!-- Image de l'article avec overlay -->
                         <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
                             <div class="news-image" style="background-image: url('img/real/collaboration.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
-                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Partenariat</div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;" data-i18n="news_category_partnership">Partenariat</div>
                         </div>
                         
                         <!-- Contenu de l'article -->
@@ -342,12 +352,12 @@
                                 </span>
                             </div>
                             
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Collaboration avec des ONG internationales</h3>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;" data-i18n="news_2_title">Collaboration avec des ONG internationales</h3>
                             
-                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Un nouveau partenariat pour renforcer la promotion des droits. Cette collaboration permettra d'échanger des expertises.</p>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;" data-i18n="news_2_content">Un nouveau partenariat pour renforcer la promotion des droits. Cette collaboration permettra d'échanger des expertises.</p>
                             
                             <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
-                                <span>Lire plus</span>
+                                <span data-i18n="read_more">Lire plus</span>
                                 <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
                             </a>
                         </div>
@@ -358,7 +368,7 @@
                         <!-- Image de l'article avec overlay -->
                         <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
                             <div class="news-image" style="background-image: url('img/real/youth-engagement.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
-                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #00cec9, #81ecec); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Projet</div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #00cec9, #81ecec); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;" data-i18n="nav_projects">Projet</div>
                         </div>
                         
                         <!-- Contenu de l'article -->
@@ -369,12 +379,12 @@
                                 </span>
                             </div>
                             
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Lancement du projet "Droits pour tous"</h3>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;" data-i18n="project_rights_for_all">Lancement du projet "Droits pour tous"</h3>
                             
-                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Un projet d'éducation civique destiné aux jeunes dans les régions éloignées. Cette initiative vise à sensibiliser les jeunes.</p>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;" data-i18n="project_education">Un projet d'éducation civique destiné aux jeunes dans les régions éloignées. Cette initiative vise à sensibiliser les jeunes.</p>
                             
                             <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
-                                <span>Lire plus</span>
+                                <span data-i18n="read_more">Lire plus</span>
                                 <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
                             </a>
                         </div>
@@ -385,7 +395,7 @@
                         <!-- Image de l'article avec overlay -->
                         <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
                             <div class="news-image" style="background-image: url('img/real/women-rights.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
-                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #ff9f43, #feca57); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Conférence</div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #ff9f43, #feca57); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;" data-i18n="news_category_event">Conférence</div>
                         </div>
                         
                         <!-- Contenu de l'article -->
@@ -396,12 +406,12 @@
                                 </span>
                             </div>
                             
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Conférence sur l'égalité des genres</h3>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;" data-i18n="gender_equality_conference">Conférence sur l'égalité des genres</h3>
                             
-                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Une journée d'échanges et de débats sur les défis et les opportunités pour l'égalité hommes-femmes. Des experts ont partagé leurs analyses.</p>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;" data-i18n="gender_equality_content">Une journée d'échanges et de débats sur les défis et les opportunités pour l'égalité hommes-femmes. Des experts ont partagé leurs analyses.</p>
                             
                             <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
-                                <span>Lire plus</span>
+                                <span data-i18n="read_more">Lire plus</span>
                                 <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
                             </a>
                         </div>
@@ -412,7 +422,7 @@
                         <!-- Image de l'article avec overlay -->
                         <div class="news-image-container" style="position: relative; height: 200px; overflow: hidden;">
                             <div class="news-image" style="background-image: url('img/real/justice-scale.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s ease;"></div>
-                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #10ac84, #1dd1a1); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">Campagne</div>
+                            <div class="news-category" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(90deg, #10ac84, #1dd1a1); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;" data-i18n="campaign_category">Campagne</div>
                         </div>
                         
                         <!-- Contenu de l'article -->
@@ -423,12 +433,12 @@
                                 </span>
                             </div>
                             
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;">Campagne sur les droits environnementaux</h3>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); line-height: 1.4;" data-i18n="environmental_rights_campaign">Campagne sur les droits environnementaux</h3>
                             
-                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;">Une série d'actions pour promouvoir la protection de l'environnement comme un droit fondamental. La campagne s'étendra sur trois mois.</p>
+                            <p style="margin-bottom: 25px; color: var(--text-color); line-height: 1.6;" data-i18n="environmental_rights_content">Une série d'actions pour promouvoir la protection de l'environnement comme un droit fondamental. La campagne s'étendra sur trois mois.</p>
                             
                             <a href="#" class="read-more" style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 600; transition: all 0.3s ease;">
-                                <span>Lire plus</span>
+                                <span data-i18n="read_more">Lire plus</span>
                                 <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
                             </a>
                         </div>
@@ -458,40 +468,64 @@
             </div>
         </section>
 
-        <section class="newsletter" style="padding: 100px 0; background: linear-gradient(135deg, rgba(60,180,150,0.95) 0%, rgba(243,146,7,0.95) 100%), url('img/real/teamwork.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; color: white; position: relative; overflow: hidden;">
-            <!-- Decorative elements -->
-            <div class="newsletter-shapes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
-                <div style="position: absolute; top: 10%; left: 15%; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
-                <div style="position: absolute; bottom: 10%; right: 10%; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
-                <div style="position: absolute; top: 40%; right: 20%; width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,0.07);"></div>
+        <section class="newsletter" id="newsletter" style="position: relative; padding: 100px 0; overflow: hidden; background: linear-gradient(135deg, rgba(60,180,150,0.9) 0%, rgba(243,146,7,0.9) 100%);">
+            <!-- Background elements -->
+            <div class="newsletter-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <div style="position: absolute; width: 100%; height: 100%; background-image: url('img/real/pattern-bg.jpg'); background-size: cover; background-position: center; opacity: 0.1;"></div>
+                
+                <!-- Floating shapes animation -->
+                <div class="floating-shape shape1" style="position: absolute; top: 10%; left: 5%; width: 80px; height: 80px; border-radius: 20%; background: rgba(255,255,255,0.1); animation: float 8s ease-in-out infinite;"></div>
+                <div class="floating-shape shape2" style="position: absolute; bottom: 15%; right: 10%; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.1); animation: float 12s ease-in-out infinite;"></div>
+                <div class="floating-shape shape3" style="position: absolute; top: 40%; right: 20%; width: 60px; height: 60px; border-radius: 30%; background: rgba(255,255,255,0.1); animation: float 10s ease-in-out infinite;"></div>
             </div>
             
-            <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
-                <div class="newsletter-content text-center" style="text-align: center;">
-                    <div class="newsletter-icon" style="margin-bottom: 20px;">
-                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; backdrop-filter: blur(5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
-                            <i class="fas fa-envelope-open-text" style="font-size: 2.5rem; color: white;"></i>
-                        </div>
+            <div class="container" style="position: relative; z-index: 1; max-width: 900px;">
+                <div class="newsletter-content text-center" style="text-align: center; color: white;">
+                    <span class="newsletter-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 15px;" data-i18n="newsletter_subtitle">Restez informés</span>
+                    
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white;" data-i18n="newsletter_title">Abonnez-vous à notre newsletter</h2>
+                    
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; color: rgba(255,255,255,0.9);" data-i18n="newsletter_description">Recevez les dernières actualités, publications et événements de la Fondation directement dans votre boîte de réception.</p>
+                    
+                    <!-- Enhanced Newsletter Form -->
+                    <div class="newsletter-form-container" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); max-width: 600px; margin: 0 auto;">
+                        <form class="newsletter-form" action="#" method="post" style="position: relative;">
+                            <div style="position: relative; margin-bottom: 20px;">
+                                <i class="far fa-envelope" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); color: var(--gray-color);"></i>
+                                <input type="email" id="email-newsletter" placeholder="Votre adresse email" required aria-required="true" style="width: 100%; padding: 15px 20px 15px 50px; border: 2px solid #eee; border-radius: 50px; font-size: 1rem; transition: all 0.3s ease;">
+                            </div>
+                            
+                            <div class="newsletter-options" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; justify-content: center;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="actualites" checked style="accent-color: var(--primary-color);">
+                                    <span data-i18n="nav_news" style="color: var(--text-color);">Actualités</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="events" checked style="accent-color: var(--primary-color);">
+                                    <span style="color: var(--text-color);" data-i18n="nav_events">Événements</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="publications" checked style="accent-color: var(--primary-color);">
+                                    <span data-i18n="nav_publications" style="color: var(--text-color);">Publications</span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-footer" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary" style="padding: 15px 40px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; background: var(--primary-gradient);">
+                                    <span data-i18n="newsletter_subscribe">S'abonner</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                                
+                                <p style="margin-top: 15px; font-size: 0.8rem; color: var(--gray-color);" data-i18n="newsletter_privacy">En vous inscrivant, vous acceptez de recevoir nos emails. Vous pourrez vous désabonner à tout moment.</p>
+                            </div>
+                        </form>
                     </div>
                     
-                    <h2 style="font-size: 2.8rem; margin-bottom: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Restez informés</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 40px; color: rgba(255,255,255,0.9); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités, ressources et opportunités d'engagement pour la promotion des droits.</p>
-                    
-                    <form class="newsletter-form" style="max-width: 600px; margin: 0 auto; position: relative;">
-                        <div style="position: relative; display: flex; flex-wrap: wrap; gap: 15px;">
-                            <input type="email" id="email-newsletter" placeholder="Votre adresse email" required style="flex: 1; min-width: 250px; padding: 18px 25px; font-size: 1.1rem; border: none; border-radius: 50px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                            <button type="submit" class="btn btn-subscribe" style="padding: 18px 35px; border: none; border-radius: 50px; background: white; color: var(--primary-color); font-weight: 700; font-size: 1.1rem; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
-                                <span>S'inscrire</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                        <p style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">En vous inscrivant, vous acceptez de recevoir nos communications. Vous pourrez vous désinscrire à tout moment.</p>
-                </form>
-                    
-                    <!-- Social Follow -->
-                    <div class="social-follow" style="margin-top: 50px;">
-                        <p style="font-size: 1.1rem; margin-bottom: 20px; color: white;">Suivez-nous sur les réseaux sociaux</p>
-                        <div class="social-icons" style="display: flex; justify-content: center; gap: 15px;">
+                    <!-- Social Media Follow -->
+                    <div class="newsletter-social" style="margin-top: 40px;">
+                        <p style="margin-bottom: 20px; color: rgba(255,255,255,0.9);" data-i18n="follow_us_social">Suivez-nous également sur les réseaux sociaux :</p>
+                        
+                        <div class="social-links" style="display: flex; justify-content: center; gap: 15px;">
                             <a href="https://web.facebook.com/profile.php?id=61566611772758&sk=about" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
@@ -504,6 +538,9 @@
                             <a href="https://youtube.com/@fondationpourlapromotiondesdro?si=ahO0gXnJ1OIYThab" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
                                 <i class="fab fa-youtube"></i>
                             </a>
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 20px; transition: all 0.3s ease; backdrop-filter: blur(5px);">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -515,27 +552,27 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Fondation pour la promotion des droits</h3>
-                    <p>Ensemble, pour des droits connus, reconnus et défendus.</p>
+                    <h3 data-i18n="site_title_full">Fondation pour la promotion des droits</h3>
+                    <p data-i18n="footer_mission">Ensemble, pour des droits connus, reconnus et défendus.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Liens rapides</h3>
+                    <h3 data-i18n="quick_links">Liens rapides</h3>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                        <li><a href="news.html">Actualités</a></li>
-                        <li><a href="gallery.html">Galerie</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a data-i18n="nav_home" href="index.html">Accueil</a></li>
+                        <li><a data-i18n="nav_about" href="about.html">À propos</a></li>
+                        <li><a data-i18n="nav_news" href="news.html">Actualités</a></li>
+                        <li><a data-i18n="nav_gallery" href="gallery.html">Galerie</a></li>
+                        <li><a data-i18n="nav_contact" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Alger, Algérie</p>
+                    <h3 data-i18n="nav_contact">Contact</h3>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-i18n="address">Alger, Algérie</span></p>
                     <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@fondationdroits.org">contact@fondationdroits.org</a></p>
                     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+21300000000">+213 XX XX XX XX</a></p>
                 </div>
                 <div class="footer-section">
-                    <h3>Suivez-nous</h3>
+                    <h3 data-i18n="follow_us">Suivez-nous</h3>
                     <div class="social-links">
                         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
@@ -557,12 +594,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Fondation pour la promotion des droits. Tous droits réservés.</p>
+                <p data-i18n="copyright_text">&copy; 2023 Fondation pour la promotion des droits. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/mobile-menu.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Filtres d'actualités améliorés

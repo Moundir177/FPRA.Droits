@@ -1,0 +1,127 @@
+/* RTL (Right-to-Left) Styles for Arabic Language */
+body.rtl {
+    text-align: right;
+}
+
+/* Navigation adjustments for RTL */
+body.rtl .main-nav {
+    direction: rtl;
+}
+
+body.rtl .dropdown-menu {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+
+body.rtl .nav-separator {
+    margin: 0 15px;
+}
+
+/* RTL adjustments for lists and content */
+body.rtl ul, 
+body.rtl ol {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+body.rtl .mission-list li,
+body.rtl .footer-section ul li {
+    padding-right: 25px;
+    padding-left: 0;
+}
+
+body.rtl .mission-list li i,
+body.rtl .footer-section ul li i {
+    right: 0;
+    left: auto;
+}
+
+/* RTL for flexbox elements */
+body.rtl .flex-row {
+    flex-direction: row-reverse;
+}
+
+/* Alignment adjustments */
+body.rtl .text-right {
+    text-align: left;
+}
+
+body.rtl .text-left {
+    text-align: right;
+}
+
+/* Form elements in RTL */
+body.rtl input,
+body.rtl textarea {
+    text-align: right;
+}
+
+body.rtl .form-group label {
+    text-align: right;
+}
+
+/* Icon placement adjustments */
+body.rtl .icon-left {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+body.rtl .icon-right {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* Grid adjustments */
+body.rtl .news-grid,
+body.rtl .programs-grid,
+body.rtl .partners-grid {
+    direction: rtl;
+}
+
+/* Other directional elements */
+body.rtl .testimonial-author,
+body.rtl .news-meta,
+body.rtl .featured-news-content {
+    text-align: right;
+}
+
+body.rtl .quote-icon {
+    text-align: right;
+}
+
+body.rtl .read-more {
+    flex-direction: row-reverse;
+}
+
+body.rtl .read-more i {
+    transform: rotate(180deg);
+}
+
+/* Button icons direction */
+body.rtl .btn i {
+    transform: scaleX(-1);
+}
+
+/* Language selector adjustments */
+body.rtl .language-switch {
+    direction: ltr; /* Keep language selector left-to-right */
+}
+
+/* Font adjustments for Arabic */
+body.rtl h1, 
+body.rtl h2, 
+body.rtl h3, 
+body.rtl h4, 
+body.rtl h5, 
+body.rtl h6, 
+body.rtl p, 
+body.rtl a, 
+body.rtl li, 
+body.rtl span {
+    font-family: 'Noto Sans Arabic', 'Tajawal', sans-serif;
+}
+
+/* Add Noto Sans Arabic font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap'); 

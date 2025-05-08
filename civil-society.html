@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhanced-style.css">
     <link rel="stylesheet" href="css/footer-fix.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,89 +149,98 @@
             }
         }
     </style>
+
+    <link rel="stylesheet" href="css/rtl-styles.css">
+    <script src="js/translations.js"></script>
 </head>
 <body>
     <a href="#content" class="skip-link">Passer au contenu</a>
+    
+    
+    <!-- Menu backdrop for mobile navigation -->
+    <div class="menu-backdrop"></div>
     
     <header>
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <h1>Fondation pour la promotion des droits</h1>
+                    <img src="img/path742.png" alt="Fondation pour la promotion des droits" style="max-height: 60px; width: auto;">
                 </a>
             </div>
             <nav>
                 <ul class="main-nav">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a data-i18n="nav_home" href="index.html">Accueil</a></li>
                     
                     <li class="dropdown primary-nav-item">
-                        <a href="about.html" class="dropdown-toggle">À propos</a>
+                        <a data-i18n="nav_about" href="about.html" class="dropdown-toggle">À propos</a>
                         <ul class="dropdown-menu">
-                            <li><a href="about.html#mission">Notre mission</a></li>
-                            <li><a href="about.html#vision">Notre vision</a></li>
-                            <li><a href="about.html#team">Notre équipe</a></li>
-                            <li><a href="about.html#history">Notre histoire</a></li>
+                            <li><a data-i18n="nav_mission" href="about.html#mission">Notre mission</a></li>
+                            <li><a data-i18n="nav_vision" href="about.html#vision">Notre vision</a></li>
+                            <li><a data-i18n="nav_team" href="about.html#team">Notre équipe</a></li>
+                            <li><a data-i18n="nav_history" href="about.html#history">Notre histoire</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown primary-nav-item">
-                        <a href="news.html" class="dropdown-toggle">Actualités</a>
+                        <a data-i18n="nav_news" href="news.html" class="dropdown-toggle">Actualités</a>
                         <ul class="dropdown-menu">
-                            <li><a href="news.html#latest">Dernières actualités</a></li>
-                            <li><a href="news.html#projects">Projets en cours</a></li>
-                            <li><a href="news.html#press">Communiqués de presse</a></li>
-                            <li><a href="news.html#events">Événements à venir</a></li>
+                            <li><a data-i18n="nav_latest_news" href="news.html#latest">Dernières actualités</a></li>
+                            <li><a data-i18n="nav_projects" href="news.html#projects">Projets en cours</a></li>
+                            <li><a data-i18n="nav_press" href="news.html#press">Communiqués de presse</a></li>
+                            <li><a data-i18n="nav_events" href="news.html#events">Événements à venir</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-separator"></li>
                     
                     <li class="dropdown resources-nav-item">
-                        <a href="revue.html" class="dropdown-toggle">Revue</a>
+                        <a data-i18n="nav_review" href="revue.html" class="dropdown-toggle">Revue</a>
                         <ul class="dropdown-menu">
-                            <li><a href="revue.html#current">Numéro actuel</a></li>
-                            <li><a href="revue.html#archives">Archives</a></li>
-                            <li><a href="revue.html#contribute">Comment contribuer</a></li>
-                            <li><a href="revue.html#editorial">Comité éditorial</a></li>
+                            <li><a data-i18n="nav_current_issue" href="revue.html#current">Numéro actuel</a></li>
+                            <li><a data-i18n="nav_archives" href="revue.html#archives">Archives</a></li>
+                            <li><a data-i18n="nav_contribute" href="revue.html#contribute">Comment contribuer</a></li>
+                            <li><a data-i18n="nav_editorial" href="revue.html#editorial">Comité éditorial</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown resources-nav-item">
-                        <a href="formations.html" class="dropdown-toggle">Formations</a>
+                        <a data-i18n="nav_training" href="formations.html" class="dropdown-toggle">Formations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="formations.html#programs">Programmes de formation</a></li>
-                            <li><a href="formations.html#workshops">Ateliers</a></li>
-                            <li><a href="formations.html#calendar">Calendrier</a></li>
-                            <li><a href="formations.html#registration">Inscription</a></li>
+                            <li><a data-i18n="nav_training_programs" href="formations.html#programs">Programmes de formation</a></li>
+                            <li><a data-i18n="nav_workshops" href="formations.html#workshops">Ateliers</a></li>
+                            <li><a data-i18n="nav_calendar" href="formations.html#calendar">Calendrier</a></li>
+                            <li><a data-i18n="nav_registration" href="formations.html#registration">Inscription</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown resources-nav-item">
-                        <a href="resources.html" class="dropdown-toggle">Ressources</a>
+                        <a data-i18n="nav_resources" href="resources.html" class="dropdown-toggle">Ressources</a>
                         <ul class="dropdown-menu">
-                            <li><div class="dropdown-section-header">Documentation</div></li>
-                            <li><a href="resources.html#publications">Publications</a></li>
-                            <li><a href="resources.html#reports">Rapports</a></li>
-                            <li><a href="resources.html#guides">Guides pratiques</a></li>
-                            <li><div class="dropdown-section-header">Média</div></li>
-                            <li><a href="resources.html#multimedia">Multimédia</a></li>
+                            <li><div class="dropdown-section-header" data-i18n="nav_documentation">Documentation</div></li>
+                            <li><a data-i18n="nav_publications" href="resources.html#publications">Publications</a></li>
+                            <li><a data-i18n="nav_reports" href="resources.html#reports">Rapports</a></li>
+                            <li><a data-i18n="nav_guides" href="resources.html#guides">Guides pratiques</a></li>
+                            <li><div class="dropdown-section-header" data-i18n="nav_media">Média</div></li>
+                            <li><a data-i18n="nav_multimedia" href="resources.html#multimedia">Multimédia</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-separator"></li>
                     
-                    <li><a href="testimonials.html">Témoignages</a></li>
-                    <li><a href="civil-society.html" class="active">Société civile</a></li>
-                    <li><a href="gallery.html">Galerie</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a data-i18n="nav_testimonials" href="testimonials.html">Témoignages</a></li>
+                    <li><a data-i18n="nav_civil_society" href="civil-society.html" class="active">Société civile</a></li>
+                    <li><a data-i18n="nav_gallery" href="gallery.html">Galerie</a></li>
+                    <li><a data-i18n="nav_contact" href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            
             <div class="language-switch">
-                <a href="#" class="active">FR</a>
+                <a href="#" data-lang="fr" class="active">FR</a>
+                <a href="#" data-lang="ar">AR</a>
             </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </div>
         </div>
     </header>
 
@@ -264,9 +274,9 @@
                     </div>
                     
                     <div class="breadcrumb animate-fadeIn" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; color: white; animation-delay: 0.7s;">
-                        <a href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
+                        <a data-i18n="nav_home" href="index.html" style="color: white; opacity: 0.8; text-decoration: none;">Accueil</a>
                         <span style="opacity: 0.8;">/</span>
-                        <span style="font-weight: 600;">Société civile</span>
+                        <span data-i18n="nav_civil_society" style="font-weight: 600;">Société civile</span>
                     </div>
                 </div>
             </div>
@@ -326,11 +336,11 @@
                         </div>
                         
                         <!-- Floating element -->
-                        <div class="floating-tag" style="position: absolute; bottom: -20px; right: -20px; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; padding: 15px 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 2; display: flex; align-items: center; gap: 15px;">
-                            <i class="fas fa-handshake" style="font-size: 2rem;"></i>
+                        <div class="floating-tag">
+                            <i class="fas fa-handshake icon"></i>
                             <div>
-                                <div style="font-size: 0.9rem; opacity: 0.9;">Ensemble pour</div>
-                                <div style="font-weight: 700; font-size: 1.1rem;">un impact durable</div>
+                                <div class="tag-title">Ensemble pour</div>
+                                <div class="tag-subtitle">un impact durable</div>
                             </div>
                         </div>
                     </div>
@@ -357,6 +367,7 @@
                         </div>
                         <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Assistance juridique</h3>
                         <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Conseils et accompagnement juridique pour les associations et les défenseurs des droits dans leurs activités quotidiennes.</p>
+                        <img src="img/real/rights/legal-aid.jpg" alt="Aide juridique et défense des droits" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
                         <div class="service-features" style="margin-bottom: 25px;">
                             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                                 <i class="fas fa-check" style="color: var(--primary-color);"></i>
@@ -384,6 +395,7 @@
                         </div>
                         <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Renforcement de capacités</h3>
                         <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Formations et ateliers spécialisés pour développer les compétences des acteurs de la société civile.</p>
+                        <img src="img/real/rights/human-rights-protest.jpg" alt="Manifestation pour les droits humains" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
                         <div class="service-features" style="margin-bottom: 25px;">
                             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                                 <i class="fas fa-check" style="color: var(--primary-color);"></i>
@@ -406,11 +418,12 @@
                     
                     <div class="civil-box service-card" style="transform: translateY(0); transition: all 0.4s ease-out;">
                         <div class="civil-icon" style="position: relative;">
-                            <i class="fas fa-network-wired"></i>
+                            <i class="fas fa-users"></i>
                             <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
                         </div>
                         <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Mise en réseau</h3>
-                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Facilitation des échanges et des collaborations entre diverses organisations à l'échelle nationale et internationale.</p>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Connexion avec d'autres acteurs pour renforcer la collaboration et maximiser l'impact des initiatives.</p>
+                        <img src="img/real/rights/equal-rights.jpg" alt="Égalité des droits" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
                         <div class="service-features" style="margin-bottom: 25px;">
                             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                                 <i class="fas fa-check" style="color: var(--primary-color);"></i>
@@ -464,7 +477,8 @@
                             <div class="icon-bg-circle" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.2); animation: pulse 2s infinite;"></div>
                         </div>
                         <h3 style="margin-bottom: 15px; font-weight: 600; color: #1a1a1a;">Plaidoyer</h3>
-                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Stratégies et outils de plaidoyer pour porter les voix des communautés et influencer les politiques publiques.</p>
+                        <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">Soutien aux actions de plaidoyer pour influencer les politiques publiques en matière de droits.</p>
+                        <img src="img/real/rights/refugee-rights.jpg" alt="Droits des réfugiés" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
                         <div class="service-features" style="margin-bottom: 25px;">
                             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                                 <i class="fas fa-check" style="color: var(--primary-color);"></i>
@@ -480,7 +494,7 @@
                             </div>
                         </div>
                         <a href="resources.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, #236b8e, #1450a0); color: white; transition: all 0.3s ease; box-shadow: 0 6px 15px rgba(35, 107, 142, 0.2);">
-                            <span>Ressources</span>
+                            <span data-i18n="nav_resources">Ressources</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -522,7 +536,7 @@
 
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="section-header" style="max-width: 700px; margin-bottom: 60px;">
-                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
+                    <span data-i18n="nav_collaborations" class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
                     <h2 class="section-title" style="margin-bottom: 20px;">Réseaux et collaborations</h2>
                     <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-color);">La Fondation pour la promotion des droits facilite et participe à plusieurs réseaux thématiques qui rassemblent diverses organisations de la société civile. Ces plateformes offrent des opportunités d'échange d'expériences, de coordination d'actions et de mutualisation des ressources.</p>
                 </div>
@@ -904,7 +918,7 @@
         <section class="partners" style="padding: 80px 0; background: white; position: relative;">
             <div class="container">
                 <div class="section-header text-center" style="max-width: 700px; margin: 0 auto 50px auto; text-align: center;">
-                    <span class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
+                    <span data-i18n="nav_collaborations" class="section-subtitle" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 700; color: #236b8e; letter-spacing: 2px; display: block; margin-bottom: 15px;">Collaborations</span>
                     <h2 class="section-title">Nos partenaires</h2>
                     <p style="font-size: 1.1rem; color: var(--text-color); opacity: 0.9; margin-top: 20px;">Nous travaillons avec un réseau diversifié de partenaires locaux et internationaux qui partagent notre engagement pour la promotion des droits.</p>
                 </div>
@@ -967,16 +981,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Fondation pour la promotion des droits</h3>
-                    <p>Ensemble, pour des droits connus, reconnus et défendus.</p>
+                    <h3 data-i18n="site_title_full">Fondation pour la promotion des droits</h3>
+                    <p data-i18n="footer_mission">Ensemble, pour des droits connus, reconnus et défendus.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Liens rapides</h3>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                        <li><a href="news.html">Actualités</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a data-i18n="nav_home" href="index.html">Accueil</a></li>
+                        <li><a data-i18n="nav_about" href="about.html">À propos</a></li>
+                        <li><a data-i18n="nav_news" href="news.html">Actualités</a></li>
+                        <li><a data-i18n="nav_contact" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1014,127 +1028,9 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        // Animations pour les éléments au scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animation pour les éléments reveal
-            const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
-            
-            const revealOnScroll = function() {
-                const windowHeight = window.innerHeight;
-                const revealPoint = 150;
-                
-                revealElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    
-                    if(elementTop < windowHeight - revealPoint) {
-                        element.classList.add('active');
-                    } else {
-                        element.classList.remove('active');
-                    }
-                });
-            };
-            
-            // Vérifier au chargement initial
-            revealOnScroll();
-            
-            // Vérifier au scroll
-            window.addEventListener('scroll', revealOnScroll);
-            
-            // Animation hover pour les cartes de service
-            const serviceCards = document.querySelectorAll('.service-card');
-            
-            serviceCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Animation pour les cartes de support
-            const supportCards = document.querySelectorAll('.support-card');
-            
-            supportCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.08)';
-                });
-            });
-            
-            // Animation pour les éléments de réseau
-            const networkItems = document.querySelectorAll('.network-item');
-            
-            networkItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.12)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
-                });
-            });
-            
-            // Animation pour les items bénéfices
-            const benefitItems = document.querySelectorAll('.benefit-item');
-            
-            benefitItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-7px)';
-                    this.style.background = 'rgba(255,255,255,0.15)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.background = 'rgba(255,255,255,0.1)';
-                });
-            });
-            
-            // Animation de pulse pour les icônes
-            const addPulseAnimation = () => {
-                document.head.insertAdjacentHTML('beforeend', `
-                    <style>
-                        @keyframes pulse {
-                            0% {
-                                transform: scale(1);
-                                opacity: 0.2;
-                            }
-                            50% {
-                                transform: scale(1.3);
-                                opacity: 0;
-                            }
-                            100% {
-                                transform: scale(1);
-                                opacity: 0;
-                            }
-                        }
-                        
-                        @keyframes floating {
-                            0% {
-                                transform: translateY(0px) rotate(0deg);
-                            }
-                            50% {
-                                transform: translateY(-20px) rotate(5deg);
-                            }
-                            100% {
-                                transform: translateY(0px) rotate(0deg);
-                            }
-                        }
-                    </style>
-                `);
-            };
-            
-            addPulseAnimation();
-        });
-    </script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/mobile-table-fix.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/update_images.js"></script>
 </body>
 </html> 

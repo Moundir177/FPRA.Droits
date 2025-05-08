@@ -1,11 +1,0 @@
---2025-05-01 15:03:43--  https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1
-Resolving images.unsplash.com (images.unsplash.com)... 199.232.82.208, 2a04:4e42:54::720
-Connecting to images.unsplash.com (images.unsplash.com)|199.232.82.208|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 3363933 (3.2M) [image/jpeg]
-Saving to: ‘img/hero-bg.jpg’
-
-img/hero-bg.jpg           0%[                               ]       0  --.-KB/s               img/hero-bg.jpg           4%[>                              ] 142.47K   712KB/s               img/hero-bg.jpg           8%[=>                             ] 294.47K   721KB/s               img/hero-bg.jpg          13%[===>                           ] 454.47K   747KB/s               img/hero-bg.jpg          22%[=====>                         ] 726.47K   888KB/s               img/hero-bg.jpg          32%[=========>                     ]   1.05M  1.03MB/s               img/hero-bg.jpg          43%[============>                  ]   1.40M  1.14MB/s               img/hero-bg.jpg          55%[================>              ]   1.79M  1.25MB/s               img/hero-bg.jpg          65%[===================>           ]   2.10M  1.27MB/s               img/hero-bg.jpg          80%[=======================>       ]   2.57M  1.38MB/s               img/hero-bg.jpg          96%[============================>  ]   3.08M  1.49MB/s               img/hero-bg.jpg         100%[==============================>]   3.21M  1.51MB/s    in 2.1s    
-
-2025-05-01 15:03:51 (1.51 MB/s) - ‘img/hero-bg.jpg’ saved [3363933/3363933]
-
