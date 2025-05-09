@@ -1,0 +1,74 @@
+/* Text color adaptation for better visibility */
+
+/* When header is transparent (not scrolled) */
+.dynamic-header:not(.scrolled) .dynamic-nav-menu > li > a {
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dynamic-header:not(.scrolled) .dropdown-toggle::after {
+    color: white;
+}
+
+.dynamic-header:not(.scrolled) .dynamic-lang-switch a {
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dynamic-header:not(.scrolled) .dynamic-lang-switch {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Keep active state visible on transparent background */
+.dynamic-header:not(.scrolled) .dynamic-nav-menu a.active,
+.dynamic-header:not(.scrolled) .dynamic-nav-menu .active-parent > a {
+    color: white;
+    font-weight: 600;
+}
+
+/* Menu toggle for mobile */
+.dynamic-header:not(.scrolled) .dynamic-menu-toggle span {
+    background-color: white;
+}
+
+/* Logo text in transparent mode */
+.dynamic-header:not(.scrolled) .dynamic-logo-text strong,
+.dynamic-header:not(.scrolled) .dynamic-logo-text span {
+    color: white;
+}
+
+/* When scrolled, keep the original colors (defaults to black text) */
+
+/* MOBILE VIEW OVERRIDES - Always use black text in mobile menu regardless of scroll state */
+@media (max-width: 991px) {
+    /* Force black text in mobile menu/sidebar regardless of scroll state */
+    .dynamic-nav-menu > li > a,
+    .dynamic-nav-menu a,
+    .dynamic-nav-menu a.active,
+    .dynamic-nav-menu .active-parent > a,
+    .dynamic-header:not(.scrolled) .dynamic-nav-menu > li > a,
+    .dynamic-header:not(.scrolled) .dynamic-nav-menu a.active,
+    .dynamic-header:not(.scrolled) .dynamic-nav-menu .active-parent > a {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+    
+    /* Ensure dropdown indicators are also black */
+    .dynamic-header:not(.scrolled) .dropdown-toggle::after,
+    .dropdown-toggle::after {
+        color: #000 !important;
+    }
+    
+    /* Ensure good contrast for active items in mobile view */
+    .dynamic-nav-menu a.active,
+    .dynamic-nav-menu .active-parent > a {
+        font-weight: 600;
+    }
+}
+
+/* RTL language support */
+html[dir="rtl"] .dynamic-header:not(.scrolled) .dynamic-nav-menu > li > a,
+html[dir="rtl"] .dynamic-header:not(.scrolled) .dynamic-lang-switch a {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,76 @@
+/* Logo Special Effects */
+
+/* Shine effect on hover */
+.dynamic-logo::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.dynamic-logo:hover::after {
+    left: 130%;
+    opacity: 1;
+}
+
+/* Pulse animation on page load */
+@keyframes logoPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dynamic-logo {
+    animation: logoPulse 1.2s ease-in-out 1;
+}
+
+/* Logo badge for special events (can be toggled with JavaScript) */
+.dynamic-logo-badge {
+    position: absolute;
+    top: -8px;
+    right: -15px;
+    background: var(--primary-color, #236B8E);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 700;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dynamic-logo-badge.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Improve contrast on transparent header */
+.dynamic-header:not(.scrolled) .dynamic-logo img {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* RTL adjustments for logo */
+html[dir='rtl'] .dynamic-logo-text {
+    margin-left: 0;
+    margin-right: 12px;
+    transform: translateX(10px);
+}
+
+html[dir='rtl'] .dynamic-logo:hover .dynamic-logo-text {
+    transform: translateX(0);
+} 

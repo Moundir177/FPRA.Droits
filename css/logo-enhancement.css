@@ -1,0 +1,93 @@
+/* Logo Enhancement Styles */
+.dynamic-logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1010;
+    transition: transform 0.3s ease;
+    width: auto;
+    margin-right: 20px;
+}
+
+.dynamic-logo:hover {
+    transform: scale(1.05);
+}
+
+.dynamic-logo img {
+    height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.dynamic-header.scrolled .dynamic-logo img {
+    height: 45px;
+}
+
+/* Logo Animation for Page Load */
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dynamic-logo img {
+    animation: logoEntrance 0.6s ease forwards;
+}
+
+/* Enhanced Logo Text */
+.dynamic-logo-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.4s ease;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.dynamic-logo:hover .dynamic-logo-text {
+    opacity: 1;
+    transform: translateX(0);
+    max-width: 200px;
+}
+
+.dynamic-logo-text strong {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--menu-text);
+    line-height: 1.2;
+}
+
+.dynamic-logo-text span {
+    font-size: 12px;
+    color: var(--menu-accent);
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .dynamic-logo img {
+        height: 45px;
+    }
+    
+    .dynamic-header.scrolled .dynamic-logo img {
+        height: 40px;
+    }
+    
+    .dynamic-logo-text {
+        display: none;
+    }
+}
+
+/* RTL Support */
+html[dir='rtl'] .dynamic-logo-text {
+    margin-left: 0;
+    margin-right: 12px;
+} 

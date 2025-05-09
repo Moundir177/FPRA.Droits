@@ -121,7 +121,7 @@ function initTranslation() {
   };
   
   // Add event listeners to language switcher
-  document.querySelectorAll('.language-switch a').forEach(a => {
+  document.querySelectorAll('.language-switch a, .dynamic-lang-switch a').forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
       const lang = a.getAttribute('data-lang');

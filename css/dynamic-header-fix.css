@@ -1,0 +1,33 @@
+/* Improved header spacing and balance */
+.dynamic-header-inner {
+    padding: 0 20px;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+/* Adjust logo spacing */
+.dynamic-logo {
+    margin-right: 15px;
+}
+
+/* Ensure language switcher is visible and properly spaced */
+.dynamic-lang-switch {
+    margin-left: 20px;
+    margin-right: 0;
+    min-width: 100px;
+    justify-content: space-around;
+}
+
+/* Add extra padding to the left on mobile */
+@media (max-width: 991px) {
+    .dynamic-header-inner {
+        padding: 0 15px;
+    }
+    
+    /* Keep language switcher visible on mobile */
+    .dynamic-lang-switch {
+        display: flex !important;
+        margin-right: 15px;
+    }
+}

@@ -1,0 +1,364 @@
+/* Dynamic Menu Bar Styles */
+:root {
+    --menu-bg: rgba(255, 255, 255, 0.95);
+    --menu-text: #333;
+    --menu-accent: var(--primary-color, #236B8E);
+    --menu-hover: #f5f5f5;
+    --menu-border: rgba(0, 0, 0, 0.08);
+    --menu-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    --menu-transition: all 0.3s ease;
+    --menu-mobile-bg: rgba(255, 255, 255, 0.98);
+}
+
+/* Header Container */
+.dynamic-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--menu-transition);
+    padding: 15px 0;
+    background-color: transparent;
+}
+
+.dynamic-header.scrolled {
+    background-color: var(--menu-bg);
+    box-shadow: var(--menu-shadow);
+    padding: 10px 0;
+}
+
+.dynamic-header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Header Inner Layout */
+.dynamic-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Logo Styling */
+.dynamic-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--menu-text);
+    z-index: 1010;
+    position: relative;
+    margin-right: 10px;
+}
+
+.dynamic-logo img {
+    height: 50px;
+    width: auto;
+    transition: var(--menu-transition);
+}
+
+.dynamic-header.scrolled .dynamic-logo img {
+    height: 40px;
+}
+
+/* Navigation Menu */
+.dynamic-nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dynamic-nav-menu > li {
+    position: relative;
+    margin: 0 5px;
+}
+
+.dynamic-nav-menu > li > a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--menu-transition);
+    position: relative;
+}
+
+/* Active State */
+.dynamic-nav-menu a.active,
+.dynamic-nav-menu .active-parent > a {
+    color: var(--menu-accent);
+}
+
+.dynamic-nav-menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--menu-accent);
+    transition: var(--menu-transition);
+    transform: translateX(-50%);
+}
+
+.dynamic-nav-menu > li > a:hover::after,
+.dynamic-nav-menu > li > a.active::after,
+.dynamic-nav-menu .active-parent > a::after {
+    width: 30px;
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: var(--menu-bg);
+    box-shadow: var(--menu-shadow);
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--menu-transition);
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--menu-transition);
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--menu-hover);
+    color: var(--menu-accent);
+}
+
+.dropdown-toggle::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8rem;
+    transition: var(--menu-transition);
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+/* Language Switch */
+.dynamic-lang-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    min-width: 90px;
+    justify-content: space-between;
+}
+
+.dynamic-lang-switch a {
+    display: block;
+    padding: 5px 10px;
+    color: var(--menu-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--menu-transition);
+    border-radius: 4px;
+    text-align: center;
+    width: 40px;
+}
+
+.dynamic-lang-switch a:hover,
+.dynamic-lang-switch a.active {
+    background-color: var(--menu-accent);
+    color: white;
+}
+
+/* Mobile Menu Toggle */
+.dynamic-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1010;
+    transition: var(--menu-transition);
+}
+
+.dynamic-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--menu-text);
+    border-radius: 3px;
+    transition: var(--menu-transition);
+}
+
+.dynamic-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.dynamic-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.dynamic-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Overlay for Mobile Menu */
+.dynamic-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--menu-transition);
+    z-index: 990;
+}
+
+.menu-open .dynamic-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .dynamic-header-inner {
+        padding: 0 15px;
+    }
+    
+    .dynamic-menu-toggle {
+        display: flex;
+    }
+    
+    .dynamic-nav-menu {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--menu-mobile-bg);
+        flex-direction: column;
+        padding: 80px 0 30px;
+        overflow-y: auto;
+        transition: var(--menu-transition);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .dynamic-nav-menu.active {
+        right: 0;
+    }
+    
+    .dynamic-nav-menu > li {
+        margin: 0;
+        border-bottom: 1px solid var(--menu-border);
+    }
+    
+    .dynamic-nav-menu > li > a {
+        padding: 15px 25px;
+    }
+    
+    .dynamic-nav-menu > li > a::after {
+        display: none;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        border-top: 1px solid var(--menu-border);
+        border-radius: 0;
+        padding: 0;
+        margin-top: 0;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+    
+    .dropdown-open .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu a {
+        padding: 12px 25px 12px 35px;
+        font-size: 0.9rem;
+    }
+    
+    .dropdown-toggle::after {
+        position: absolute;
+        right: 25px;
+    }
+    
+    .dropdown-open .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+    
+    .dynamic-nav-menu .dynamic-lang-switch {
+        display: none !important;
+    }
+    
+    .dynamic-lang-switch {
+        display: flex;
+        margin-right: 15px;
+    }
+    
+    .dynamic-header.scrolled .dynamic-logo img {
+        height: 35px;
+    }
+}
+
+/* Animation for Mobile Menu Items */
+@media (max-width: 991px) {
+    .dynamic-nav-menu > li {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition-delay: 0.1s;
+    }
+    
+    .dynamic-nav-menu.active > li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .dynamic-nav-menu > li:nth-child(2) { transition-delay: 0.15s; }
+    .dynamic-nav-menu > li:nth-child(3) { transition-delay: 0.2s; }
+    .dynamic-nav-menu > li:nth-child(4) { transition-delay: 0.25s; }
+    .dynamic-nav-menu > li:nth-child(5) { transition-delay: 0.3s; }
+    .dynamic-nav-menu > li:nth-child(6) { transition-delay: 0.35s; }
+    .dynamic-nav-menu > li:nth-child(7) { transition-delay: 0.4s; }
+    .dynamic-nav-menu > li:nth-child(8) { transition-delay: 0.45s; }
+    .dynamic-nav-menu > li:nth-child(9) { transition-delay: 0.5s; }
+    .dynamic-nav-menu > li:nth-child(10) { transition-delay: 0.55s; }
+} 
